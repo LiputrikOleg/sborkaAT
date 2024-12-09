@@ -1,0 +1,18 @@
+﻿
+						Вывод заголовка статьи
+						=======================
+
+
+<h2>
+                                
+	<a href="<?php the_permalink();?>" rel="bookmark" title="Permanent Link to Карта сайта WordPress без плагинов"><?php the_title(); ?></a>                
+</h2>
+
+						Вывод даты публикации, автора, рубрики статьи
+						==============================================
+
+
+<h3>
+	Опубликовано : <?php the_time('d-m-Y') ?> | Автор : <span><?php the_author() ?></span> | В рубрике : <span class="post_cats"><?php the_category(', ') ?></span>
+
+</h3>

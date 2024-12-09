@@ -1,0 +1,487 @@
+<?php
+
+function mayak_converter_php($attr, $content = null){
+$mayak_puh = $content;
+$mayak_van = array('&#187;', '&#8216;', '&#8217;');
+$mayak_too = array('&quot;', '&apos;', '&apos;');
+$mayak_rezult = str_replace($mayak_van, $mayak_too, $mayak_puh);
+$mayak_php = strip_tags($mayak_rezult);
+return '<pre class="brush: php">'.$mayak_php.'</pre>';
+}
+function mayak_converter_css($attr, $content = null){
+$mayak_a = $content;
+$mayak_b = array('&#187;', '&#8216;', '&#8217;');
+$mayak_c = array('&quot;', '&apos;', '&apos;');
+$mayak_put = str_replace($mayak_b, $mayak_c, $mayak_a);
+$mayak_css = strip_tags($mayak_put);
+return '<pre class="brush: php">'.$mayak_css.'</pre>';
+}
+add_shortcode ('php','mayak_converter_php');
+add_shortcode ('css','mayak_converter_css');
+
+/**
+* загружаемые стили и скрипты
+**/
+function load_style_script(){
+  wp_deregister_script( 'jquery' );
+  wp_register_script( 'jquery', 'http://yastatic.net/jquery/2.1.4/jquery.min.js');
+  wp_enqueue_script( 'jquery' );
+  wp_enqueue_script('bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js');
+  wp_enqueue_script('highlight.pack', get_template_directory_uri() . '/js/highlight.pack.js');
+  wp_enqueue_script('wow.min', get_template_directory_uri() . '/js/wow.min.js');
+  wp_enqueue_script('main_js', get_template_directory_uri() . '/js/main_js.js');
+  wp_enqueue_style('style', get_template_directory_uri() . '/style.css');
+  wp_enqueue_style('font-awesome.min', get_template_directory_uri() . '/css/fonts/font-awesome.min.css');
+  wp_enqueue_style('hover_min', get_template_directory_uri() . '/css/hover_min.css');
+  wp_enqueue_style('main_style', get_template_directory_uri() . '/css/main_style.css');
+  wp_enqueue_style('main_style_new', get_template_directory_uri() . '/css/main_style_new.css');
+  
+}
+/**
+* загружаем стили и скрипты
+**/
+add_action('wp_enqueue_scripts', 'load_style_script');
+remove_action( 'wp_head', 'rsd_link' );
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_generator' );
+
+/**
+*  Вставка миниатюр
+**/
+
+add_theme_support( 'post-thumbnails' );
+
+/**
+* меню
+**/
+register_nav_menu('menu', 'headMenu');
+
+
+ require_once('wp_bootstrap_navwalker.php');
+
+ if (function_exists('add_theme_support')) {
+ add_theme_support('menus');
+ }
+
+// Регистрируем сайдбары
+
+
+if ( function_exists('register_sidebar') ) {
+
+    register_sidebar(array(
+    'name' => 'Реклама 1',
+    'before_widget' => '<div>',
+          'after_widget' => '</div>',
+            'before_title' => '<span itemprop="name" >',
+            'after_title' => '</span>'
+  ));
+
+}
+
+if ( function_exists('register_sidebar') ) {
+
+    register_sidebar(array(
+    'name' => 'Рубрики',
+    'before_widget' => '<div>',
+          'after_widget' => '</div>',
+         'before_title' => '<span itemprop="name" style="display:none;">',
+            'after_title' => '</span>'
+  ));
+
+}
+
+if ( function_exists('register_sidebar') ) {
+
+    register_sidebar(array(
+    'name' => 'Свежие записи',
+    'before_widget' => '<div>',
+           'after_widget' => '</div>',
+            'before_title' => '<span itemprop="name" style="display:none;">',
+            'after_title' => '</span>'
+  ));
+
+}
+
+if ( function_exists('register_sidebar') ) {
+
+    register_sidebar(array(
+    'name' => 'Реклама 2',
+    'before_widget' => '<div>',
+          'after_widget' => '</div>',
+            'before_title' => '<span itemprop="name" >',
+            'after_title' => '</span>'
+  ));
+
+}
+
+
+if ( function_exists('register_sidebar') ) {
+
+    register_sidebar(array(
+    'name' => 'Email подписка',
+    'before_widget' => '<div>',
+          'after_widget' => '</div>',
+            'before_title' => '<span itemprop="name" >',
+            'after_title' => '</span>'
+  ));
+
+}
+
+
+/**
+* Хлебные крошки
+**/
+
+function dimox_breadcrumbs() {
+
+  /* === ОПЦИИ === */
+  $text['home'] = 'Главная'; // текст ссылки "Главная"
+  $text['category'] = 'Архив рубрики "%s"'; // текст для страницы рубрики
+  $text['search'] = 'Результаты поиска по запросу "%s"'; // текст для страницы с результатами поиска
+  $text['tag'] = 'Записи с тегом "%s"'; // текст для страницы тега
+  $text['author'] = 'Статьи автора %s'; // текст для страницы автора
+  $text['404'] = 'Ошибка 404'; // текст для страницы 404
+  $text['page'] = 'Страница %s'; // текст 'Страница N'
+  $text['cpage'] = 'Страница комментариев %s'; // текст 'Страница комментариев N'
+
+  $wrap_before = '<div class="breadcrumbs">'; // открывающий тег обертки
+  $wrap_after = '</div><!-- .breadcrumbs -->'; // закрывающий тег обертки
+  $sep = '›'; // разделитель между "крошками"
+  $sep_before = '<span class="sep">'; // тег перед разделителем
+  $sep_after = '</span>'; // тег после разделителя
+  $show_home_link = 1; // 1 - показывать ссылку "Главная", 0 - не показывать
+  $show_on_home = 0; // 1 - показывать "хлебные крошки" на главной странице, 0 - не показывать
+  $show_current = 1; // 1 - показывать название текущей страницы, 0 - не показывать
+  $before = '<span class="current">'; // тег перед текущей "крошкой"
+  $after = '</span>'; // тег после текущей "крошки"
+  /* === КОНЕЦ ОПЦИЙ === */
+
+  global $post;
+  $home_link = home_url('/');
+  $link_before = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">';
+  $link_after = '</span>';
+  $link_attr = ' itemprop="url"';
+  $link_in_before = '<span itemprop="title">';
+  $link_in_after = '</span>';
+  $link = $link_before . '<a href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
+  $frontpage_id = get_option('page_on_front');
+  $parent_id = $post->post_parent;
+  $sep = ' ' . $sep_before . $sep . $sep_after . ' ';
+
+  if (is_home() || is_front_page()) {
+
+    if ($show_on_home) echo $wrap_before . '<a href="' . $home_link . '">' . $text['home'] . '</a>' . $wrap_after;
+
+  } else {
+
+    echo $wrap_before;
+    if ($show_home_link) echo sprintf($link, $home_link, $text['home']);
+
+    if ( is_category() ) {
+      $cat = get_category(get_query_var('cat'), false);
+      if ($cat->parent != 0) {
+        $cats = get_category_parents($cat->parent, TRUE, $sep);
+        $cats = preg_replace("#^(.+)$sep$#", "$1", $cats);
+        $cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr .'>' . $link_in_before . '$2' . $link_in_after .'</a>' . $link_after, $cats);
+        if ($show_home_link) echo $sep;
+        echo $cats;
+      }
+      if ( get_query_var('paged') ) {
+        $cat = $cat->cat_ID;
+        echo $sep . sprintf($link, get_category_link($cat), get_cat_name($cat)) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+      } else {
+        if ($show_current) echo $sep . $before . sprintf($text['category'], single_cat_title('', false)) . $after;
+      }
+
+    } elseif ( is_search() ) {
+      if (have_posts()) {
+        if ($show_home_link && $show_current) echo $sep;
+        if ($show_current) echo $before . sprintf($text['search'], get_search_query()) . $after;
+      } else {
+        if ($show_home_link) echo $sep;
+        echo $before . sprintf($text['search'], get_search_query()) . $after;
+      }
+
+    } elseif ( is_day() ) {
+      if ($show_home_link) echo $sep;
+      echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y')) . $sep;
+      echo sprintf($link, get_month_link(get_the_time('Y'), get_the_time('m')), get_the_time('F'));
+      if ($show_current) echo $sep . $before . get_the_time('d') . $after;
+
+    } elseif ( is_month() ) {
+      if ($show_home_link) echo $sep;
+      echo sprintf($link, get_year_link(get_the_time('Y')), get_the_time('Y'));
+      if ($show_current) echo $sep . $before . get_the_time('F') . $after;
+
+    } elseif ( is_year() ) {
+      if ($show_home_link && $show_current) echo $sep;
+      if ($show_current) echo $before . get_the_time('Y') . $after;
+
+    } elseif ( is_single() && !is_attachment() ) {
+      if ($show_home_link) echo $sep;
+      if ( get_post_type() != 'post' ) {
+        $post_type = get_post_type_object(get_post_type());
+        $slug = $post_type->rewrite;
+        printf($link, $home_link . '/' . $slug['slug'] . '/', $post_type->labels->singular_name);
+        if ($show_current) echo $sep . $before . get_the_title() . $after;
+      } else {
+        $cat = get_the_category(); $cat = $cat[0];
+        $cats = get_category_parents($cat, TRUE, $sep);
+        if (!$show_current || get_query_var('cpage')) $cats = preg_replace("#^(.+)$sep$#", "$1", $cats);
+        $cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr .'>' . $link_in_before . '$2' . $link_in_after .'</a>' . $link_after, $cats);
+        echo $cats;
+        if ( get_query_var('cpage') ) {
+          echo $sep . sprintf($link, get_permalink(), get_the_title()) . $sep . $before . sprintf($text['cpage'], get_query_var('cpage')) . $after;
+        } else {
+          if ($show_current) echo $before . get_the_title() . $after;
+        }
+      }
+
+    // custom post type
+    } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
+      $post_type = get_post_type_object(get_post_type());
+      if ( get_query_var('paged') ) {
+        echo $sep . sprintf($link, get_post_type_archive_link($post_type->name), $post_type->label) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+      } else {
+        if ($show_current) echo $sep . $before . $post_type->label . $after;
+      }
+
+    } elseif ( is_attachment() ) {
+      if ($show_home_link) echo $sep;
+      $parent = get_post($parent_id);
+      $cat = get_the_category($parent->ID); $cat = $cat[0];
+      if ($cat) {
+        $cats = get_category_parents($cat, TRUE, $sep);
+        $cats = preg_replace('#<a([^>]+)>([^<]+)<\/a>#', $link_before . '<a$1' . $link_attr .'>' . $link_in_before . '$2' . $link_in_after .'</a>' . $link_after, $cats);
+        echo $cats;
+      }
+      printf($link, get_permalink($parent), $parent->post_title);
+      if ($show_current) echo $sep . $before . get_the_title() . $after;
+
+    } elseif ( is_page() && !$parent_id ) {
+      if ($show_current) echo $sep . $before . get_the_title() . $after;
+
+    } elseif ( is_page() && $parent_id ) {
+      if ($show_home_link) echo $sep;
+      if ($parent_id != $frontpage_id) {
+        $breadcrumbs = array();
+        while ($parent_id) {
+          $page = get_page($parent_id);
+          if ($parent_id != $frontpage_id) {
+            $breadcrumbs[] = sprintf($link, get_permalink($page->ID), get_the_title($page->ID));
+          }
+          $parent_id = $page->post_parent;
+        }
+        $breadcrumbs = array_reverse($breadcrumbs);
+        for ($i = 0; $i < count($breadcrumbs); $i++) {
+          echo $breadcrumbs[$i];
+          if ($i != count($breadcrumbs)-1) echo $sep;
+        }
+      }
+      if ($show_current) echo $sep . $before . get_the_title() . $after;
+
+    } elseif ( is_tag() ) {
+      if ( get_query_var('paged') ) {
+        $tag_id = get_queried_object_id();
+        $tag = get_tag($tag_id);
+        echo $sep . sprintf($link, get_tag_link($tag_id), $tag->name) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+      } else {
+        if ($show_current) echo $sep . $before . sprintf($text['tag'], single_tag_title('', false)) . $after;
+      }
+
+    } elseif ( is_author() ) {
+      global $author;
+      $author = get_userdata($author);
+      if ( get_query_var('paged') ) {
+        if ($show_home_link) echo $sep;
+        echo sprintf($link, get_author_posts_url($author->ID), $author->display_name) . $sep . $before . sprintf($text['page'], get_query_var('paged')) . $after;
+      } else {
+        if ($show_home_link && $show_current) echo $sep;
+        if ($show_current) echo $before . sprintf($text['author'], $author->display_name) . $after;
+      }
+
+    } elseif ( is_404() ) {
+      if ($show_home_link && $show_current) echo $sep;
+      if ($show_current) echo $before . $text['404'] . $after;
+
+    } elseif ( has_post_format() && !is_singular() ) {
+      if ($show_home_link) echo $sep;
+      echo get_post_format_string( get_post_format() );
+    }
+
+    echo $wrap_after;
+
+  }
+} // end of dimox_breadcrumbs()
+
+
+/**
+ * Альтернатива wp_pagenavi. Создает ссылки пагинации на страницах архивов.
+ *
+ * @param string $before   - текст до навигации
+ * @param string $after    - текст после навигации
+ * @param bool   $echo     - возвращать или выводить результат
+ * @param array  $args     - аргументы функции
+ * @param array  $wp_query - объект WP_Query на основе которого строится пагинация. По умолчанию глобальная переменная $wp_query
+ *
+ * Версия: 2.4
+ * Автор: Тимур Камаев
+ * Ссылка на страницу функции: http://wp-kama.ru/?p=8
+ */
+function kama_pagenavi( $before = '', $after = '', $echo = true, $args = array(), $wp_query = null ) {
+  if( ! $wp_query )
+    global $wp_query;
+
+  // параметры по умолчанию
+  $default_args = array(
+    'text_num_page'   => '', // Текст перед пагинацией. {current} - текущая; {last} - последняя (пр. 'Страница {current} из {last}' получим: "Страница 4 из 60" )
+    'num_pages'       => 10, // сколько ссылок показывать
+    'step_link'       => 10, // ссылки с шагом (значение - число, размер шага (пр. 1,2,3...10,20,30). Ставим 0, если такие ссылки не нужны.
+    'dotright_text'   => '…', // промежуточный текст "до".
+    'dotright_text2'  => '…', // промежуточный текст "после".
+    'back_text'       => '« назад', // текст "перейти на предыдущую страницу". Ставим 0, если эта ссылка не нужна.
+    'next_text'       => 'вперед »', // текст "перейти на следующую страницу". Ставим 0, если эта ссылка не нужна.
+    'first_page_text' => '« к началу', // текст "к первой странице". Ставим 0, если вместо текста нужно показать номер страницы.
+    'last_page_text'  => 'в конец »', // текст "к последней странице". Ставим 0, если вместо текста нужно показать номер страницы.
+  );
+
+  $default_args = apply_filters('kama_pagenavi_args', $default_args ); // чтобы можно было установить свои значения по умолчанию
+
+  $args = array_merge( $default_args, $args );
+
+  extract( $args );
+
+  $posts_per_page = (int) $wp_query->query_vars['posts_per_page'];
+  $paged          = (int) $wp_query->query_vars['paged'];
+  $max_page       = $wp_query->max_num_pages;
+
+  //проверка на надобность в навигации
+  if( $max_page <= 1 )
+    return false;
+
+  if( empty( $paged ) || $paged == 0 )
+    $paged = 1;
+
+  $pages_to_show = intval( $num_pages );
+  $pages_to_show_minus_1 = $pages_to_show-1;
+
+  $half_page_start = floor( $pages_to_show_minus_1/2 ); //сколько ссылок до текущей страницы
+  $half_page_end = ceil( $pages_to_show_minus_1/2 ); //сколько ссылок после текущей страницы
+
+  $start_page = $paged - $half_page_start; //первая страница
+  $end_page = $paged + $half_page_end; //последняя страница (условно)
+
+  if( $start_page <= 0 )
+    $start_page = 1;
+  if( ($end_page - $start_page) != $pages_to_show_minus_1 )
+    $end_page = $start_page + $pages_to_show_minus_1;
+  if( $end_page > $max_page ) {
+    $start_page = $max_page - $pages_to_show_minus_1;
+    $end_page = (int) $max_page;
+  }
+
+  if( $start_page <= 0 )
+    $start_page = 1;
+
+  //выводим навигацию
+  $out = '';
+
+  // создаем базу чтобы вызвать get_pagenum_link один раз
+  $link_base = str_replace( 99999999, '___', get_pagenum_link( 99999999 ) );
+  $first_url = get_pagenum_link( 1 );
+  if( false === strpos( $first_url, '?') )
+    $first_url = user_trailingslashit( $first_url );
+
+  $out .= $before . "<div class='wp-pagenavi'>\n";
+
+    if( $text_num_page ){
+      $text_num_page = preg_replace( '!{current}|{last}!', '%s', $text_num_page );
+      $out.= sprintf( "<span class='pages'>$text_num_page</span> ", $paged, $max_page );
+    }
+    // назад
+    if ( $back_text && $paged != 1 )
+      $out .= '<a class="prev" href="'. ( ($paged-1)==1 ? $first_url : str_replace( '___', ($paged-1), $link_base ) ) .'">'. $back_text .'</a> ';
+    // в начало
+    if ( $start_page >= 2 && $pages_to_show < $max_page ) {
+      $out.= '<a class="first" href="'. $first_url .'">'. ( $first_page_text ? $first_page_text : 1 ) .'</a> ';
+      if( $dotright_text && $start_page != 2 ) $out .= '<span class="extend">'. $dotright_text .'</span> ';
+    }
+    // пагинация
+    for( $i = $start_page; $i <= $end_page; $i++ ) {
+      if( $i == $paged )
+        $out .= '<span class="current">'.$i.'</span> ';
+      elseif( $i == 1 )
+        $out .= '<a href="'. $first_url .'">1</a> ';
+      else
+        $out .= '<a href="'. str_replace( '___', $i, $link_base ) .'">'. $i .'</a> ';
+    }
+
+    //ссылки с шагом
+    $dd = 0;
+    if ( $step_link && $end_page < $max_page ){
+      for( $i = $end_page+1; $i<=$max_page; $i++ ) {
+        if( $i % $step_link == 0 && $i !== $num_pages ) {
+          if ( ++$dd == 1 )
+            $out.= '<span class="extend">'. $dotright_text2 .'</span> ';
+          $out.= '<a href="'. str_replace( '___', $i, $link_base ) .'">'. $i .'</a> ';
+        }
+      }
+    }
+    // в конец
+    if ( $end_page < $max_page ) {
+      if( $dotright_text && $end_page != ($max_page-1) )
+        $out.= '<span class="extend">'. $dotright_text2 .'</span> ';
+      $out.= '<a class="last" href="'. str_replace( '___', $max_page, $link_base ) .'">'. ( $last_page_text ? $last_page_text : $max_page ) .'</a> ';
+    }
+    // вперед
+    if ( $next_text && $paged != $end_page )
+      $out.= '<a class="next" href="'. str_replace( '___', ($paged+1), $link_base ) .'">'. $next_text .'</a> ';
+
+  $out .= "</div>". $after ."\n";
+
+  $out = apply_filters('kama_pagenavi', $out );
+
+  if( $echo )
+    return print $out;
+
+  return $out;
+}
+
+
+//Поддержка PHP в виджете
+function php_in_widgets($widget_content) {
+if (strpos($widget_content, '<' . '?') !== false) {
+ob_start();
+eval('?' . '>' . $widget_content);
+$widget_content = ob_get_contents();
+ob_end_clean();
+}
+return $widget_content;
+}
+add_filter('widget_text', 'php_in_widgets', 99);
+
+
+//Микроразметка изображений
+
+function shabloncss_filter_image($content) {
+$ar_mk	= '!<img (.*?) width="(.*?)" height="(.*?)" (.*?)/>!si';
+$br_mk = '<span itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><img itemprop="url image" \\1 width="\\2" height="\\3" \\4/><meta itemprop="width" content="\\2"><meta itemprop="height" content="\\3"></span>';
+$content = preg_replace($ar_mk, $br_mk, $content);
+  return $content;
+}
+add_filter('the_content', 'shabloncss_filter_image');
+
+
+
+//Миниатюра - ссылка
+
+//function devise_autolink_featured_images( $html, $post_id, $post_image_id ) {
+//$html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_the_title( $post_id ) ) . '">' . $html . '</a>';
+//return $html;
+//}
+//add_filter( 'post_thumbnail_html', 'devise_autolink_featured_images', 10, 3 );
+
+
+
+
+ ?>

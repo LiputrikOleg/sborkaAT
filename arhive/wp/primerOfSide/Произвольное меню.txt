@@ -1,0 +1,57 @@
+﻿Вставляем в functions.php  перед закрывающим тегом " ?> "
+----------------------------------------------------------
+
+//Произвольное меню
+if ( function_exists( 'register_nav_menus' ) )
+{
+	register_nav_menus(
+		array(
+			'custom-menu'=>__('Custom menu'),
+		)
+	);
+}
+
+function custom_menu(){
+	echo '<ul>';
+	wp_list_pages('title_li=&');
+	echo '</ul>';
+}
+
+=========================================================================================================
+
+В header.php вместо списка меню
+--------------------------------
+
+<ul>
+     <li class="first current_page_item"><a href="#">Главная</a></li>
+      <li class="page_item page-item-64"><a href="#">Пример страницы</a>
+             <ul>
+                 <li><a href="#">Страница 1</a></li>
+                 <li><a href="#">Страница 2</a></li>
+                 <li><a href="#">Страница 3</a></li>
+                 <li><a href="#">Страница 4</a></li>
+                 <li><a href="#">Страница 5</a></li>
+                 <li><a href="#">Страница 1</a></li>
+              </ul>
+       </li>
+       <li class="page_item page-item-64"><a href="#">Варианты</a></li>
+       <li class="page_item page-item-64"><a href="#">Варианты</a></li>
+       <li class="page_item page-item-64"><a href="#">Варианты</a></li>
+                      
+</ul>
+
+вставляем:
+----------
+
+		<?php
+		      if ( function_exists( 'wp_nav_menu' ) )
+			    wp_nav_menu( 
+				  array( 
+				 'theme_location' => 'custom-menu',
+				 'fallback_cb'=> 'custom_menu',
+				 'container' => 'ul',
+				 'menu_id' => 'nav',
+				 'menu_class' => 'nav') 
+				);
+		       else custom_menu();
+		 ?>
