@@ -1,0 +1,24 @@
+﻿Подгружаем header      <?php get_header(); ?>
+
+Подгружаем sidebar     <?php get_sidebar(); ?>  
+
+Подгружаем footer      <?php get_footer(); ?>
+
+
+
+Текст статьи           <?php the_content(); ?>
+
+Анонс статьи (цитата)  <?php the_excerpt(); ?>
+
+
+Вывод ссылок           <?php the_permalink(); ?>
+
+
+Для вывода статьи начало  <?php if (have_posts()) : ?>
+			  <?php while (have_posts()) : the_post(); ?>
+
+
+		  Конец	  <?php endwhile; /* rewind or continue if all posts have been fetched */ ?>
+			
+			  <?php else : ?>
+			  <?php endif; ?>

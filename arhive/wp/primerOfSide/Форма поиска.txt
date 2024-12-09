@@ -1,0 +1,137 @@
+﻿					
+
+					Поиск на сайте
+======================================================================================================
+
+Создаем 2 новых файла:
+
+				    1.	Результаты поиска search.php
+				   --------------------------------------
+
+
+   <?php get_header(); ?>                 
+
+ <div id="content" class="narrowcolumn">
+	<?php if (have_posts()) : ?>
+	<?php $i=0; while (have_posts()) : the_post(); ?>
+	
+
+                            <div class="post" id="post-67">
+                                <div class="post-top">
+                                    <div class="post-title">
+                            <h2>
+                                <a href="<?php the_permalink();?>" rel="bookmark" title="Permanent Link to Карта сайта WordPress без плагинов"><?php the_title(); ?></a>                
+                            </h2>
+                            <h3>
+                                Опубликовано в : 28-08-2012 | Автор : <span>Админ</span> | В рубрике : <span class="post_cats"><a href="#" title="Просмотреть все записи в рубрике &laquo;Без рубрики&raquo;" rel="category tag">Без рубрики</a></span>
+                            </h3>
+                        </div>
+                        <h4><?php comments_number('0', '1', '%'); ?></h4>
+                    </div>
+
+<!--Вставка миниатюр-->
+			<div class="image">
+				<?php 
+					if ( function_exists( 'add_theme_support' ) )
+ 					the_post_thumbnail( array(250,9999), array('class' => 'img-polaroid') ); 
+				?>
+			</div>
+
+
+
+                    <div class="entry">
+                         <?php the_excerpt();?>
+                    </div>
+			<div class="clear"></div>
+                    <div class="postmetadata">
+                        <p><a href="<?php the_permalink();?>">Читать полностью</a></p>
+                    </div>
+                </div>
+
+                
+<?php endwhile; ?>
+		
+		
+
+		<div class="navigation">
+			<?php if(!function_exists('wp_pagenavi')) : ?>
+           		 <div class="alignleft"><?php next_posts_link(' &lArr; Предыдущая страница') ?></div>
+           		 <div class="alignright"><?php previous_posts_link('Следующая страница &rArr;') ?></div>
+            		<?php else : wp_pagenavi(); endif; ?>
+		</div>
+
+
+	<?php else : ?>
+		================================================
+		<h2 class="center">Вы искали "<?php the_search_query(); ?>"</h2>
+		<p class="center">Извините, но по Вашему запросу ничего не найдено.</p>
+		 <form method="get" id="searchform_top"class="form_center" action="http://css3.liputrik.ru/">
+                    <div>
+                        <input type="text" value="Введите новый запрос..." name="s" id="searchform_top_text" onclick="this.value='';" />
+                        <input type="image" src="http://liputrik.ru/css3/wp-content/themes/chablon/images/button_go.gif" id="gosearch" />
+                    </div>
+                </form>
+		================================================
+	<?php endif; ?>
+
+       </div>
+            </div>
+         </div>
+
+        
+    <?php get_sidebar(); ?>
+    
+<?php get_footer(); ?>
+----------------------------------
+
+Этот файл практически полностью повторяет index.php,за те исключением, что в него добавляется небольшой код (он выделен,но при копировании для переноса на сайт знаки "=====" нужно убрать).
+
+Если запрос поиска положителен , то выводится страница со статьей или со статьями (поэтому блок навигации по желанию можно оставить)
+
+Если же поиск не принес результатов, то начинает "работать" этот код.
+Он выводит на странице: 
+				
+				Вы искали "вопрос запроса"
+			Извините, но по Вашему запросу ничего не найдено
+			------------------------------------------------
+				и окно для повторного запроса.
+
+
+======================================================================================================
+
+				2.  Форма поиска (searchform.php)
+				-----------------------------------
+
+
+
+<form method="get" id="searchform" action="<?php bloginfo('url'); ?>/">
+<div><input type="text" value="<?php the_search_query(); ?>" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="Найти" />
+</div>
+</form>
+
+======================================================================================================
+
+                                     НЕ ЗАБЫТЬ!!!!!!!!
+				=========================
+				=========================
+
+В коде, задающем окно поиска, не забудь прописать адрес сайта где производится поиск, а то потом намучиетесь, не понимая, почему не работает поиск .
+
+Вот здесь:   <form method="get" id="searchform_top" action="http://css3.liputrik.ru/">
+						    --------------------------------- 
+
+
+<!--         Форма поиска
+    =================================-->
+            <div id="main_search">
+                <form method="get" id="searchform_top" action="http://css3.liputrik.ru/">
+                    <div>
+                        <input type="text" value="Введите поисковый запрос..." name="s" id="searchform_top_text" onclick="this.value='';" />
+                        <input type="image" src="http://liputrik.ru/css3/wp-content/themes/chablon/images/button_go.gif" id="gosearch" />
+                    </div>
+                </form>
+            </div>
+
+     Ну и не забываем про CSS.
+

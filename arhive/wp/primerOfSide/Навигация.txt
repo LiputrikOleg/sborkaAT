@@ -1,0 +1,48 @@
+﻿  
+                          Прописываем в index.php  код
+------------------------------------------------------------------------------------------------------
+
+<div class="navigation">
+
+	<?php if(!function_exists('wp_pagenavi')) : ?>
+        <div class="alignleft"><?php next_posts_link(' &lArr; Предыдущая страница') ?></div>
+        <div class="alignright"><?php previous_posts_link('Следующая страница &rArr;') ?></div>
+        <?php else : wp_pagenavi(); endif; ?>
+</div>
+
+------------------------------------------------------------------------------------------------------
+вместо  ' &lArr; Предыдущая страница'
+        ----------------------------
+и
+        'Следующая страница &rArr;'
+	---------------------------
+можем прописать любой текст, который нас устраивает.
+========================================================
+
+Оформляем стили:
+
+
+	/*Навигация*/
+
+.navigation {
+    padding: 0 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 25px 0px #999;
+    background: #F3F3F3;
+    overflow: hidden;
+    font-size: 13px;
+    color: #000;
+}
+.navigation a {
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+    line-height:50px;
+    text-shadow: 1px 1px 0px rgba(153,153,153,0.3);
+}
+
+
+
+Получаем блок навигации.  http://css3.liputrik.ru/
