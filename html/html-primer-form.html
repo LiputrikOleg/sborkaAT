@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Primer Form</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h2 class="page__subtitle page__subtitle--center">Атрибуты тега <code class="green">&lt;select&gt;</code></h2>
+
+				<!-- ======================= -->
+
+				<h3 id="selauto" class="">Атрибут <code class="green">autofocus</code> тега
+					<code class="green">&lt;select&gt;</code>
+				</h3>
+				<p class="page__warning
+">Не активирован, т.к. несколько автофокусов на одной странице не работают, к тому же не работают якорные ссылки -
+					страничка открывается в том месте, где автофокус.</p>
+
+
+				<div class="page__content">
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form&gt; 
+  &lt;select name=&quot;num&quot; autofocus&gt;
+    &lt;option value=&quot;1&quot;&gt;uno&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;dos&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;tres&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;cinco&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/form&gt; </code></pre>
+							</div>
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<select name="num">
+										<option value="1">uno</option>
+										<option value="2">dos</option>
+										<option value="3">tres</option>
+										<option value="4">cinco</option>
+									</select>
+								</form>
+							</div>
+
+						</div>
+
+					</div>
+
+					<!-- ======================= -->
+
+					<h3 id="seldisab" class="">Атрибут <code class="green">disablet </code>тега <code
+							class="green">&lt;select&gt;</code></h3>
+					<div class="page__content--items">
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;p&gt;&lt;select disabled name=&quot;hero&quot;&gt;
+    &lt;option selected&gt;Выберите героя&lt;/option&gt;
+    &lt;option value=&quot;t1&quot;&gt;Чебурашка&lt;/option&gt;
+    &lt;option value=&quot;t2&quot;&gt;Крокодил Гена&lt;/option&gt;
+    &lt;option value=&quot;t3&quot;&gt;Шапокляк&lt;/option&gt;
+    &lt;option value=&quot;t4&quot;&gt;Крыса Лариса&lt;/option&gt;
+  &lt;/select&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+							</div>
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><select disabled name="hero">
+											<option selected>Выберите героя</option>
+											<option value="t1">Чебурашка</option>
+											<option value="t2">Крокодил Гена</option>
+											<option value="t3">Шапокляк</option>
+											<option value="t4">Крыса Лариса</option>
+										</select></p>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<!-- ======================= -->
+
+					<h3 id="selform" class="">Атрибут <code class="green">form</code> тега <code
+							class="green">&lt;select&gt;</code>
+					</h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form id=&quot;data&quot; action=&quot;#&quot;&gt;
+  &lt;p&gt;
+    &lt;select name=&quot;num&quot; form=&quot;data&quot;&gt;
+      &lt;option value=&quot;1&quot;&gt;uno&lt;/option&gt;
+      &lt;option value=&quot;2&quot;&gt;dos&lt;/option&gt;
+      &lt;option value=&quot;3&quot;&gt;tres&lt;/option&gt;
+      &lt;option value=&quot;4&quot;&gt;cinco&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; form=&quot;data&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form id="data" action="">
+									<p>
+										<select name="num" form="data">
+											<option value="1">uno</option>
+											<option value="2">dos</option>
+											<option value="3">tres</option>
+											<option value="4">cinco</option>
+										</select>
+									</p>
+									<p><input type="submit" form="data" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ======================= -->
+
+					<h3 id="selmulti" class="">Атрибут <code class="green">multiple</code> тега <code
+							class="green">&lt;select&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;p&gt;&lt;select multiple name=&quot;hero[]&quot;&gt;
+    &lt;option&gt;Чебурашка&lt;/option&gt;
+    &lt;option&gt;Крокодил Гена&lt;/option&gt;
+    &lt;option&gt;Шапокляк&lt;/option&gt;
+    &lt;option&gt;Крыса Лариса&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><select multiple name="hero[]">
+											<option>Чебурашка</option>
+											<option>Крокодил Гена</option>
+											<option>Шапокляк</option>
+											<option>Крыса Лариса</option>
+										</select></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ======================= -->
+
+					<h3 id="selsize" class="">Атрибут <code class="green"> size</code> тега <code class="green"> select</code>
+					</h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;&lt;select size=&quot;3&quot;&gt;
+  &lt;option selected&gt;Выберите героя&lt;/option&gt;
+  &lt;option&gt;Чебурашка&lt;/option&gt;
+  &lt;option&gt;Крокодил Гена&lt;/option&gt;
+  &lt;option&gt;Шапокляк&lt;/option&gt;
+  &lt;option&gt;Крыса Лариса&lt;/option&gt;
+  &lt;/select&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><select size="3">
+											<option selected>Выберите героя</option>
+											<option>Чебурашка</option>
+											<option>Крокодил Гена</option>
+											<option>Шапокляк</option>
+											<option>Крыса Лариса</option>
+										</select></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ======================= -->
+
+					<h3 id="" class="">Атрибут <code class="green"> size</code> совместно с <code class="green">multiple</code>
+						тега
+						<code class="green"> &lt;select&gt;</code>
+					</h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+&lt;p&gt;&lt;select multiple size=&quot;3&quot;&gt;
+  &lt;option selected&gt;Выберите героя&lt;/option&gt;
+  &lt;option&gt;Чебурашка&lt;/option&gt;
+  &lt;option&gt;Крокодил Гена&lt;/option&gt;
+  &lt;option&gt;Шапокляк&lt;/option&gt;
+  &lt;option&gt;Крыса Лариса&lt;/option&gt;
+&lt;/select&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><select multiple size="3">
+											<option selected>Выберите героя</option>
+											<option>Чебурашка</option>
+											<option>Крокодил Гена</option>
+											<option>Шапокляк</option>
+											<option>Крыса Лариса</option>
+										</select></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ======================= -->
+
+					<h3 id="selreq" class="">Атрибут <code class="green"> required </code> тега <code
+							class="green"> &lt;select&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;p&gt;Какое растение в списке вечнозелёное?&lt;/p&gt;
+  &lt;p&gt;&lt;select name=&quot;pregunta&quot; required&gt;
+    &lt;option&gt;&lt;/option&gt;
+    &lt;option value=&quot;1&quot;&gt;Ольха&lt;/option&gt;
+    &lt;option value=&quot;2&quot;&gt;Берёза&lt;/option&gt;
+    &lt;option value=&quot;3&quot;&gt;Бузина&lt;/option&gt;
+    &lt;option value=&quot;4&quot;&gt;Тис&lt;/option&gt;
+    &lt;/select&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p>Какое растение в списке вечнозелёное?</p>
+									<p><select name="pregunta" required>
+											<option></option>
+											<option value="1">Ольха</option>
+											<option value="2">Берёза</option>
+											<option value="3">Бузина</option>
+											<option value="4">Тис</option>
+										</select></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="selname" class="">Атрибут <code class="green"> name </code> тега <code
+							class="green"> &lt;select&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;scrip&gt;
+  function dataSelect(f) {
+  n = f.hero.selectedIndex
+  if(n) alert(&quot;Выбран герой: &quot; + f.hero.options[n].value)
+  }
+&lt;/script&gt;
+
+&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;select name=&quot;hero&quot;&gt;
+  &lt;option&gt;Выберите героя&lt;/option&gt;
+  &lt;option value=&quot;Чебурашка&quot;&gt;Чебурашка&lt;/option&gt;
+  &lt;option value=&quot;Крокодил Гена&quot;&gt;Крокодил Гена&lt;/option&gt;
+  &lt;option value=&quot;Шапокляк&quot;&gt;Шапокляк&lt;/option&gt;
+  &lt;option value=&quot;Крыса Лариса&quot;&gt;Крыса Лариса&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type=&quot;button&quot; value=&quot;OK&quot; onClick=&quot;dataSelect(this.form)&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<script>
+									function dataSelect(f) {
+										n = f.hero.selectedIndex
+										if (n) alert("Выбран герой: " + f.hero.options[n].value)
+									}
+								</script>
+								<form action="">
+									<p><select name="hero">
+											<option>Выберите героя</option>
+											<option value="Чебурашка">Чебурашка</option>
+											<option value="Крокодил Гена">Крокодил Гена</option>
+											<option value="Шапокляк">Шапокляк</option>
+											<option value="Крыса Лариса">Крыса Лариса</option>
+										</select>
+										<input type="button" value="OK" onClick="dataSelect(this.form)">
+									</p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<h2 class="page__subtitle page__subtitle--center">Атрибуты тега <code class="green">&lt;option&gt;</code></h2>
+
+					<!-- ======================= -->
+
+					<h3 id="optlabel" class="">Атрибут <code class="green"> label </code> тега <code
+							class="green"> &lt;option&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;Кто написал полонез Огинского?&lt;/p&gt;
+  &lt;select name=&quot;question&quot;&gt;
+  &lt;option label=&quot;Бах&quot; value=&quot;1&quot;&gt;Иоганн Себастьян Бах&lt;/option&gt;
+  &lt;option label=&quot;Бетховен&quot; value=&quot;2&quot;&gt;Людвиг ван Бетховен&lt;/option&gt;
+  &lt;option label=&quot;Шопен&quot; value=&quot;3&quot;&gt;Фредерик Шопен&lt;/option&gt;
+  &lt;option label=&quot;Огинский&quot; value=&quot;4&quot;&gt;Михаил Клеофас Огинский&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p>Кто написал полонез Огинского?</p>
+									<select name="question">
+										<option label="Бах" value="1">Иоганн Себастьян Бах</option>
+										<option label="Бетховен" value="2">Людвиг ван Бетховен</option>
+										<option label="Шопен" value="3">Фредерик Шопен</option>
+										<option label="Огинский" value="4">Михаил Клеофас Огинский</option>
+									</select>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="optsel" class="">Атрибут <code class="green"> selected </code> тега <code
+							class="green"> &lt;option&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;select name=&quot;hero&quot;&gt;
+  &lt;option&gt;Выберите героя&lt;/option&gt;
+  &lt;option value=&quot;t1&quot;&gt;Чебурашка&lt;/option&gt;
+  &lt;option value=&quot;t2&quot;&gt;Крокодил Гена&lt;/option&gt;
+  &lt;option value=&quot;t3&quot;&gt;Шапокляк&lt;/option&gt;
+  &lt;option selected value=&quot;t4&quot;&gt;Крыса Лариса&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><select name="hero">
+											<option>Выберите героя</option>
+											<option value="t1">Чебурашка</option>
+											<option value="t2">Крокодил Гена</option>
+											<option value="t3">Шапокляк</option>
+											<option selected value="t4">Крыса Лариса</option>
+										</select>
+										<input type="submit" value="Отправить">
+									</p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="optdis" class="">Атрибут <code class="green"> disabled </code> тега <code
+							class="green"> &lt;option&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;select name=&quot;hero&quot;&gt;
+  &lt;option disabled selected&gt;Выберите героя&lt;/option&gt;
+  &lt;option value=&quot;t1&quot;&gt;Чебурашка&lt;/option&gt;
+  &lt;option value=&quot;t2&quot;&gt;Крокодил Гена&lt;/option&gt;
+  &lt;option value=&quot;t3&quot;&gt;Шапокляк&lt;/option&gt;
+  &lt;option value=&quot;t4&quot;&gt;Крыса Лариса&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><select name="hero">
+											<option disabled selected>Выберите героя</option>
+											<option value="t1">Чебурашка</option>
+											<option value="t2">Крокодил Гена</option>
+											<option value="t3">Шапокляк</option>
+											<option value="t4">Крыса Лариса</option>
+										</select>
+										<input type="submit" value="Отправить">
+									</p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="optvalue" class="">Атрибут <code class="green"> value </code> тега <code
+							class="green"> &lt;option&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;scrip&gt;
+  function dataSelect(f) {
+  n = f.hero.selectedIndex
+  if(n) alert(&quot;Выбран герой: &quot; + f.hero.options[n].value)
+  }
+&lt;/script&gt;
+
+&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;select name=&quot;hero&quot;&gt;
+  &lt;option&gt;Выберите героя&lt;/option&gt;
+  &lt;option value=&quot;Чебурашка&quot;&gt;Чебурашка&lt;/option&gt;
+  &lt;option value=&quot;Крокодил Гена&quot;&gt;Крокодил Гена&lt;/option&gt;
+  &lt;option value=&quot;Шапокляк&quot;&gt;Шапокляк&lt;/option&gt;
+  &lt;option value=&quot;Крыса Лариса&quot;&gt;Крыса Лариса&lt;/option&gt;
+  &lt;/select&gt;
+  &lt;input type=&quot;button&quot; value=&quot;OK&quot; onClick=&quot;dataSelect(this.form)&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<script>
+									function dataSelect(f) {
+										n = f.hero.selectedIndex
+										if (n) alert("Выбран герой: " + f.hero.options[n].value)
+									}
+								</script>
+
+								<form action="">
+									<p><select name="hero">
+											<option>Выберите героя</option>
+											<option value="Чебурашка">Чебурашка</option>
+											<option value="Крокодил Гена">Крокодил Гена</option>
+											<option value="Шапокляк">Шапокляк</option>
+											<option value="Крыса Лариса">Крыса Лариса</option>
+										</select>
+										<input type="button" value="OK" onClick="dataSelect(this.form)">
+									</p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+					<h2 class="page__subtitle page__subtitle--center">Атрибуты тега <code class="green">&lt;optgroup&gt;</code>
+					</h2>
+
+					<!-- ======================= -->
+
+					<h3 id="optgrp" class="">Атрибут <code class="green"> label</code> тега <code
+							class="green"> &lt;optgroup&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html"> &lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;select&gt;
+  &lt;optgroup label=&quot;Цвет&quot;&gt;
+    &lt;option value=&quot;c1&quot;&gt;Апельсиновый&lt;/option&gt;
+    &lt;option value=&quot;c2&quot;&gt;Лимонный&lt;/option&gt;
+    &lt;option value=&quot;c3&quot;&gt;Персиковый&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label=&quot;Тон&quot;&gt;
+    &lt;option value=&quot;s1&quot;&gt;Светлый&lt;/option&gt;
+    &lt;option value=&quot;s2&quot;&gt;Нормальный&lt;/option&gt;
+    &lt;option value=&quot;s3&quot;&gt;Темный&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;/select&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><select>
+											<optgroup label="Цвет">
+												<option value="c1">Апельсиновый</option>
+												<option value="c2">Лимонный</option>
+												<option value="c3">Персиковый</option>
+											</optgroup>
+											<optgroup label="Тон">
+												<option value="s1">Светлый</option>
+												<option value="s2">Нормальный</option>
+												<option value="s3">Темный</option>
+											</optgroup>
+										</select></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="" class="">Ещё один пример </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;label for=&quot;city&quot;&gt;&lt;/label&gt;
+&lt;select name=&quot;city&quot; id=&quot;&quot;&gt;
+&lt;option value=&quot;&quot; disabled selected&gt;Выбери город&lt;/option&gt;
+&lt;optgroup label=&quot;Деревни&quot; disabled&gt;
+    &lt;option value=&quot;city1&quot;&gt;Хотьково&lt;/option&gt;
+    &lt;option value=&quot;city2&quot;&gt;Заборкино&lt;/option&gt;
+    &lt;option value=&quot;city3&quot;&gt;Cопливо&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Россия&quot;&gt;
+    &lt;option value=&quot;city4&quot;&gt;Москва&lt;/option&gt;
+    &lt;option value=&quot;city5&quot;&gt;Краснодар&lt;/option&gt;
+    &lt;option value=&quot;city6&quot;&gt;Питер&lt;/option&gt;
+    &lt;option value=&quot;city6&quot;&gt;Мурманск&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;optgroup label=&quot;Беларусь&quot;&gt;
+    &lt;option value=&quot;city7&quot;&gt;Минск&lt;/option&gt;
+    &lt;option value=&quot;city8&quot;&gt;Брест&lt;/option&gt;
+    &lt;option value=&quot;city9&quot;&gt;Гродно&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<label for="city"></label>
+								<select name="city" id="">
+									<option value="" disabled selected>Выбери город</option>
+									<optgroup label="Деревни" disabled>
+										<option value="city1">Хотьково</option>
+										<option value="city2">Заборкино</option>
+										<option value="city3">Cопливо</option>
+									</optgroup>
+									<optgroup label="Россия">
+										<option value="city4">Москва</option>
+										<option value="city5">Краснодар</option>
+										<option value="city6">Питер</option>
+										<option value="city6">Мурманск</option>
+									</optgroup>
+									<optgroup label="Беларусь">
+										<option value="city7">Минск</option>
+										<option value="city8">Брест</option>
+										<option value="city9">Гродно</option>
+									</optgroup>
+								</select>
+							</div>
+
+						</div>
+					</div>
+
+
+					<h2 class="page__subtitle page__subtitle--center">Атрибуты тега <code class="green">&lt;textarea&gt;</code>
+					</h2>
+					<!-- ======================= -->
+
+					<h3 id="areacols" class="">Атрибуты <code class="green"> cols</code> и <code class="green"> rows</code> тега
+						<code class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;
+    &lt;textarea rows=&quot;10&quot; cols=&quot;20&quot;&gt;Возможно разместить 20 символов в строке....&lt;/textarea&gt;
+  &lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><textarea rows="10" cols="20">Возможно разместить 20 символов в строке и 10 строк, если текста будет больше появится вертикальный скролл.ааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааввввввввввввввввввввввввввввввввввввввввввввввввввввввввввв
+         </textarea></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="areadir" class="">Атрибут <code class="green"> dirname</code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+   &lt;p&gt;Комментарий:&lt;/p&gt;
+   &lt;p&gt;&lt;textarea name=&quot;comment&quot; dirname=&quot;comment.dir&quot; required&gt;&lt;/textarea&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;button type=&quot;submit&quot;&gt;Отправить&lt;/button&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p>Комментарий:</p>
+									<p><textarea name="comment" dirname="comment.dir" required></textarea></p>
+									<p><button type="submit">Отправить</button></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="areadis" class="">Атрибут <code class="green"> disabled</code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+   &lt;p&gt;&lt;textarea rows=&quot;10&quot; cols=&quot;20&quot;&gt;Активное поле&lt;/textarea&gt;
+    &lt;textarea rows=&quot;10&quot; cols=&quot;20&quot; disabled&gt;Неактивное поле&lt;/textarea&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><textarea rows="10" cols="20">Активное поле</textarea>
+										<textarea rows="10" cols="20" disabled>Неактивное поле</textarea>
+									</p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="areaform" class="">Атрибут <code class="green">form </code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form id=&quot;text&quot; action=&quot;&quot;&gt;
+  &lt;div&gt;
+    &lt;p&gt;&lt;textarea name=&quot;comment&quot; placeholder=&quot;Комментарий&quot; required form=&quot;text&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot; form=&quot;text&quot;&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form id="text" action="">
+									<div>
+										<p><textarea name="comment" placeholder="Комментарий" required form="text"></textarea></p>
+										<p><input type="submit" value="Отправить" form="text"></p>
+									</div>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="areamax" class="">Атрибут <code class="green">maxlength </code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;   
+   &lt;p&gt;Сообщение в Твиттер&lt;/p&gt;&lt;br&gt;   
+   &lt;p&gt;&lt;textarea  maxlength=&quot;140&quot;placeholder=&quot;Максимум 140 символов&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;&lt;br&gt;
+   &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p>Сообщение в Твиттер</p><br>
+									<p><textarea maxlength="140" placeholder="Максимум 140 символов"></textarea></p><br>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="areamin" class="">Атрибут <code class="green"> minlength</code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;Введите описание&lt;/p&gt;
+  &lt;p&gt;&lt;textarea minlength=&quot;160&quot; required placeholder=&quot;Не меньше 160 символов&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p>Введите описание</p>
+									<p><textarea minlength="160" required placeholder="Не меньше 160 символов"></textarea></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="areaname" class="">Атрибут <code class="green">name </code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;scrip&gt; 
+    function dataField(f) {
+     alert(&quot;Вы ввели: &quot; + f.comment.value);
+    }
+&lt;/script&gt;
+
+&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;b&gt;Введите комментарий&lt;/b&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;textarea rows=&quot;5&quot; cols=&quot;20&quot; name=&quot;comment&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;button&quot; value=&quot;ОК&quot; onClick=&quot;dataField(this.form)&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<script>
+									function dataField(f) {
+										alert("Вы ввели: " + f.comment.value);
+									}
+								</script>
+
+								<form action="">
+									<p><b>Введите комментарий</b></p>
+									<p><textarea rows="5" cols="20" name="comment"></textarea></p>
+									<p><input type="button" value="ОК" onClick="dataField(this.form)"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<!-- ======================= -->
+
+					<h3 id="areaplas" class="">Атрибут <code class="green"> plaseholder</code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;textarea placeholder=&quot;Ваше сообщение&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><textarea placeholder="Ваше сообщение"></textarea></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<!-- ======================= -->
+
+					<h3 id="arearea" class="">Атрибут <code class="green"> readonly</code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;&lt;textarea rows=&quot;5&quot; cols=&quot;20&quot; readonly&gt;Поле  недоступно для изменения&lt;/textarea&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><textarea rows="5" cols="20" readonly>Поле недоступно для изменения</textarea></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<!-- ======================= -->
+
+					<h3 id="areareq" class="">Атрибут <code class="green"> required</code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;p&quot;&gt;
+   &lt;p&gt;&lt;input name=&quot;user&quot; required placeholder=&quot;Ваше имя&quot;&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;textarea name=&quot;comment&quot; placeholder=&quot;Комментарий&quot; required&gt;&lt;/textarea&gt;&lt;/p&gt;
+   &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+ &lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="">
+									<p><input name="user" required placeholder="Ваше имя"></p><br>
+									<p><textarea name="comment" placeholder="Комментарий" required></textarea></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h3 id="areawrap" class="">Атрибут <code class="green"> wrap</code> тега <code
+							class="green"> &lt;textarea&gt;</code> </h3>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+  &lt;p&gt;&lt;textarea rows=&quot;10&quot; cols=&quot;20&quot; wrap=&quot;soft&quot;&gt;Далеко-далеко 
+  за словесными горами в стране, гласных и согласных живут рыбные тексты.
+   Рукописи раз подзаголовок вдали, образ проектах знаках до диких что, 
+   меня текстами, коварный дал, большого свой одна толку на берегу 
+   встретил!&lt;/textarea&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="" method="post">
+									<p><textarea rows="10" cols="20"
+											wrap="soft">Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Рукописи раз подзаголовок вдали, образ проектах знаках до диких что, меня текстами, коварный дал, большого свой одна толку на берегу встретил!</textarea>
+									</p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+
+					<!-- ======================= -->
+
+					<h2 id="legend" class="page__subtitle page__subtitle--center">Теги <code
+							class="green"> &lt;fieldset&gt;</code> и
+						<code class="green"> &lt;legend&gt;</code>
+					</h2>
+
+					<div class="page__content--items">
+
+
+						<div class="prim_atr">
+							<pre class="pre"><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;fieldset&gt;
+   &lt;legend&gt;Работа со временем&lt;/legend&gt;
+     &lt;input type=&quot;checkbox&quot;&gt; создание пунктуальности (никогда не будете никуда опаздывать);&lt;br&gt;
+     &lt;input type=&quot;checkbox&quot;&gt; излечение от пунктуальности (никогда никуда не будете торопиться);&lt;br&gt;
+     &lt;input type=&quot;checkbox&quot;&gt; изменение восприятия времени и часов.
+      &lt;p&gt;&lt;input type=&quot;submit&quot;&gt;&lt;/p&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+						</div>
+
+						<div class="prim_atr prim_atr-center">
+							<form action="">
+								<fieldset>
+									<legend>Работа со временем</legend>
+									<input type="checkbox"> создание пунктуальности (никогда не будете никуда опаздывать);<br>
+									<input type="checkbox"> излечение от пунктуальности (никогда никуда не будете торопиться);<br>
+									<input type="checkbox"> изменение восприятия времени и часов.
+									<p><input type="submit"></p>
+								</fieldset>
+							</form>
+						</div>
+
+
+					</div>
+
+
+
+					<!-- ======================= -->
+
+					<h3 id="autofocus" class="">Атрибут <code class="green">autofocus </code> тега <code
+							class="green"> &lt;input&gt;</code></h3>
+
+
+
+					<p class="page__warning">Не активирован, т.к. несколько автофокусов на одной странице не
+						работают, к тому же не работают якорные ссылки
+						-
+						страничка открывается в том месте, где автофокус.</p>
+
+					<div class="page__content--items">
+
+						<div class="page__content_prim">
+
+							<div class="prim_atr">
+								<pre class="pre"><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;p&gt;Поиск по сайту&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;search&quot; name=&quot;s&quot; autofocus&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Искать&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+
+							<div class="prim_atr prim_atr-center">
+								<form action="#">
+									<p>Поиск по сайту</p>
+									<p><input type="search" name="focus">
+										<input type="submit" value="Искать">
+									</p>
+								</form>
+							</div>
+
+						</div>
+					</div>
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

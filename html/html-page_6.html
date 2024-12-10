@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 6</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">ПрогрессБар</h1>
+
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">ПрогрессБар</h2>
+
+					<div class="page__content--items">
+
+
+						<span class="green">progress</span> - создает прогресс-бар, который мы можем анимировать через Javascript.
+						<pre
+							class="pre"><code class="js"> &lt;script type="text/javascript" src="js/progressbaranimate.js"&gt;&lt;/script&gt;</code></pre>
+						<p>Не забываем про библиотеку</p>
+						<pre
+							class="pre"><code class="javascript">&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+
+						<pre class="pre"><code class="html">&lt;p&gt;Загрузка мозга. 
+  &lt;progress max="100" value="0" id="progressbar"&gt;&lt;/progress&gt;
+&lt;/p&gt;</code></pre>
+
+						<p>Загрузка мозга. <progress max="100" value="0" id="progressbar"></progress></p>
+
+						<pre class="pre"><code class="css">progress#progressbar {
+  background: #9eda03;
+  color: #11969d;
+  border: none;
+  width: 250px;
+  height: 8px;
+}
+
+progress#progressbar::-webkit-progress-bar {
+  background: #9eda03;
+}
+
+progress#progressbar::-webkit-progress-value {
+  background: #11969d;
+}
+
+progress#progressbar::-moz-progress-bar {
+  background: #11969d;
+}
+</code></pre>
+
+
+						<h3 class="page__subtitle"> Атрибут meter</h3>
+
+						<p>
+							<span class="green">meter</span> - он отображает числовые значения в баре и в зависимости от значения,
+							окрашивает
+							строку в определенный цвет.
+						</p>
+
+						<h4 class="gray"> Атрибуты тега <span class="green">meter</span></h4>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">value</span> - обязательный атрибут, который указывает его состояние.
+								</li>
+								<li><span class="green">min</span> - указывает минимальное значение.
+								</li>
+								<li><span class="green">max</span> - указывает максимальное значение.
+								</li>
+								<li><span class="green">low</span> - определяет величину наименьшего (не минимального) значения.
+								</li>
+								<li><span class="green">optimum</span> - определяет величину оптимального значения.
+								</li>
+								<li><span class="green">high</span> - определяет величину наибольшего (не максимального) значения.
+								</li>
+							</ul>
+						</div>
+
+						<pre class="pre"><code class="html">&lt;p&gt; Нервное состояние: &lt;/p&gt;
+  &lt;p&gt;
+    &lt;meter value="20" min="0" max="100" low="33" optimum="14" high="77"&gt;&lt;/meter&gt; хорошее
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;meter value="54" min="0" max="100" low="33" optimum="14" high="77"&gt;&lt;/meter&gt; волнуется
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;meter value="80" min="0" max="100" low="33" optimum="14" high="77"&gt;&lt;/meter&gt; может ударить
+&lt;/p&gt;</code></pre>
+						<p> Нервное состояние: </p>
+						<p>
+							<meter value="20" min="0" max="100" low="33" optimum="14" high="77"></meter> хорошее
+						</p>
+						<p>
+							<meter value="54" min="0" max="100" low="33" optimum="14" high="77"></meter> волнуется
+						</p>
+						<p>
+							<meter value="80" min="0" max="100" low="33" optimum="14" high="77"></meter> может ударить
+						</p>
+
+						<div class="warning">
+							<p><span class="red">Важно:</span> если браузер не понимает теги <span
+									class="green">&lt;progress&gt;</span>
+								и
+								<span class="green">&lt;meter&gt;</span> вместо
+								рисунков он отображает текст, который находится в них.
+							</p>
+							<p class="green"> &lt;meter value="54" min="0" max="100" low="33" optimum="14"
+								high="77"&gt;волнуется&lt;/meter>&gt; </p>
+						</div>
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<!-- <h2 class="page__subtitle" id="h-items_2"></h2>
+
+    <div class="page__content--items">
+
+    </div> page__content--items 2 -->
+
+
+
+
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="../../js/progressbaranimate.js"></script>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

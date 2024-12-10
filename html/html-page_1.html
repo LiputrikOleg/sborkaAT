@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 1</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h1 class="page__title">Сематические теги</h1>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+
+					<div class="page__content--items">
+
+						<p><code class="green">&lt;main&gt;</code> - В нем должен содержаться главный контент страницы</p>
+
+						<div class="warning">
+							<p><span class="red">Важно:</span></p>
+
+							<p><b>1</b>. Этот тег должен быть уникальным и встречаться один раз на странице.
+							</p>
+							<p><b>2</b>. Он не должен быть внутри других структурных тегов.
+							</p>
+						</div>
+						<p><code class="green">&lt;header&gt;</code> - Шапка сайта,используется в статьях для показа названия
+							статьи.
+							Так же используется как заголовочная информация.</p>
+
+						<p><code class="green">&lt;nav&gt;</code> - Главная навигация (меню) по сайту
+						</p>
+						<p><code class="green">&lt;article&gt;</code> - Контент, основная информация сайта (статьи).
+						</p>
+						<p><code class="green">&lt;section&gt;</code> - В этот тег заключают либо каждую статью, либо части статьи,
+							либо
+							какой то раздел (для сравнения главы, части, предисловия и т.д в книге)</p>
+
+						<p><code class="green">&lt;hgroup&gt;</code> - Объединяет все теги Н1-Н6. При группировке влияние будет
+							иметь
+							только самый первый тег, а остальные будут использоваться в качестве описания</p>
+
+						<p><code class="green">&lt;aside&gt;</code> - Используется в основном в сайдбарах. Вторичная информация.
+						</p>
+
+						<p><code class="green">&lt;footer&gt;</code> - Подвал сайта
+						</p>
+						<div class="warning">
+							<p><span class="red"> Важно:</span></p>
+							<p>Для полноценного использования тегов HTML5 во всех браузерах достаточно выполнить три условия:</p>
+						</div>
+						<p><b>1</b>.Установить доктайп</p>
+						<code class="green">
+							&lt;!DOCTYPE html&gt;
+						</code><br><br>
+
+						<p><b>2</b>.Включить скрипт, расположеный ниже</p>
+
+						<p><b>3</b>.В стилях для новых тегов установить <span class="green">display: block;</span>
+							, в противном случае стили не будут работать.
+						</p>
+						<h3 class="page__subtitle">Скрипт для IE
+						</h3>
+						<pre class="pre"><code class="js">&lt;!-- [if lt IE 9]&gt;
+&lt;link rel="stylesheet" href="css/sky-mega-menu-ie8.css"&gt;
+&lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;
+&lt;/script&gt;
+&lt;![endif] --&gt;
+
+      &lt;!-- [if lt IE 10]&gt;
+&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.placeholder.min.js"&gt;&lt;/script&gt;
+&lt;![endif] --&gt;</code></pre>
+
+
+					</div> <!-- page__content--items 1-->
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Grid Page 2</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="grid__container">
+
+				<h1 class="page__title">Строки и столбцы, свойство grid</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Размеры строк и столбцов</a>
+							<a href="#h-items_2" class="con-menu">Столбцы</a>
+							<a href="#h-items_3" class="con-menu">Строки (ряды)</a>
+							<a href="#h-items_4" class="con-menu"> Свойство grid </a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!-- =====  Размеры строк и столбцов  ====== -->
+					<h2 class="page__subtitle" id="h-items_1">Размеры строк и столбцов</h2>
+					<div class="page__content--items">
+						<div class="content__items">
+
+							<div class="content__text">
+								<p>Для определения размеров мы можем использовать самые различные единицы измерения, которые нам
+									доступны
+									в
+									CSS
+									<span class="green"> (px, em, rem, pt, %)</span>.
+								</p>
+							</div>
+
+							<!--  таб -->
+
+							<div data-tabs class="grids">
+
+								<nav data-tabs-titles class="grids__navigation">
+									<button type="button" class="grids__title _tab-active">fr</button>
+									<button type="button" class="grids__title">minmax</button>
+									<button type="button" class="grids__title">auto</button>
+									<button type="button" class="grids__title">repeat</button>
+								</nav>
+
+								<div data-tabs-body class="grids__content">
+									<div class="grids__body">
+										<div class="grids__text grids__text_border">
+											<p>
+												<span class="green">fr</span> — единица длины, которая позволяет создавать гибкие
+												дорожки. Общий размер фиксированных строк или столбцов вычитается из
+												доступного пространства контейнера-сетки. Оставшееся пространство
+												делится между строками и столбцами с гибкими размерами пропорционально
+												их коэффициенту.
+											</p>
+										</div>
+									</div>
+									<div class="grids__body">
+										<div class="grids__text grids__text_border">
+											<p>
+												Функция <span class="green">minmax(min,max)</span> определяет диапазон размеров,
+												больше или равный <span class="green">min</span> и меньше или равный <span
+													class="green">max</span> . Если <span class="green">max &lt; min</span>
+												, то <span class="green">max</span> игнорируется, а <span class="green">minmax(min,max)</span>
+												обрабатывается как <span class="green">min</span> .
+												Значения в <span class="green">fr</span> можно устанавливать только как максимальное.
+											</p>
+										</div>
+									</div>
+									<div class="grids__body">
+										<div class="grids__text grids__text_border">
+											<p>
+												Значение <span class="green">auto</span> ориентируется на содержимое элементов сетки
+												одной дорожки. Как минимум, рассматривается как минимальный размер
+												элемента сетки, как определено <span class="green">min-width</span> или <span
+													class="green">min-height</span>
+												. Как максимум, обрабатывается так же, как и
+												<span class="green">max-content</span>.
+												Может растягиваться за счет свойств
+												<a class="link" href="grid-page_7.html" target="_blank"> align-content</a> и <a class="link"
+													href="grid-page_6.html" target="_blank">justify-content</a>.
+											</p>
+										</div>
+									</div>
+									<div class="grids__body">
+										<div class="grids__text grids__text_border">
+											<p>
+												Нотация <span class="green">repeat(n, 1fr)</span> представляет повторяющийся фрагмент
+												списка
+												дорожек,
+												что
+												позволяет
+												записать в более компактной форме большое количество одинаковых по размерам
+												столбцов или строк.
+											</p>
+										</div>
+									</div>
+
+
+								</div> <!--  /grids__content  -->
+
+							</div> <!--  /grids -->
+
+						</div>
+
+					</div>
+
+					<!--======  Столбцы  ======= -->
+
+					<h2 class="page__subtitle" id="h-items_2">Столбцы</h2>
+
+					<div class="page__content--items">
+						<div class="content__items">
+							<div class="content__text">
+								<p>Для определения столбцов используем у grid-контейнера стилевое свойство <span
+										class="green">grid-template-columns</span>.
+								</p>
+							</div>
+							<div data-tabs class="grids">
+								<nav data-tabs-titles class="grids__navigation">
+									<button type="button" class="grids__title _tab-active">Пример 1</button>
+									<button type="button" class="grids__title">Пример 2</button>
+									<button type="button" class="grids__title">Пример 3</button>
+									<button type="button" class="grids__title">Пример 4</button>
+									<button type="button" class="grids__title">Пример 5</button>
+									<button type="button" class="grids__title">Пример 6</button>
+									<button type="button" class="grids__title">Пример 7</button>
+									<button type="button" class="grids__title">Пример 8</button>
+								</nav>
+								<div data-tabs-body class="grids__content">
+									<div class="grids__body">
+										<div class="block__grid grid-block_03">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+											<div class="block__grid_item item4">4</div>
+											<div class="block__grid_item item5">5</div>
+											<div class="block__grid_item item6">6</div>
+											<div class="block__grid_item item7">7</div>
+										</div>
+										<div class="grids__text">
+											<p>3 колонки адаптивные по 1fr</p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-columns:1fr 1fr 1fr;
+}</code></pre>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_04">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+											<div class="block__grid_item item4">4</div>
+											<div class="block__grid_item item5">5</div>
+											<div class="block__grid_item item6">6</div>
+											<div class="block__grid_item item7">7</div>
+										</div>
+										<div class="grids__text">
+											<p>4 колонки в процентном выражении + 20% свободного места </p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-columns:20% 30% 20% 10%;
+}</code></pre>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_05">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+											<div class="block__grid_item item4">4</div>
+											<div class="block__grid_item item5">5</div>
+											<div class="block__grid_item item6">6</div>
+											<div class="block__grid_item item7">7</div>
+										</div>
+										<div class="grids__text">
+											<p>3 колонки, от 150px до 1fr </p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-column: repeat(3, minmax(150px, 1fr));
+}</code></pre>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_06">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+											<div class="block__grid_item item4">4</div>
+											<div class="block__grid_item item5">5</div>
+											<div class="block__grid_item item6">6</div>
+											<div class="block__grid_item item7">7</div>
+										</div>
+										<div class="grids__text">
+											<p>Колонки меняют свою ширину в указанных пределах от <span class="name__green">min</span> до
+												<span class="name__green">max</span> и наоборот
+											</p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-column: minmax(200px,300px) minmax(100px,200px) minmax(250px, 350px);
+}</code></pre>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_07">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+										</div>
+										<pre class="pre"><code class="css">.block_grid {
+   display: grid;
+   grid-template-column:repeat(auto-fill,minmax(150px, 1fr));
+}</code></pre>
+										<div class="grids__text">
+											<p>Если количество элементов достаточно для того, чтобы при заданной минимальной ширине - 150рх
+												занять весь
+												ряд или даже
+												больше (2 ряда, 3 ряда....), то поведение блоков будет таким: <br><br> Допустим ширина
+												вью-порта
+												1000рх, в
+												эту ширину
+												поместятся 6х150=900 6 элементов, но ширина каждого будет 1000/6=166рх. При уменьшении ширины
+												вью-порта,
+												ширина каждого
+												элемента будет также уменьшаться и когда она достигнит минимума - 150рх, крайний правый
+												элемент
+												переместится
+												в нижний ряд, а
+												ширина элеменов станет равной ширине вью-порта/5 и т.д.</p>
+											<p>Т.е. будет вести себя так, как будто просто задано <span class="green">minmax(150px,
+													1fr)</span></p>
+											<p>Но если количество блоков и их ширина не позволяют занять весь ряд при заданной ширине
+												вью-порта. то
+												происходит следующее:
+												( padding, margin опускаем )</p>
+											<ol>
+												<li> Ширина экрана ( блока с grid-элеменами ) 450рх. 3 элемента шириной по 150рх занимают
+													целиком ряд.
+												</li>
+												<figure>
+													<picture>
+														<img src="../../img/grid-img/scrin_1.JPG" alt="Image">
+													</picture>
+													<figcaption>width: 450px</figcaption>
+												</figure>
+												<li>Увеличиваем ширину экрана. Ширина элементов пропорционально растет. Это происходит до тех
+													пор, пока
+													ширина экрана не
+													достигнет ширины 599рх</li>
+												<figure>
+													<picture>
+														<img src="../../img/grid-img/scrin_2.JPG" alt="Image">
+													</picture>
+													<figcaption>width: 599px</figcaption>
+												</figure>
+												<li>При ширине 600рх браузер понимает, что здесь могу поместиться уже 4 элемента шириной по
+													150рх.
+												</li>
+												<li>И он делает следующее: уменьшает ширину элементов до минимума - 150рх, а свободное место
+													справа от
+													элемента 3 как бы
+													резервирует по еще один элемент. </li>
+												<figure>
+													<picture>
+														<img src="../../img/grid-img/scrin_3.JPG" alt="Image">
+													</picture>
+													<figcaption>width: 600px</figcaption>
+												</figure>
+												<li>При дальнейшем увеличении ширины экрана ширина элементов и резервного места опять
+													пропорционально
+													увеличивается.</li>
+												<li>Когда ширина экрана становится такой, что в ней могут разместить уже 5 элементов шириной
+													по 150рх,браузер опять
+													уменьшает ширину элемента до 150рх, и уже резервирует 2 места</li>
+												<figure>
+													<picture>
+														<img src="../../img/grid-img/scrin_4.JPG" alt="Image">
+													</picture>
+													<figcaption>width: 749px</figcaption>
+												</figure>
+												<figure>
+													<picture>
+														<img src="../../img/grid-img/scrin_5.JPG" alt="Image">
+													</picture>
+													<figcaption>width: 750px</figcaption>
+												</figure>
+												<li>и так происходит далее: 900рх - 3 элемента по 150рх + 3 резервных <br> 1050рх - 3
+													элемента +
+													4 резерв
+													<br> 1200px - 3
+													элемента + 5 резерв
+												</li>
+												<figure>
+													<picture>
+														<img src="../../img/grid-img/scrin_6.JPG" alt="Image">
+													</picture>
+													<figcaption>width: 1199px</figcaption>
+												</figure>
+												<figure>
+													<picture>
+														<img src="../../img/grid-img/scrin_7.JPG" alt="Image">
+													</picture>
+													<figcaption>width: 1200px</figcaption>
+												</figure>
+											</ol>
+											<p>Если:</p>
+											<pre class=""><code class="css">grid-template-columns: repeat(auto-fill, 150px);</code></pre>
+											<p>Будет происходить то же самое, только элементы будут постоянной шириной по 150рх, а резервное
+												место будет
+												добавлятся при
+												ширине экрана 600рх, 750рх, 900рх и т.д.</p>
+										</div>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_08">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-column: repeat(auto-fit,minmax(150px, 1fr));
+}</code></pre>
+										<div class="grids__text">
+											<p>
+											<p>Смотри предыдущий пример, чтобы понять об чём это я.</p>
+											<p>При большом количестве элементов при уменьшении ширины экрана элементы перемещаются на нижний
+												ряд.
+											</p>
+											<p>А если элементов мало, то они просто занимают весь ряд, пропорционально растягиваясь.</p>
+											<p> При уменьшении до 150рх перемещются в нижний ряд.</p>
+											<p>Ни каких резервных мест не образовывают</p>
+											<figure>
+												<picture>
+													<img src="../../img/grid-img/scrin_9.JPG" alt="Image">
+												</picture>
+												<figcaption>width: 449px</figcaption>
+											</figure>
+											<figure>
+												<picture>
+													<img src="../../img/grid-img/scrin_10.JPG" alt="Image">
+												</picture>
+												<figcaption>width: 450px</figcaption>
+											</figure>
+											<figure>
+												<picture>
+													<img src="../../img/grid-img/scrin_8.JPG" alt="Image">
+												</picture>
+												<figcaption>width: 1200px</figcaption>
+											</figure>
+										</div>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_09">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">Lorem ipsum dolor sit amet.</div>
+											<div class="block__grid_item item3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+												Aliasest
+												pariatur?</div>
+											<div class="block__grid_item item4">4</div>
+										</div>
+										<div class="grids__text">
+											<p><span class="green">min-content</span> - Ширина элемента равна самому длинному слову +
+												padding
+											</p>
+											<p><span class="green">max-content</span>- Ширина равна длине фразы + padding, и если
+												использовать тег
+												&lt;br&gt; ширина
+												элемента будет равна самому длинному участку текста + padding</p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-column: 100px min-content max-content 100px;
+}</code></pre>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_10">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+											<div class="block__grid_item item4">4</div>
+										</div>
+										<div class="grids__text">
+											<p>Ширина 1 и 4 колонок зависит от содержимого, 2 остальных колонки занимают место по 1/2 от
+												оставшегося.
+											</p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-column: auto 1fr 1fr auto;
+}</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--======  Строки (ряды)  ======= -->
+
+					<h2 class="page__subtitle" id="h-items_3">Строки (ряды)</h2>
+					<div class="page__content--items">
+						<div class="content__items">
+							<div class="content__text">
+								<p>У грид-контейнера необходимо установить свойство <span class="green">grid-template-rows</span> ,
+									которое
+									задает
+									количество и размеры строк:</p>
+							</div>
+							<div data-tabs class="grids">
+								<nav data-tabs-titles class="grids__navigation">
+									<button type="button" class="grids__title _tab-active">Пример 1</button>
+									<button type="button" class="grids__title">Пример 2</button>
+								</nav>
+								<div data-tabs-body class="grids__content">
+									<div class="grids__body">
+										<div class="block__grid grid-block_11">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2 <br> <br>
+												<p>
+													Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+													Voluptatibus minima aspernatur unde sunt fugiat quia dolores, necessitatibus corporis
+													tempora,
+													repellendus voluptate quaerat suscipit dolore incidunt vitae iusto eum est optio itaque
+													voluptates
+												</p>
+											</div>
+											<div class="block__grid_item item3">Третий ряд - пустой</div>
+										</div>
+										<div class="grids__text">
+											<p>3 ряда. При таких условиях высота всех блоков будет одинаковой и равной высоте самого
+												наполненного
+												блока. Третьего ряда в HTML-документе нет, но место для него заложено в сетке - пунктирный
+												контур.
+												И
+												на его
+												месте может быть только блок, расположенный в том же блоке, что и первые два. </p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-rows: 1fr 1fr 1fr;
+}</code></pre>
+									</div>
+									<div class="grids__body">
+										<div class="block__grid grid-block_12">
+											<div class="block__grid_item item1">1</div>
+											<div class="block__grid_item item2">2 <br> <br>
+												<p>
+													Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+													Voluptatibus minima aspernatur unde sunt fugiat quia dolores, necessitatibus corporis
+													tempora,
+													repellendus voluptate quaerat suscipit dolore incidunt vitae iusto eum est optio itaque
+													voluptates
+												</p>
+											</div>
+											<div class="block__grid_item item3">Третий ряд - пустой</div>
+										</div>
+										<div class="grids__text">
+											<p class="warning">Параметры для данного свойста такие же , как и для <span
+													class="green">grid-template-columns</span>,
+												только ОСТОРОЖНО с фиксированными значениями ( смотри на 1 блок)</p>
+											<p>В то же время, если элементов больше, чем ячеек грида, то образуются дополнительные строки
+												(как в случае со столбцами). Поэтому, несмотря на то, что выше были определены настройки
+												только для трех строк, в реальности строк в гриде будет четыре и более строк, причем, высота
+												четвертой и последующих строк необязательно будет как у других строк, она будет вычисляться
+												автоматически.</p>
+										</div>
+										<pre class=""><code class="css">.block_grid {
+   display: grid;
+   grid-template-rows: 30px auto 200px;
+}</code></pre>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--====== Свойство grid  ======= -->
+
+					<h2 class="page__subtitle" id="h-items_4"> Свойство <span class="code-t"></span> grid </h2>
+					<div class="page__content--items">
+						<div class="content__items">
+							<div class="content__text">
+								<p>Свойство
+									<span class="green">grid </span>объединяет свойства
+									<span class="green">grid-template-rows</span> и
+									<span class="green">grid-template-columns</span> и
+									разом
+									позволяет
+									задать настройки для строк и столбцов в следующем формате:
+								</p>
+								<pre class=""><code class="css">grid: grid-template-rows / grid-template-columns;</code></pre>
+							</div>
+						</div> <!-- /Свойство grid  -->
+					</div>
+
+				</div> <!--grid__container -->
+				<div class="return">
+					<div class="return__container">
+
+						<p><a href="../grid/grid-menu.html" class="link">К меню " GRID "</a></p>
+						<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="footer__container">
+
+						<!-- Кнопка вверх -->
+						<!-- https://itchief.ru/javascript/btn-up -->
+						<div class="btn-up btn-up_hide"></div>
+
+
+					</div>
+
+				</footer>
+		</main>
+
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

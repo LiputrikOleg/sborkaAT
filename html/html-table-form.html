@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Table Form</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<style>
+				body {
+					font-family: sans-serif;
+					color: #fff;
+					background-color: #43526c;
+				}
+
+				table {
+					border: 2px solid #d2d0d0;
+					border-collapse: collapse;
+					margin: 20px auto;
+				}
+
+				th {
+					padding: 10px;
+					background-color: #4a6495;
+					border: 2px solid #cfcccc;
+				}
+
+				td {
+					padding: 5px;
+					border: 2px solid #d0cece;
+				}
+
+				caption {
+					margin: 15px 0;
+					font-size: 20px;
+				}
+
+				.vertical-text,
+				.vertical-text2,
+				.vertical-text3 {
+					transform: rotate(90deg);
+					letter-spacing: 10px;
+					font-size: 30px;
+					text-shadow: 1px 1px 1px rgba(85, 85, 85, 0.49)
+				}
+
+				.vertical-text2 {
+					font-size: 22px;
+				}
+
+				.vertical-text3 {
+					font-size: 20px;
+
+				}
+			</style>
+			</head>
+
+			<body>
+				<table>
+					<caption>Таблица атрибутов</caption>
+					<tr>
+						<th>Тег</th>
+						<th>Атрибуты</th>
+						<th>Атрибуты атрибута</th>
+						<th> Тег</th>
+						<th>Атрибуты</th>
+						<th>Атрибуты атрибута</th>
+						<th></th>
+						<th>Доп. атрибуты</th>
+						<th>Тег</th>
+						<th>Атрибут</th>
+					</tr>
+					<tr>
+						<td rowspan=10 class="vertical-text">form</td>
+						<td>action</td>
+						<td></td>
+						<td rowspan="23" class="vertical-text">input</td>
+						<td rowspan="23" class="vertical-text2">type</td>
+						<td>button</td>
+						<td rowspan="23" class="vertical-text3"> </td>
+						<td>autofocus</td>
+						<td rowspan="2">fieldset</td>
+						<td>disabled</td>
+					</tr>
+					<tr>
+						<td rowspan="2">method</td>
+						<td>get</td>
+						<td>reset</td>
+						<td>autocomplete</td>
+						<td>form</td>
+					</tr>
+					<tr>
+						<td>post</td>
+						<td>submit</td>
+						<td>accept</td>
+						<td rowspan="15" class="vertical-text2">textarea</td>
+						<td>autocomplete</td>
+					</tr>
+					<tr>
+						<td>autocomplete<br></td>
+						<td>on | off</td>
+						<td>radio</td>
+						<td>checked</td>
+						<td>autofocus</td>
+					</tr>
+					<tr>
+						<td>name</td>
+						<td></td>
+						<td>checkbox</td>
+						<td>disabled</td>
+						<td>cols</td>
+					</tr>
+					<tr>
+						<td>novalidate</td>
+						<td></td>
+						<td>text</td>
+						<td>form</td>
+						<td>dirname</td>
+					</tr>
+					<tr>
+						<td rowspan="3">enctype</td>
+						<td>application/x-www-form-urlencoded</td>
+						<td>email</td>
+						<td>formaction</td>
+						<td>disabled</td>
+					</tr>
+					<tr>
+						<td>multipart/form-data</td>
+						<td>password</td>
+						<td>list</td>
+						<td>form</td>
+					</tr>
+					<tr>
+						<td>text/plain</td>
+						<td>hidden</td>
+						<td>max</td>
+						<td>maxlength</td>
+					</tr>
+					<tr>
+						<td>accept-charset</td>
+						<td>Windows-1251 | UTF-8 и др.</td>
+						<td>image</td>
+						<td>maxlength</td>
+						<td>minlength</td>
+					</tr>
+					<tr>
+						<td>==========</td>
+						<td>===========</td>
+						<td>=======================</td>
+						<td>file</td>
+						<td>min</td>
+						<td>name</td>
+					</tr>
+					<tr>
+						<td rowspan="7" class="vertical-text">select</td>
+						<td>autofocus</td>
+						<td></td>
+						<td>color</td>
+						<td>minlength</td>
+						<td>plaseholder</td>
+					</tr>
+					<tr>
+						<td>disabled</td>
+						<td></td>
+						<td>tel</td>
+						<td>multiple</td>
+						<td>readonly</td>
+					</tr>
+					<tr>
+						<td>form</td>
+						<td></td>
+						<td>search</td>
+						<td>name</td>
+						<td>required</td>
+					</tr>
+					<tr>
+						<td>multiple</td>
+						<td></td>
+						<td>url</td>
+						<td>pattern</td>
+						<td>rows</td>
+					</tr>
+					<tr>
+						<td>name</td>
+						<td></td>
+						<td>range</td>
+						<td>placeholder</td>
+						<td rowspan="2">wrap</td>
+						<td>soft</td>
+					</tr>
+					<tr>
+						<td>required</td>
+						<td></td>
+						<td>number</td>
+						<td>readonly</td>
+						<td>hard</td>
+					</tr>
+					<tr>
+						<td>size</td>
+						<td></td>
+						<td>date</td>
+						<td>required</td>
+						<td>label</td>
+						<td>for</td>
+					</tr>
+					<tr>
+						<td rowspan="4" class="vertical-text">option</td>
+						<td>disabled</td>
+						<td></td>
+						<td>time</td>
+						<td>size</td>
+
+					</tr>
+					<tr>
+						<td>label</td>
+						<td></td>
+						<td>datetime</td>
+						<td>src</td>
+					</tr>
+					<tr>
+						<td>selected</td>
+						<td></td>
+						<td>datetime-local</td>
+						<td>step</td>
+					</tr>
+					<tr>
+						<td>value</td>
+						<td></td>
+						<td>month</td>
+						<td>value</td>
+					</tr>
+					<tr>
+						<td> optgroup</td>
+						<td>disabled<br>
+							<hr>label
+						</td>
+						<td></td>
+						<td>week</td>
+						<td>formnovalidate</td>
+					</tr>
+				</table>
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

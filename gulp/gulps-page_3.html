@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>GULP Page 1</title>
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <!-- <style>body{opacity: 0;}</style> -->
+  <link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <main class="page">
+      <div class="page__container">
+
+        <h1 class="page__title">Скачанные видео материалы</h1>
+
+
+        <!-- Контейнер  со статьями -->
+        <div class="page__content">
+
+
+          <!--! Статья 1 -->
+
+          <div class="page__content--items">
+
+            <div class="page__block--list">
+              <ul class="page__block--list-arhive">
+                <li><i class="fa-solid fa-video"></i><a class="link" href="../../video/gulp/GULP 2022 .mp4"
+                    target="_blank" title="GULP 2022 установка настройка плагины. Подробный курс по настройке галпа.">
+                    GULP 2022
+                  </a> "Сборка GULP"
+                </li>
+
+                <li><i class="fa-solid fa-video"></i><a class="link" href="../../video/gulp/Gulp sborka.mp4"
+                    target="_blank" title="Gulp сборка с нуля, современный синтаксис, полное руководство">Gulp сборка с
+                    нуля</a> Gulp от
+                  "от 0 до 1"
+                </li>
+
+                <li><i class="fa-solid fa-file-zipper"></i><a class="link" href="../../arhive/gulp/Sborka  2021.zip"
+                    target="_blank" title="Сборка GULP">Сборка GULP 2021</a>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+
+        </div> <!-- page__content -->
+
+
+      </div> <!-- page__container -->
+      <div class="return">
+        <div class="return__container">
+
+          <p><a href="../gulp/gulps-menu.html" class="link">К меню "Сборка GULP "</a></p>
+          <p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="footer__container">
+
+          <!-- Кнопка вверх -->
+          <!-- https://itchief.ru/javascript/btn-up -->
+          <div class="btn-up btn-up_hide"></div>
+
+
+        </div>
+
+      </footer>
+    </main>
+
+  </div>
+  <script src="../../js/app.min.js?_v=20241026231742"></script>
+
+  <!-- ! Кнопка "Вверх" -->
+  <script>
+    const btnUp = {
+      el: document.querySelector('.btn-up'),
+      scrolling: false,
+      show() {
+        if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+          this.el.classList.remove('btn-up_hide');
+          this.el.classList.add('btn-up_hiding');
+          window.setTimeout(() => {
+            this.el.classList.remove('btn-up_hiding');
+          }, 300);
+        }
+      },
+      hide() {
+        if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+          this.el.classList.add('btn-up_hiding');
+          window.setTimeout(() => {
+            this.el.classList.add('btn-up_hide');
+            this.el.classList.remove('btn-up_hiding');
+          }, 300);
+        }
+      },
+      addEventListener() {
+        // при прокрутке окна (window)
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY || document.documentElement.scrollTop;
+          if (this.scrolling && scrollY > 0) {
+            return;
+          }
+          this.scrolling = false;
+          // если пользователь прокрутил страницу более чем на 150px
+          if (scrollY > 150) {
+            // сделаем кнопку .btn-up видимой
+            this.show();
+          } else {
+            // иначе скроем кнопку .btn-up
+            this.hide();
+          }
+        });
+        // при нажатии на кнопку .btn-up
+        document.querySelector('.btn-up').onclick = () => {
+          this.scrolling = true;
+          this.hide();
+          // переместиться в верхнюю часть страницы
+          window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+        }
+      }
+    }
+
+    btnUp.addEventListener();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 8</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Формы HTML-5</h1>
+
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Атрибуты тега <span class="green">&lt;form&gt;</span></a>
+							<a href="#h-items_2" class="con-menu">Атрибуты тега <span class="green">&lt;input&gt;</span></a>
+							<a href="#h-items_3" class="con-menu">Тег <span class="green">&lt;lebel&gt;</span></a>
+							<a href="#h-items_4" class="con-menu">Списки в формах</a>
+
+							<a href="#h-items_5.1" class="con-menu">Атрибуты тега <span class="green">&lt;select&gt;</span> </a>
+							<a href="#h-items_5.2" class="con-menu">Атрибуты тега <span class="green">&lt;option&gt;</span> </a>
+							<a href="#h-items_5.3" class="con-menu">Атрибуты тега <span class="green">&lt;optgroup&gt;</span> </a>
+
+							<a href="#h-items_6" class="con-menu">Тег <span class="green">&lt;textarea&gt;</span></a>
+							<a href="#h-items_7" class="con-menu">Тег <span class="green">&lt;fieldset&gt;</span></a>
+							<a href="#h-items_8" class="con-menu">Тег <span class="green">&lt;legend&gt;</span></a>
+							<a href="#h-items_9" class="con-menu">Атрибут <span class="green">tabindex</span></a>
+							<a href="#h-items_10" class="con-menu">Регулярные выражения ( паттерны )</a>
+							<a href="#h-items_11" class="con-menu">Предустановка для даты и цвета</a>
+							<a href="#h-items_12" class="con-menu">Примеры <span class="green">type="range"</span></a>
+							<a href="../../html-table-form.html" class="con-menu">Таблица атрибутов</a></a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+					<!-- ====Атрибуты тега form  ======  -->
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Атрибуты тега <code>&lt;form&gt;</code></h2>
+
+					<div class="page__content--items">
+
+						<p>Формы задаются при помощи тега <span class="green">&lt;form&gt;</span> , который является парным.
+							Содержимое формы на 99% состоит из тегов <span class="green">&lt;input&gt;</span> различного типа. Этот
+							тег
+							является одиночным.</p>
+						<p>Пример простой формы</p>
+						<pre class="pre"><code class="html">&lt;form action=&quot;main.php&quot; accept-charset=&quot;utf-8&quot; method=&quot;post&quot; name=&quot;test&quot; enctype=&quot;application/x-www-form-urlencoded&quot; autocomplete=&quot;off&quot; novalidate &gt;  
+  &lt;input name=&quot;name&quot;&gt; 
+  &lt;input name=&quot;mail&quot;&gt; 
+  &lt;input name=&quot;text&quot;&gt; 
+&lt;/form&gt;</span></pre>
+						<h3 class="">Атрибуты тега <span class="green">&lt;form&gt;</span></h3>
+
+						<div class="page__block--list">
+							<ul class="form_ul">
+								<li><span class="green">action</span> Указывет путь к файлу - обработчику</li>
+								<li><span class="green">accept-charset</span> Устанавливает кодировку для отправляемых данных.
+									Данные, отправляемые формой имеют ту же кодировку, что и страница, на которой находится форма. Но как
+									же
+									быть,
+									если страница например в кодировке UTF-8, а надо чтобы данные отправлялись в кодировке windows-1251.
+									Конечно
+									есть такой вариант, как сменить кодировку у страницы. Но это не всегда возможно, сайт — CMS уже
+									настроена на
+									работу с конкретной кодировкой. Поменять кодировку отправляемых формой данных можно прописав у тега
+									<span class="green">form</span> атрибут <span class="green">accept-charset=»нужная
+										кодировка»</span>.
+								</li>
+								<li><span class="green">method</span> Указывает как передовать данные:
+									<ul class="atr">
+										<li><span class="green">get</span> ( по умолчанию ) ограничивает объём передаваемой скрипту
+											информации, максимальный объем здесь 4 Кб. Так как метод GET отправляет скрипту всю собранную
+											информацию
+											формы как часть URL (то есть в открытом виде), то это может пагубно повлиять на безопасность
+											сайта;</li>
+										<li><span class="green">post</span> Метод POST отличается от GET тем, что данные передаются в
+											закрытой форме. Объем передаваемых значений методом POST по умолчанию ограничен и равен 8 Мбайт
+										</li>
+									</ul>
+								</li>
+								<li><span class="green">name</span> Задается уникальное имя формы, используется в основном
+									JavaScript. Имена могут состоять только из латинских букв, цифр и дефисов. <span
+										class="green">MyForm</span> или <span class="green">SamajaLutchaja-Forma_125</span> </li>
+								<li><span class="green">enctype</span> Указывает способ кодировки отправленных данных. <br>
+									<p>HTML-формы предоставляют три метода кодирования:</p>
+									<ul class="atr">
+										<li><span class="green">application/x-www-form-urlencoded</span> по умолчанию</li>
+										<li><span class="green">multipart/form-data</span></li>
+										<li><span class="green">text/plain</span></li>
+									</ul>
+									Специфика форматов не важна для большинства разработчиков. По этому используем "по умолчанию"
+								</li>
+								<li><span class="green">autocomplete</span> Включает/выключает (on/off) автозаполнение форм.
+									Значение может быть перекрыто атрибутом <span class="green">autocomplete</span> у конкретных
+									элементов
+									формы.</li>
+								<li><span class="green">novalidate</span> Отменяет проверку на правильность заполнения полей форм
+								</li>
+							</ul>
+						</div>
+
+					</div>
+
+					<!-- ==== Атрибуты тега input  -->
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Атрибуты тега <code>&lt;input&gt;</code></h2>
+
+					<div class="page__content--items">
+
+						<h3 class="">Значения атрибута<span class="green"> type</span> тега <span class="green">
+								&lt;input&gt;</span>
+						</h3>
+						<p>У тега <span class="green">&lt;input&gt;</span> обязательно должны присутствовать 2 атрибута -
+							<span class="green">name="произвольное значение"</span> и <span class="green">type="Значение из
+								таблицы"
+							</span>
+						</p>
+
+						<h3 class="" style="text-align: center;">Значения атрибута<code> type</code></h3>
+						<div class="table-grid">
+
+							<div class="table-grid--item" style="text-align: center;">Тип</div>
+							<div class="table-grid--item" style="text-align: center;">Описание</div>
+							<div class="table-grid--item" style="text-align: center;">Код</div>
+							<div class="table-grid--item" style="text-align: center;">Вид</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">button</span></div>
+							<div class="table-grid--item">Кнопка</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;button&quot; name=&quot;button&quot; value=&quot;Кнопка&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="button" name="button" value="Кнопка" /></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">reset</span></div>
+							<div class="table-grid--item">Кнопка для возвращения данных формы в первоначальное значение. По умолчанию
+								надпись
+								"Сбросить".</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;Сброс&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input name="reset" type="reset" value="Сброс"></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">submit</span></div>
+							<div class="table-grid--item">Кнопка для отправки данных формы на сервер.По умолчанию надпись "Отправить"
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Кликай&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="submit" name="submit" value="Кликай"></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">image</span></div>
+							<div class="table-grid--item">Поле с изображением. При нажатии на рисунок данные формы отправляются на
+								сервер.
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;image&quot;
+  src=&quot;../../img/h/form/button.webp&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="image" src="../../img/h/form/button.webp"></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">file</span></div>
+							<div class="table-grid--item">Поле для ввода имени файла, который пересылается на сервер.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;file&quot; name=&quot;file&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="file" name="file"><br><br>
+								<a href="https://habr.com/ru/articles/423035/" class="link" target="_blank">Подробнее</a>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">checkbox</span></div>
+							<div class="table-grid--item">Флажки. Позволяют выбрать более одного варианта из предложенных</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;checkbox&quot;name=&quot;checkbox&quot;&gt;Пиво
+&lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot;&gt;Чай
+&lt;input type=&quot;checkbox&quot; name=&quot;checkbox3&quot;&gt;Кофе</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="checkbox" name="checkbox" id="cb1"> <label
+									for="cb1">Пиво</label>
+								<input type="checkbox" name="checkbox2" id="cb2"> <label for="cb2">
+									Чай
+								</label>
+								<input type="checkbox" name="checkbox3" id="cb3"> <label for="cb3">Кофе</label>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">radio</span></div>
+							<div class="table-grid--item">Переключатели. Используются, когда следует выбрать один вариант из
+								нескольких
+								предложенных.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;radio&quot; name=&quot;radiobutton&quot;&gt;Пиво
+&lt;input type=&quot;radio&quot; name=&quot;radiobutton&quot;&gt;Чай
+&lt;input type=&quot;radio&quot; name=&quot;radiobutton&quot;&gt;Кофе</code></pre>
+							</div>
+							<div class="table-grid--item"> <input type="radio" name="radiobutton" id="rb1" checked> <label
+									for="rb1">Пиво</label>
+								<input type="radio" name="radiobutton" id="rb2" checked> <label for="rb2">Чай</label>
+								<input type="radio" name="radiobutton" id="rb3" checked> <label for="rb3">Кофе</label>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">password</span></div>
+							<div class="table-grid--item">Обычное текстовое поле, но отличается от него тем, что все символы
+								показываются
+								звездочками. Предназначено для того, чтобы никто не подглядел вводимый пароль.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;password&quot; name=&quot;textfield&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"> <input type="password" name="textfield"></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">email</span></div>
+							<div class="table-grid--item">Текстовое поле. Предназначено для ввода email.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;email&quot; name=&quot;email&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="email" name="email"></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">text</span></div>
+							<div class="table-grid--item">Текстовое поле. Предназначено для ввода символов с помощью клавиатуры.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;text&quot; name=&quot;text&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="email" name="email"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">hidden</span></div>
+							<div class="table-grid--item">Скрытое поле. Оно никак не отображается на веб-странице.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;hidden&quot; name=&quot;hidden&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="hidden" name="hidden"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">color</span></div>
+							<div class="table-grid--item">Поле для выбора цвета</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;color&quot; name=&quot;color&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input name="color" type="color"></td>
+							</div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">date</span></div>
+							<div class="table-grid--item">Поле для выбора календарной даты</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;date&quot; name=&quot;date&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="date" name="date"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">datetime</span></div>
+							<div class="table-grid--item">Указание даты и времени</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;datetime&quot; name=&quot;datetime&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="datetime" name="datetime"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">datetime-local</span></div>
+							<div class="table-grid--item">Указание местной даты и времени</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;datetime-local&quot; name=&quot;datetime-local&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="datetime-local" name="datetime-local"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">time</span></div>
+							<div class="table-grid--item">Указание времени</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;time&quot; name=&quot;time&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="time" name="time"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">month</span></div>
+							<div class="table-grid--item">Выбор месяца</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;month&quot; name=&quot;month&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="month" name="month"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">week</span></div>
+							<div class="table-grid--item">Выбор недели</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;week&quot; name=&quot;week&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="week" name="week"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">search</span></div>
+							<div class="table-grid--item">Поле для поиска</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;search&quot; name=&quot;search&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="search" name="search"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">url</span></div>
+							<div class="table-grid--item">Поле для веб-адресов</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;url&quot; name=&quot;url&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="url" name="url"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">number</span></div>
+							<div class="table-grid--item">Ввод чисел</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;number&quot; name=&quot;number&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="url" name="url"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">tel</span></div>
+							<div class="table-grid--item">Ввод телефонного номера</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;tel&quot; name=&quot;tel&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="tel" name="tel"></div>
+
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">range</span></div>
+							<div class="table-grid--item">Ползунок для выбора чисел в указанном диапазоне</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;range&quot; name=&quot;range&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="range" name="range"></div>
+
+						</div>
+
+
+						<br><br><br>
+
+
+						<!-- ======  Дополнительные атрибуты тега input =====-->
+						<h3>Дополнительные атрибуты тега <code class="green">&lt;input&gt;</code></h3>
+						<p>При помощи дополнительных атрибутов, мы можем более конкретно настраивать поля наших форм.</p>
+
+						<div class="table-grid table-grid--2">
+
+							<div class="table-grid--item" style="text-align: center;">Тип</div>
+							<div class="table-grid--item" style="text-align: center;">Описание</div>
+							<div class="table-grid--item" style="text-align: center;">Код</div>
+							<div class="table-grid--item" style="text-align: center;">Вид</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">accept</span></div>
+							<div class="table-grid--item">Устанавливает фильтр на типы файлов, которые вы можете отправить через поле
+								загрузки файлов. Если файл не подходит под установленный фильтр, он не показывается в окне выбора
+								файлов.
+								Применяется к полю для отправки файла (<code class="green">&lt;input type="file"&gt;</code>) <br><br>
+								<a href="https://webref.ru/html/input/accept" target="_blank" title="webref.ru"
+									class="link">Подробнее</a>
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;file&quot; name=&quot;img&quot;
+  accept=&quot;image/jpeg,image/png,image/gif&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="file" name="img" accept="image/jpeg,image/png,image/gif"></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">autocomplete</span></div>
+							<div class="table-grid--item">Включает или отключает автозаполнение</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;Имя: &lt;input name=&quot;user&quot; autocomplete=&quot;on&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;Пароль: &lt;input name=&quot;pass&quot; type=&quot;password&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p>Имя: <input name="user" autocomplete="on"></p>
+									<p>Пароль: <input name="pass" type="password"></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">autofocus <br><br><a
+										href="html-primer-form.html#autofocus" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a></span></div>
+							<div class="table-grid--item">Устанавливает фокус в поле формы. В данном сайте почему то очень сильно
+								глючит,
+								сдвигает слайды, при размещении на странице без слайдера - делает эту страницу первой, но не сразу, а
+								при
+								обновлении.</div>
+							<div class="table-grid--item">
+								<pre class="pre"><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;Поиск по сайту&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;search&quot; name=&quot;s&quot; autofocus&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Искать&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p>Поиск по сайту</p>
+									<p><input type="search" name="focus">
+										<input type="submit" value="Искать">
+									</p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">checked</span></div>
+							<div class="table-grid--item">Этот атрибут определяет, помечен ли заранее такой элемент формы, как флажок
+								или
+								переключатель. В случае использования переключателей (radiobutton) может быть отмечен только один
+								элемент
+								группы, для флажков (checkbox) допустимо пометить хоть все элементы.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;radio&quot; checked&gt;
+&lt;input type=&quot;checkbox&quot; checked&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="radio" checked>
+								<input type="checkbox" checked>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">formtarget</span></div>
+							<div class="table-grid--item">Определяет окно или фрейм в которое будет загружаться результат,
+								возвращаемый
+								обработчиком формы
+								<br><br>
+								<a href="https://webref.ru/html/input/formtarget" target="_blank" class="link">Подробнее</a>
+							</div>
+							<div class="table-grid--item">
+								<pre class="pre"><code class="html">&lt;form&gt;
+  &lt;p&gt;&lt;iframe name=&quot;output&quot; height=&quot;50&quot; width=&quot;400&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;Ваше имя: &lt;input name=&quot;user&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; formaction=&quot;handler.php&quot; formtarget=&quot;output&quot; 
+  value=&quot;Отправить&quot;&gt;&lt;/p&gt; 
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"></div>
+
+							<!--  -->
+							<div class="table-grid--item"> <span class="sel">list</span></div>
+							<div class="table-grid--item">Указывает на список вариантов, созданный с помощью элемента
+								<code>&lt;datalist&gt;</code>, которые можно выбирать при наборе текста. Изначально этот список скрыт и
+								становится доступным при получении полем фокуса.
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form&gt; 
+  &lt;p&gt;&lt;input list=&quot;cocktail&quot;&gt;&lt;/p&gt;
+  &lt;datalist id=&quot;cocktail&quot;&gt;
+    &lt;option&gt;Аперитивы&lt;/option&gt;
+    &lt;option&gt;Горячие&lt;/option&gt;
+    &lt;option&gt;Десертные&lt;/option&gt;
+    &lt;option&gt;Диджестивы&lt;/option&gt;
+    &lt;option&gt;Молочные&lt;/option&gt;
+    &lt;option&gt;Слоистые&lt;/option&gt;
+  &lt;/datalist&gt; 
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form>
+									<p><input list="cocktail"></p>
+									<datalist id="cocktail">
+										<option>Аперитивы</option>
+										<option>Горячие</option>
+										<option>Десертные</option>
+										<option>Диджестивы</option>
+										<option>Молочные</option>
+										<option>Слоистые</option>
+									</datalist>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">max <br> min</span></div>
+							<div class="table-grid--item">Устанавливает верхнее и соответственно нижнее значение для ввода числа или
+								даты
+								в
+								поле формы. Работает с <code class="green">type="number"</code>, <code
+									class="green">type="range"</code>,
+								<code class="green">type="data"</code>
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;Укажите вашу температуру в градусах Цельсия&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;number&quot; min=&quot;35&quot; max=&quot;41&quot; 
+  value=&quot;36.6&quot; step=&quot;0.1&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p>Укажите вашу температуру в градусах Цельсия</p>
+									<p><input type="number" min="35" max="41" value="36.6" step="0.1"></p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">minlength</span></div>
+							<div class="table-grid--item">Задаёт минимальное число символов, которое может быть введено пользователем
+								в
+								текстовом поле. Если число символов меньше указанного значения, то браузер выдаёт сообщение об ошибке и
+								не
+								отправляет форму.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;Введите пароль&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;password&quot; size=&quot;30&quot; minlength=&quot;6&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p>Введите пароль</p>
+									<p><input type="password" size="30" minlength="6"></p>
+									<p><input type="submit" name="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">maxlength</span></div>
+							<div class="table-grid--item">Устанавливает максимальное число символов, которое может быть введено
+								пользователем
+								в текстовом поле. Когда это количество достигается при наборе, дальнейший ввод становится невозможным.
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;&lt;input type=&quot;text&quot; size=&quot;30&quot; maxlength=&quot;10&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p><input type="text" size="30" maxlength="10"></p>
+									<p><input type="submit" name="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">multiple</span></div>
+							<div class="table-grid--item">Атрибут <code class="green">multiple</code> позволяет указывать
+								одновременно
+								несколько файлов в поле для загрузки файлов, а также несколько адресов электронной почты. При
+								использовании
+								двух и более почтовых адресов они должны перечисляться через запятую.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  p&gt;&lt;input type=&quot;file&quot; name=&quot;photo&quot; required multiple
+  placeholder=&quot;Загрузите одну или несколько фотографий&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt; <hr>
+&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;Укажите почтовые адреса через запятую:&lt;/p&gt;   
+  &lt;p&gt;&lt;input type=&quot;email&quot; name=&quot;email&quot; required multiple&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p><input type="file" name="photo" required multiple
+											placeholder="Загрузите одну или несколько фотографий">
+									</p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+								<hr>
+								<form action="handler.php">
+									<p>Укажите почтовые адреса через запятую:</p>
+									<p><input type="email" name="email" required multiple></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">name</span></div>
+							<div class="table-grid--item">Определяет уникальное имя элемента формы. Как правило, это имя используется
+								при
+								отправке данных на сервер или для доступа к введённым данным поля через скрипты</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;script&gt;  
+  function dataField(f) {
+   alert(&quot;Вы ввели: &quot; + f.comment.value);
+}
+&lt;/script&gt;
+
+&lt;form&gt;
+  &lt;p&gt;&lt;b&gt;Введите текст&lt;/b&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;text&quot; name=&quot;comment&quot;&gt;
+   &lt;input type=&quot;button&quot; value=&quot;ОК&quot; onClick=&quot;dataField(this.form)&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<script>
+									function dataField(f) {
+										alert("Вы ввели: " + f.comment.value);
+									}
+								</script>
+
+								<form>
+									<p><b>Введите текст</b></p>
+									<p><input type="text" name="comment">
+										<input type="button" value="ОК" onClick="dataField(this.form)">
+									</p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">pattern</span></div>
+							<div class="table-grid--item">Устанавливает шаблон ввода. Если присутствует атрибут <code
+									class="green">pattern</code>, то форма не будет отправляться, пока поле не будет заполнено
+								правильно.
+								<br><br><a href="#h-items_10" class="link">Таблица паттернов</a>
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;Введите телефон в формате 2-xxx-xxx, где вместо x должна быть цифра:&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;tel&quot; pattern=&quot;2-[0-9]{3}-[0-9]{3}&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p>Введите телефон в формате 2-xxx-xxx, где вместо x должна быть цифра:</p>
+									<p><input type="tel" pattern="2-[0-9]{3}-[0-9]{3}"></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">placeholder</span></div>
+							<div class="table-grid--item">Выводит подсказывающий текст, который исчезает при получении фокуса или при
+								наборе
+								текста. Обычно отображается серым цветом.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;&lt;input type=search placeholder=&quot;Введите текст для поиска&quot;&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Искать&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p><input type=search placeholder="Введите текст для поиска">
+										<input type="submit" value="Искать">
+									</p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">required</span></div>
+							<div class="table-grid--item">Обязательное для заполнения поле</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;form action=&quot;handler.php&quot;&gt;
+  &lt;p&gt;&lt;input name=&quot;user&quot; required placeholder=&quot;Ваше имя&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="handler.php">
+									<p><input name="user" required placeholder="Ваше имя"></p>
+									<p><input type="submit" value="Отправить"></p>
+								</form>
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"> <span class="sel">size</span></div>
+							<div class="table-grid--item">Ширина текстового поля, которое определяется числом символов моноширинного
+								шрифта.
+								Иными словами, ширина задаётся количеством близстоящих букв одинаковой ширины по горизонтали. Если
+								размер
+								шрифта изменяется с помощью стилей, ширина также соответственно меняется. По умолчанию 20, длинный текст
+								не
+								поместиться.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;text&quot; placeholder=&quot;Очень длинный текст, <br> который не помещается в отведенные 25 символов&quot; size=&quot;&lt;25&gt;&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="text"
+									placeholder="Очень длинный текст, который не помещается в отведенные 25 символов" size="<25>"></div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">src</span></div>
+							<div class="table-grid--item">Адрес графического файла для поля с изображением</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;image&quot; src=&quot;./../img/h/form/button.webp&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="image" src="../../img/h/form/button.webp">
+							</div>
+
+							<!--  -->
+							<div class="table-grid--item"><span class="sel">step</span></div>
+							<div class="table-grid--item">Шаг приращения для числовых полей.</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; step=&quot;2&quot;&gt;<hr>
+&lt;p&gt;Введите произвольное значение от 0 до 1:&lt;/p&gt;
+&lt;p&gt;&lt;input type=&quot;number&quot; value=&quot;0&quot; min=&quot;0&quot; max=&quot;1&quot; step=&quot;0.1&quot;&gt;&lt;/p&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="range" min="0" max="10" step="2">
+								<hr>
+								<p>Введите произвольное значение от 0 до 1:</p>
+								<p><input type="number" value="0" min="0" max="1" step="0.1"></p>
+							</div>
+						</div>
+
+						<div class="table-grid--item-big">
+							<div class="table-grid--item"><code class="green">value</code></div>
+						</div>
+
+						<div class="table-grid table-grid--3">
+
+							<!--  -->
+
+							<div class="table-grid--item"><strong>Oписание</strong></div>
+							<div class="table-grid--item"><strong>Код</strong></div>
+							<div class="table-grid--item">Вид</div>
+
+							<!--  -->
+
+							<div class="table-grid--item">Для кнопок <br><code
+									class="green">(input type="button | reset | submit")</code>
+								<br>устанавливает текстовую надпись на них
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Отправить куда подальше&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="submit" value="Отправить куда подальше"></div>
+
+							<!--  -->
+
+							<div class="table-grid--item">Для текстовых полей <br><code
+									class="green">(input type="password | text")</code><br> указывает предварительно введённую строку.
+								Пользователь может стирать текст и вводить свои символы, но при использовании в форме кнопки Reset
+								пользовательский текст очищается и восстанавливается введённый в атрибуте <code
+									class="green">value</code>;</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;text&quot; name=&quot;name&quot; value=&quot;Ваше имя&quot;&gt;
+&lt;input type=&quot;reset&quot; name=&quot;reset&quot; value=&quot;Сброс со скалы&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item">
+								<form action="#">
+									<input type="text" name="name" value="Ваше имя">
+									<input type="reset" name="reset" value="Сброс со скалы">
+								</form>
+							</div>
+
+							<!--  -->
+
+							<div class="table-grid--item">Для флажков и переключателей <br><code
+									class="green">(input type="checkbox | radio")</code><br> уникально определяет каждый элемент, с
+								тем,
+								чтобы клиентская или серверная программа могла однозначно установить, какой пункт выбрал пользователь.
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;radio&quot; name=&quot;answer&quot; value=&quot;a1&quot;&gt; Офицерский состав</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="radio" name="answer" value="a1"> Офицерский состав</div>
+
+							<div class="table-grid--item">Для файлового поля <br><code class="green">(input type="file")</code><br>
+								не
+								оказывает влияние.
+							</div>
+							<div class="table-grid--item">
+								<pre><code class="html">&lt;input type=&quot;file&quot; name=&quot;file&quot; value=&quot;filsed&quot;&gt;</code></pre>
+							</div>
+							<div class="table-grid--item"><input type="file" name="file" value="filsed"></div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- ======  Тег lebel   ====== -->
+				<!--! Статья 3 -->
+				<h2 id="h-items_3">Тег <code class="green">lebel</code></h2>
+
+				<div class="page__content--items">
+					<p>Элемент <code class="green">&lt;label&gt;</code> устанавливает связь между определённой меткой, в качестве
+						которой обычно
+						выступает текст, и элементом формы (<code class="green">&lt;input&gt;</code>, <code
+							class="green">&lt;select&gt;</code>,
+						<code class="green">&lt;textarea&gt;</code>). Такая связь необходима, чтобы изменять значения элементов
+						формы
+						при щелчке
+						курсором мыши на текст. Кроме того, с помощью <code class="green">&lt;label&gt;</code> можно устанавливать
+						горячие клавиши на
+						клавиатуре и переходить на активный элемент подобно ссылкам.
+					</p>
+
+					<p>Существует два способа связывания объекта и метки. Первый заключается в использовании идентификатора
+						<code class="green">id</code> внутри элемента формы и указании его имени в качестве атрибута <code
+							class="green">for</code> элемента
+						<code class="green">&lt;label&gt;</code>. При втором способе элемент формы помещается внутрь контейнера
+						<code class="green">&lt;label&gt;</code>.
+					</p>
+					<pre class="prer"><code class="html">Вариант 1
+&lt;form action=&quot;#&quot; &gt;
+  &lt;label for=&quot;iden_1&quot;&gt;Ваше имя:&lt;/label&gt;
+  &lt;input id=&quot;iden_1&quot; type=&quot;text&quot; placeholder=&quot;Введите Ваше имя&quot;&gt;
+&lt;/form&gt;
+
+Вариант 2
+&lt;form action=&quot;#&quot; &gt;
+  &lt;label&gt; Ваше имя:&lt; input type=&quot;text&quot; placeholder=&quot;Введите Ваше имя&quot;&gt;&lt;/label&gt;
+&lt;/form&gt;</code></pre>
+
+					<form action="#">
+						<label for="iden_1">Ваше имя:</label>
+						<input id="iden_1" type="text" placeholder="Введите Ваше имя" style="width: 200px;">
+					</form>
+					<br>
+					<form action="#">
+						<label> Ваше имя: <input type="text" placeholder="Введите Ваше имя" style="width: 200px;"></label>
+					</form><br>
+					<p>С радио-кнопками и чек-боксами существует особенность. Идентификатор на то и идентификатор. что может
+						присваивается только одному из элементов, но тогда в радио-кнопках становиться возможным выделение всех
+						элеменов.
+						чтобы этого не происходило всем элементы списка присваивается одно имя. При клике по тексту отмечается тот
+						элемент
+						списка у которого идентификатор. Возможно так же выделение одного из списка с помощью атрибута
+						<code class="green">checked</code>
+					</p>
+
+					<pre class="pre"><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;p&gt;&lt;label for=&quot;pol&quot;&gt;Укажите пол:&lt;/label&gt;&lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;pol&quot;&gt;Мужской&lt;br&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;pol&quot; checked&gt;Женский&lt;br&gt;
+    &lt;input id=&quot;pol&quot; type=&quot;radio&quot; name=&quot;pol&quot;&gt;Иное&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+					<form action="#">
+						<p><label for="pol">Укажите пол:</label><br>
+							<input type="radio" name="pol">Мужской<br>
+							<input type="radio" name="pol" checked>Женский<br>
+							<input id="pol" type="radio" name="pol">Иное
+						</p>
+					</form>
+
+					<pre class="pre"><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;label for=&quot;check&quot;&gt;Выберите напиток&lt;/label&gt;
+  &lt;p&gt;&lt;input type=&quot;checkbox&quot; id=&quot;check&quot; name=&quot;napit&quot;&gt;Коньяк&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;napit&quot; checked&gt;Водка&lt;br&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;napit&quot;&gt;Пиво&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+					<form action="#">
+						<label for="check">Выберите напиток</label>
+						<p><input type="checkbox" id="check" name="napit">Коньяк<br>
+							<input type="checkbox" name="napit" checked>Водка<br>
+							<input type="checkbox" name="napit">Пиво
+						</p>
+					</form>
+
+				</div>
+
+
+				<!-- ======  Списки в формах  ====== -->
+				<!--! Статья 4 -->
+				<h2 class="page__subtitle" id="h-items_4">Списки в формах</h2>
+
+				<div class="page__content--items">
+
+					<p>
+						<spam class="green">&lt;select&gt;</spam> позволяет создать элемент интерфейса в виде раскрывающегося
+						списка,
+						а также список с
+						одним или множественным выбором. Каждый пункт создаётся с помощью элемента <spam class="green">
+							&lt;option&gt;
+						</spam>, который
+						должен быть вложен в контейнер <spam class="green">&lt;select&gt;</spam>. Общий вид:
+					</p>
+
+					<pre><code class="html">&lt;select&gt;
+  &lt;option&gt;Пункт 1&lt;/option&gt;
+  &lt;option&gt;Пункт 2&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+					<h3 class="" id="h-items_5.1">Атрибуты <code class="green">&lt;select&gt;</code></h3>
+
+					<div class="page__block--list">
+						<ul class="">
+							<li class="">
+								<span class="green">autofocus <a href="html-primer-form.html#selauto" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a> </span>Устанавливает,
+								что список получает фокус после загрузки страницы, при этом список становится доступным для выбора
+								пунктов,
+								например, с помощью клавиатуры
+							</li>
+							<li class="">
+								<span class="green">disabled <a href="html-primer-form.html#seldisab" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a></span>
+								Блокирует доступ и изменение элементов списка. Блокированный список не может получить фокус через курсор
+								или
+								клавиатуру, быть изменён, значение такого списка не передаётся на сервер. Непонятно, зачем этот список
+								делать,
+								если он все равно будет заблокирован
+							</li>
+							<li class="">
+								<span class="green">form <a href="html-primer-form.html#selform" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a></span>
+								Связывает список с формой по её идентификатору. Такая связь необходима в случае, когда список
+								располагается за
+								пределами <code>&lt;form&gt;</code>.
+							</li>
+							<li class="">
+								<span class="green">multiple <a href="html-primer-form.html#selmulti" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a></span>
+								Наличие атрибута <code>multiple</code> сообщает браузеру отображать полное содержимое элемента
+								<span class="green">&lt;select&gt;</span> как список множественного выбора. Для выбора нескольких
+								значений
+								списка
+								применяются
+								клавиши <kbd>Ctrl</kbd> и <kbd>Shift</kbd> совместно с курсором мыши.
+							</li>
+							<li class="">
+								<span class="green">name <a href="html-primer-form.html#selname" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a></span> Имя
+								элемента для отправки на сервер или обращения через скрипты.
+							</li>
+							<li class="">
+								<span class="green">required <a href="html-primer-form.html#selreq" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a></span>
+								Устанавливает список обязательным для выбора перед отправкой формы на сервер
+							</li>
+							<li class="">
+								<span class="green">size <a href="html-primer-form.html#selsize" target="_blank"
+										class="link">&rang;&rang;&rang;&rang;</a></span>
+								Количество отображаемых строк списка.
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="" id="h-items_5.2">Атрибуты <code class="green">&lt;option&gt;</code></h3>
+
+					<div class="page__block--list">
+						<ul class="">
+							<li class="">
+								<code
+									class="green">disablet <a href="html-primer-form.html#optdis" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Заблокировать для доступа элемент списка.
+							</li>
+							<li class="">
+								<code
+									class="green">label <a href="html-primer-form.html#optlabel" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Атрибут предназначен для указания метки пункта списка, сокращённой по сравнению с текстом
+								внутри<code> &lt;option&gt;</code>. Если атрибут <code class="green">label</code> присутствует, то
+								текст
+								внутри
+								<code class="green">&lt;option&gt;</code> игнорируется и в списке выводится значение <code
+									class="green">label</code>.
+							</li>
+							<li class="">
+								<code
+									class="green">selected <a href="html-primer-form.html#optsel" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Заранее устанавливает определённый пункт списка выделенным.
+							</li>
+							<li class="">
+								<code
+									class="green">value <a href="html-primer-form.html#optvalue" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Значение пункта списка, которое будет отправлено на сервер или прочитано с помощью скриптов.
+							</li>
+						</ul>
+					</div>
+
+					<h3 class="" id="h-items_5.3">Атрибуты <code class="green">&lt;optgroup&gt;</code></h3>
+
+					<p>Элемент <code class="green">&lt;optgroup&gt;</code> представляет собой контейнер, внутри которого
+						располагаются элементы
+						<code class="green">&lt;option&gt;</code>, объединённые в одну группу. Особенностью <code
+							class="green">&lt;optgroup&gt;</code> является то,
+						что он не выделяется как обычный элемент списка, акцентируется с помощью жирного начертания, а все элементы,
+						входящие в этот контейнер, смещаются вправо от своего исходного положения.
+					</p>
+					<div class="page__block--list">
+						<ul class="">
+							<li class=""><code class="green">disabled</code> Блокирует доступ к группе списка.</li>
+							<li class="">
+								<code
+									class="green">label <a href="html-primer-form.html#optgrp" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Текст,
+								который будет входить в список в виде заголовка группы. <span class="red">ОБЯЗАТЕЛЬНЫЙ!</span>
+							</li>
+						</ul>
+					</div>
+
+				</div> <!-- page__content--items 3-->
+
+
+
+				<!-- ======  Тег textarea  ====== -->
+				<!--! Статья 5 -->
+				<h2 class="page__subtitle" id="h-items_6">Тег <code class="green">textarea</code></h2>
+
+				<div class="page__content--items">
+
+					<p>Представляет собой элемент формы для создания области, в которую можно вводить несколько строк текста. В
+						отличие
+						от элемента
+						<span class="green">&lt;input&gt;</span> в текстовом поле допустимо делать переносы строк, они сохраняются
+						при
+						отправке данных <span class="green">&lt;textarea&gt;&lt;/textarea&gt;</span>
+						сервер.
+					</p>
+					<p>Между тегами
+						<span class="green">&lt;textarea&gt;</span> и <span class="green">&lt;/textarea&gt;</span> можно
+						поместить
+						любой
+						текст, который будет отображаться внутри
+						поля.
+					</p>
+
+					<h3 class="">Атрибуты <code class=" green">&lt;textarea&gt;</code></h3>
+
+					<div class="page__block--list">
+						<ul class="form--ul">
+							<li class=""><code class="green">autocomplete</code> Включает или отключает автозаполнение.</li>
+							<li class=""><code class="green">autofocus </code> Автоматическое получение фокуса</li>
+							<li class="">
+								<code
+									class="green">cols <a href="html-primer-form.html#areacols" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Ширина поля в символах
+							</li>
+							<li class="">
+								<code
+									class="green">dirname <a href="html-primer-form.html#areadir" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Параметр, который передает на сервер направление текста
+							</li>
+							<li class="">
+								<code
+									class="green">disabled <a href="html-primer-form.html#areadis" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Блокирует доступ и изменение элемента
+							</li>
+							<li class="">
+								<code
+									class="green">form <a href="html-primer-form.html#areaform" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Связывает текстовое поле с формой по ее идентификатору
+							</li>
+							<li class="">
+								<code
+									class="green">maxlength <a href="html-primer-form.html#areamax" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Максимальное число введенный символов
+							</li>
+							<li class="">
+								<code
+									class="green">minlength <a href="html-primer-form.html#areamin" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Минимальное число введенный символов
+							</li>
+							<li class="">
+								<code
+									class="green">name <a href="html-primer-form.html#areaname" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Имя
+								поля, предназначено для того, чтобы обработчик формы мог его идентифицировать.
+							</li>
+							<li class="">
+								<code
+									class="green">plaseholder <a href="html-primer-form.html#areaplas" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Добавляет подказку
+							</li>
+							<li class="">
+								<code
+									class="green">readonly <a href="html-primer-form.html#arearea" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Устанавливает, что поле не может быть изменeно пользователем
+							</li>
+							<li class="">
+								<code
+									class="green">required <a href="html-primer-form.html#areareq" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Обязательное к заполнению поле
+							</li>
+							<li class="">
+								<code
+									class="green">rows <a href="html-primer-form.html#areacols" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Высота поля в строках текста
+							</li>
+							<li class="">
+								<code
+									class="green">wrap <a href="html-primer-form.html#areawrap" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+								Параметры переноса строк
+								<ul class="atr">
+									<li class=""><code class="green">soft</code> Слова в текстовом поле переносятся механически, если
+										они не
+										поместились в
+										размер области, но при отправке на сервер переносы не сохраняются.</li>
+									<li class=""><code class="green">hard</code> Длинный текст, который самостоятельно не помещается в
+										поле
+										по ширине,
+										автоматически переносится на новую строку и вместе с переносами отправляется на сервер. Для работы
+										требуется
+										наличие атрибута <code class="green">cols</code>.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+
+
+				<!-- ======  Тег fieldset  ====== -->
+				<!--! Статья 7 -->
+				<h2 class="page__subtitle" id="h-items_7">Тег <code class="green">fieldset</code></h2>
+
+				<div class="page__content--items">
+
+					<p>Элемент <code class="green">&lt;fieldset&gt;</code> предназначен для группирования элементов формы. Такая
+						группировка облегчает работу с формами, содержащими большое число данных, например, один блок может быть
+						предназначен для ввода текстовой информации, а другой — для флажков.</p>
+					<p>Браузеры для повышения наглядности отображают результат использования элемента <code
+							class="green">&lt;fieldset&gt;</code> в виде рамки. Её вид зависит от операционной системы, а также
+						используемого браузер</p>
+
+					<h3 class="">Атрибуты тега <code class="green">&lt;fieldset&gt;</code></h3>
+
+					<div class="page__block--list">
+						<ul class="form--ul">
+							<li class=""><code class="green">disabled</code> Блокирует поля формы в группе.</li>
+							<li class=""><code class="green">form</code> Связывает группу с формой.</li>
+						</ul>
+					</div>
+
+				</div>
+
+
+				<!-- ======  Тег legend  ====== -->
+				<!--! Статья 8 -->
+				<h2 class="" id="h-items_8">Тег <code class="green">legend</code></h2>
+
+				<div class="page__content--items">
+
+					<h3 class=""> Тег
+						<code
+							class="green">&lt;legend&gt; <a href="html-primer-form.html#legend" target="_blank" class="link">&rang;&rang;&rang;&rang;</a></code>
+					</h3>
+					<p>Элемент <code class="green">&lt;legend&gt;</code> применяется для создания заголовка группы элементов
+						формы,
+						которая
+						определяется с помощью <code class="green">&lt;fieldset&gt;</code>. Группа элементов обозначается в
+						браузере с
+						помощью рамки, а
+						текст, который располагается внутри контейнера <code class="green">&lt;legend&gt;</code>, встраивается в
+						эту
+						рамку.</p>
+				</div>
+
+
+				<!-- ======  Тег tabindex  ====== -->
+				<!--! Статья 9 -->
+				<h2 class="page__subtitle" id="h-items_9"> Атрибут <code class="green">tabindex</code></h2>
+
+				<div class="page__content--items">
+
+					<h3 class=""> Атрибут <code class="green">tabindex</code></h3>
+					<p>Атрибут <code class="green">tabindex</code> устанавливает порядок получения фокуса при переходе между
+						элементами с помощью
+						клавиши Tab. Переход происходит от меньшего значения к большему, например от 1 к 2, затем к 3 и так далее.
+						При
+						этом строгая последовательность не важна, допускается пропускать какие-то числа и начинать с любой цифры.
+						Если
+						значения <code class="green">tabindex</code> у элементов совпадают, тогда учитывается их порядок появления
+						в
+						коде.
+						Заблокированные элементы (у которых установлен атрибут <code class="green">disabled</code>) не участвуют в
+						переходе и фокус не
+						получают.</p>
+
+					<p>Переход к элементам, у которых не задан атрибут <code class="green">tabindex</code> или его значение равно
+						0,
+						происходит после
+						всех «нумерованных» элементов в том порядке, как они указаны в коде.</p>
+
+					<p>Для <code class="green"> &lt;input type="radio"&gt;</code> находящихся в одной группе <code
+							class="green">tabindex</code> одинаков.</p>
+
+					<pre class="pre"><code class="html">&lt;form action="#" method="post" enctype="multipart/form-data"&gt;
+  &lt;div&gt;
+    &lt;p&gt;Имя&lt;/p&gt;
+    &lt;input placeholder="Имя" tabindex="1" name="username" type="text" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Пароль&lt;/p&gt;
+    &lt;input tabindex="2" name="userpass" type="password" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Телефон&lt;/p&gt;
+    &lt;input tabindex="3" name="userphone" type="tel" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Пол&lt;/p&gt;
+    &lt;div&gt;
+      &lt;input tabindex="4" checked type="radio" name="gender" value="male" /&gt; Мужской
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input tabindex="4" type="radio" name="gender" value="female" /&gt; Женский
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Имущество&lt;/p&gt;
+    &lt;div&gt;
+      &lt;input tabindex="5" checked type="checkbox" name="bike" value="yes" /&gt; Велик
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input tabindex="6" type="checkbox" name="car" value="yes" /&gt; Машина
+    &lt;/div&gt;
+    &lt;div&gt;
+      &lt;input tabindex="7" disabled type="checkbox" name="house" value="yes" /&gt; Дом
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Дополнительная информация&lt;/p&gt;
+    &lt;textarea tabindex="8" name="text"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Прикрепить фото&lt;/p&gt;
+    &lt;input tabindex="9" type="file" /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Любимый цвет&lt;/p&gt;
+    &lt;select tabindex="10" name="color"&gt;
+    &lt;option value="red"&gt;Красный&lt;/option&gt;
+    &lt;option value="green"&gt;Зеленый&lt;/option&gt;
+    &lt;option selected value="yellow"&gt;Желтый&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;p&gt;Действия&lt;/p&gt;
+    &lt;button tabindex="11" type="submit"&gt;Отправить&lt;/button&gt;
+    &lt;button tabindex="12" type="reset"&gt;Очистить&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/form&gt;</code></pre>
+
+
+
+					<form action="#" method="post" enctype="multipart/form-data">
+						<div>
+							<p>Имя</p>
+							<input placeholder="Имя" tabindex="1" name="username" type="text" />
+						</div>
+						<div>
+							<p>Пароль</p>
+							<input tabindex="2" name="userpass" type="password" />
+						</div>
+						<div>
+							<p>Телефон</p>
+							<input tabindex="3" name="userphone" type="tel" />
+						</div>
+						<div>
+							<p>Пол</p>
+							<div>
+								<input tabindex="4" checked type="radio" name="gender" value="male" /> Мужской
+							</div>
+							<div>
+								<input tabindex="4" type="radio" name="gender" value="female" /> Женский
+							</div>
+						</div>
+						<div>
+							<p>Имущество</p>
+							<div>
+								<input tabindex="5" checked type="checkbox" name="bike" value="yes" /> Велик
+							</div>
+							<div>
+								<input tabindex="6" type="checkbox" name="car" value="yes" /> Машина
+							</div>
+							<div>
+								<input tabindex="7" disabled type="checkbox" name="house" value="yes" /> Дом
+							</div>
+						</div>
+						<div>
+							<p>Дополнительная информация</p>
+							<textarea tabindex="8" name="text"></textarea>
+						</div>
+						<div>
+							<p>Прикрепить фото</p>
+							<input tabindex="9" type="file" />
+						</div>
+						<div>
+							<p>Любимый цвет</p>
+							<select tabindex="10" name="color">
+								<option value="red">Красный</option>
+								<option value="green">Зеленый</option>
+								<option selected value="yellow">Желтый</option>
+							</select>
+						</div>
+						<div>
+							<p>Действия</p>
+							<button tabindex="11" type="submit">Отправить</button>
+							<button tabindex="12" type="reset">Очистить</button>
+						</div>
+					</form>
+
+
+				</div>
+
+
+				<!-- ======  Регулярные выражения ( паттерны )  ====== -->
+				<!--! Статья 10 -->
+				<h2 class="page__subtitle" id="h-items_10">Регулярные выражения ( паттерны )</h2>
+
+				<div class="page__content--items">
+
+					<style>
+						.table-all td.sel {
+							color: #23eac9;
+						}
+					</style>
+					<table class="table-all">
+
+						<tr>
+							<th>Выражение</th>
+							<th>Описание</th>
+						</tr>
+						<tr>
+							<td class="sel">\d [0-9]</td>
+							<td>Одна цифра от 0 до 9.</td>
+						</tr>
+						<tr>
+							<td class="sel">\D [^0-9]</td>
+							<td>Любой символ кроме цифры.</td>
+						</tr>
+						<tr>
+							<td class="sel">\s</td>
+							<td>Пробел.</td>
+						</tr>
+						<tr>
+							<td class="sel">[A-Z]</td>
+							<td>Только заглавная латинская буква.</td>
+						</tr>
+						<tr>
+							<td class="sel">[A-Za-z]</td>
+							<td>Только латинская буква в любом регистре.</td>
+						</tr>
+						<tr>
+							<td class="sel">[А-Яа-яЁё]</td>
+							<td>Только русская буква в любом регистре.</td>
+						</tr>
+						<tr>
+							<td class="sel">[A-Za-zА-Яа-яЁё]</td>
+							<td>Любая буква русского и латинского алфавита.</td>
+						</tr>
+						<tr>
+							<td class="sel">[0-9]{3}</td>
+							<td>Три цифры.</td>
+						</tr>
+						<tr>
+							<td class="sel">[A-Za-z]{6,}</td>
+							<td>Не менее шести латинских букв.</td>
+						</tr>
+						<tr>
+							<td class="sel">[0-9]{,3}</td>
+							<td>Не более трёх цифр.</td>
+						</tr>
+						<tr>
+							<td class="sel">[0-9]{5,10}</td>
+							<td>От пяти до десяти цифр.</td>
+						</tr>
+
+						<tr>
+							<td class="sel">^[a-zA-Z]+$</td>
+							<td>Любое слово на латинице.</td>
+						</tr>
+						<tr>
+							<td class="sel">^[А-Яа-яЁё\s]+$</td>
+							<td>Любое слово на русском включая пробелы.</td>
+						</tr>
+						<tr>
+							<td class="sel">^[ 0-9]+$</td>
+							<td>Любое число.</td>
+						</tr>
+						<tr>
+							<td class="sel">[0-9]{6}</td>
+							<td>Почтовый индекс.</td>
+						</tr>
+						<tr>
+							<td class="sel">\d+(,\d{2})?</td>
+							<td>Число в формате 1,34 (разделитель запятая).</td>
+						</tr>
+						<tr>
+							<td class="sel">\d+(\.\d{2})?</td>
+							<td>Число в формате 2.10 (разделитель точка).</td>
+						</tr>
+						<tr>
+							<td class="sel">\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}</td>
+							<td>IP-адрес</td>
+						</tr>
+						<tr>
+							<td colspan="2">Ещё больше паттернов на <a href="http:\\html5/pattern.com" target="_blank"
+									class="link">сайте</a> - нет сайта.</td>
+						</tr>
+
+					</table>
+
+				</div>
+
+
+				<!-- ======  Предустановка для даты и цвета  ====== -->
+				<!--! Статья 11 -->
+				<h2 class="page__subtitle" id="h-items_11">Предустановка для даты и цвета</h2>
+
+				<div class="page__content--items">
+
+					<p>Для атрибутов <code class="green">type=" date | time | datetime | datetime-local | week | month "</code>
+						можно задавать
+						предварительные значения, а также задавать максимальные и минимальные значения. Формат записи показан ниже.
+					</p>
+					<p>Для <code class="green">type="color"</code> также возможно предустановка. Цвет задается в
+						шестнадцатитеричной
+						системе в полном
+						объеме (# 6 знаков).</p>
+					<pre><code class="html">&lt;form action=&quot;&quot;&gt;
+  &lt;p&gt;Дата&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;date&quot; value=&quot;2015-04-28&quot; max=&quot;2015-09-15&quot;&gt;&lt;/p&gt;&lt;br&gt;
+  &lt;p&gt;Время&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;time&quot; value=&quot;08:00&quot; max=&quot;16:15&quot;&gt;&lt;/p&gt;&lt;br&gt;
+  &lt;p&gt;Дата и время&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;datetime&quot; value=&quot;2015-04-28T08:00&quot; max=&quot;2015-09-15T09:36&quot;&gt;&lt;/p&gt;&lt;br&gt;
+  &lt;p&gt;Локальные дата и время&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;datetime-local&quot; value=&quot;2015-04-28T08:00&quot; max=&quot;2015-09-15T09:34&quot;&gt;&lt;/p&gt;&lt;br&gt;
+  &lt;p&gt;&lt;/p&gt;&lt;p&gt;Неделя&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;week&quot; value=&quot;2015-W28&quot; min=&quot;2015-W12&quot; max=&quot;2015-W30&quot;&gt;&lt;/p&gt;&lt;br&gt;
+  &lt;p&gt;Месяц&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;month&quot; value=&quot;2015-04&quot; max=&quot;2015-09&quot;&gt;&lt;/p&gt;&lt;br&gt;
+  &lt;p&gt;&lt;input type=&quot;color&quot; value=&quot;#f3875e&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;Отправить&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+					<form action="">
+						<p>Дата
+							<input type="date" value="2015-04-28" max="2015-09-15">&nbsp;&nbsp;
+							Время
+							<input type="time" value="08:00" max="16:15">&nbsp;&nbsp;
+							Дата и время
+							<input type="datetime" value="2015-04-28T08:00" max="2015-09-15T09:36">
+						</p><br><br>
+						<p>Локальные дата и время
+							<input type="datetime-local" value="2015-04-28T08:00" max="2015-09-15T09:34">
+						</p><br>
+						<br>
+						<p>Неделя
+							<input type="week" value="2015-W28" min="2015-W12" max="2015-W30">&nbsp;&nbsp;
+							Месяц
+							<input type="month" value="2015-04" max="2015-09">
+						</p><br>
+						<input type="color"
+							value="#f3875e">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="submit" value="Отправить">
+					</form><br>
+					<p>И, хотя возможно ввести данные больше или меньше установленных, браузер не пропустит и выдаст ошибку, что
+						поле
+						неправильно заполнено.</p>
+
+				</div> <!-- page__content -->
+
+
+
+				<!-- ======  Примеры type="range" ====== -->
+				<!--! Статья 12 -->
+				<h2 class="page__subtitle" id="h-items_12">Примеры <span class="green">type = "range"</span></h2>
+
+				<div class="page__content--items">
+
+					<p>Первоначальное положение ползунка это (min+max)/2 т.е. - середина шкалы. <code
+							class="green">value="100"</code>изменяют
+						положение ползунка на указанное. Тег <code class="green">&lt;output&gt;</code> выводит указанное в нем
+						значение справа от шкалы.
+						Для этого тега указываем идентификатор, чтобы привязать к нему скрипты. В данном случае для тега
+						<code class="green">&lt;input&gt;</code> следующее: <code
+							class="green">oninput="out.value=(ran.value)"</code>
+					</p>
+					<pre><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;label for=&quot;ran&quot;&gt;Укажите Ваш рост (cm): &lt;br&gt;
+  &lt;input oninput=&quot;out.value=(ran.value)&quot; id=&quot;ran&quot; type=&quot;range&quot; min=&quot;0&quot; max=&quot;300&quot; value=&quot;100&quot;&gt;&lt;/label&gt;
+  &lt;output id=&quot;out&quot;&gt;100&lt;/output&gt;
+&lt;/form&gt;</code></pre>
+
+					<form action="#">
+						<label for="ran">Укажите Ваш рост (cm): <br>
+							<input oninput="out.value=(ran.value)" id="ran" type="range" min="0" max="300" value="100"></label>
+						<output id="out">100</output>
+					</form>
+
+					<p>А теперь внесем модернизацию:</p>
+
+					<pre><code class="html">&lt;form action=&quot;#&quot;&gt;
+  &lt;label for=&quot;ran&quot;&gt;Укажите Ваш рост (cm): &lt;br&gt;
+  &lt;input oninput=&quot;out.value=(ran.value); out2.value=(ran.value*10)&quot; id=&quot;ran&quot; type=&quot;range&quot; min=&quot;0&quot; max=&quot;300&quot; value=&quot;100&quot;&gt;&lt;/label&gt;&lt;br&gt;
+  &lt;p&gt;Ваш рост &lt;output id=&quot;out&quot;&gt;100 &lt;/output&gt; сантиметров&lt;/p&gt;
+  &lt;p&gt;или &lt;output id=&quot;out2&quot;&gt;1000&lt;/output&gt; миллиметров&lt;/p&gt;
+&lt;/form&gt;</code></pre>
+
+					<form action="#">
+						<label for="ran_2">Укажите Ваш рост (cm): <br>
+							<input oninput="out_2.value=(ran_2.value); out2.value=(ran_2.value*10)" id="ran_2" type="range" min="0"
+								max="300" value="100"></label><br>
+						<p>Ваш рост <output id="out_2">100 </output> сантиметров</p>
+						<p>или <output id="out2">1000</output>миллиметров</p>
+					</form>
+
+				</div>
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Grid Page 7</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Выравнивание сетки вдоль вертикальной оси - align-content:</h1>
+
+				<div class="page__content--items">
+
+					<div class="content__items">
+						<div class="content__text">
+							<h4 class="red">Применяется для Grid-контейнера</h4>
+							<p class="page__warning">Работает тек же, как и FLEX</p>
+						</div>
+						<div data-tabs class="grids">
+							<nav data-tabs-titles class="grids__navigation">
+								<button type="button" class="grids__title _tab-active">start (по умолчанию)</button>
+								<button type="button" class="grids__title">end</button>
+								<button type="button" class="grids__title">center</button>
+								<button type="button" class="grids__title">stretch</button>
+								<button type="button" class="grids__title">space-around</button>
+								<button type="button" class="grids__title">space-between</button>
+								<button type="button" class="grids__title">space-evenly</button>
+							</nav>
+							<div data-tabs-body class="grids__content">
+								<div class="grids__body">
+									<div class="block__grid grid-block_37">
+										<div class="block__grid_item item1">1</div>
+										<div class="block__grid_item item2">2</div>
+										<div class="block__grid_item item3">3</div>
+										<div class="block__grid_item item4">4</div>
+										<div class="block__grid_item item5">5</div>
+										<div class="block__grid_item item6">6</div>
+									</div>
+									<pre class=""><code class="css">.grid-block {
+     display: grid;
+     height: 400px;
+     grid-template-columns: repeat(3, 200px);
+     grid-template-rows: repeat(2, 100px);
+     align-content: start;
+   }</code></pre>
+								</div>
+								<div class="grids__body">
+									<div class="block__grid grid-block_38">
+										<div class="block__grid_item item1">1</div>
+										<div class="block__grid_item item2">2</div>
+										<div class="block__grid_item item3">3</div>
+										<div class="block__grid_item item4">4</div>
+										<div class="block__grid_item item5">5</div>
+										<div class="block__grid_item item6">6</div>
+									</div>
+									<pre class=""><code class="css">.grid-block {
+     display: grid;
+     height: 400px;
+     grid-template-columns: repeat(3, 200px);
+     grid-template-rows: repeat(2, 100px);
+     align-content: end;
+   }</code></pre>
+								</div>
+								<div class="grids__body">
+									<div class="block__grid grid-block_39">
+										<div class="block__grid_item item1">1</div>
+										<div class="block__grid_item item2">2</div>
+										<div class="block__grid_item item3">3</div>
+										<div class="block__grid_item item4">4</div>
+										<div class="block__grid_item item5">5</div>
+										<div class="block__grid_item item6">6</div>
+									</div>
+									<pre class=""><code class="css">.grid-block {
+     display: grid;
+     height: 400px;
+     grid-template-columns: repeat(3, 200px);
+     grid-template-rows: repeat(2, 100px);
+     align-content: center;
+   }</code></pre>
+								</div>
+								<div class="grids__body">
+									<div class="block__grid grid-block_40">
+										<div class="block__grid_item item1">1</div>
+										<div class="block__grid_item item2">2</div>
+										<div class="block__grid_item item3">3</div>
+										<div class="block__grid_item item4">4</div>
+										<div class="block__grid_item item5">5</div>
+										<div class="block__grid_item item6">6</div>
+									</div>
+									<pre class=""><code class="css">.grid-block {
+     display: grid;
+     height: 400px;
+     grid-template-columns: repeat(3, 200px);
+     grid-template-rows: repeat(2, 100px);
+     align-content: stretch;
+   }</code></pre>
+								</div>
+								<div class="grids__body">
+									<div class="block__grid grid-block_41">
+										<div class="block__grid_item item1">1</div>
+										<div class="block__grid_item item2">2</div>
+										<div class="block__grid_item item3">3</div>
+										<div class="block__grid_item item4">4</div>
+										<div class="block__grid_item item5">5</div>
+										<div class="block__grid_item item6">6</div>
+									</div>
+									<pre class=""><code class="css">.grid-block {
+     display: grid;
+     height: 400px;
+     grid-template-columns: repeat(3, 200px);
+     grid-template-rows: repeat(2, 100px);
+     align-content: space-around;
+   }</code></pre>
+								</div>
+								<div class="grids__body">
+									<div class="block__grid grid-block_42">
+										<div class="block__grid_item item1">1</div>
+										<div class="block__grid_item item2">2</div>
+										<div class="block__grid_item item3">3</div>
+										<div class="block__grid_item item4">4</div>
+										<div class="block__grid_item item5">5</div>
+										<div class="block__grid_item item6">6</div>
+									</div>
+									<pre class=""><code class="css">.grid-block {
+     display: grid;
+     height: 400px;
+     grid-template-columns: repeat(3, 200px);
+     grid-template-rows: repeat(2, 100px);
+     align-content: space-between;
+   }</code></pre>
+								</div>
+								<div class="grids__body">
+									<div class="block__grid grid-block_43">
+										<div class="block__grid_item item1">1</div>
+										<div class="block__grid_item item2">2</div>
+										<div class="block__grid_item item3">3</div>
+										<div class="block__grid_item item4">4</div>
+										<div class="block__grid_item item5">5</div>
+										<div class="block__grid_item item6">6</div>
+									</div>
+									<pre class=""><code class="css">.grid-block {
+     display: grid;
+     height: 400px;
+     grid-template-columns: repeat(3, 200px);
+     grid-template-rows: repeat(2, 100px);
+     align-content: space-evenly;
+   }</code></pre>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div> <!-- page__container -->
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../grid/grid-menu.html" class="link">К меню " GRID "</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

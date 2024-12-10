@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 4</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<style>
+					.parent {
+						border: 1px solid #eee;
+						background-color: #777;
+						height: 150px;
+						position: relative;
+					}
+
+					.child {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						border: 1px solid var(--bg-border);
+						padding: 5px;
+
+					}
+
+					.child_2 {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						/* ширина и высота 2 блока */
+						width: 500px;
+						height: px;
+						/* Значения определяются в зависимости от его размера */
+						/* margin-left = - width / 2 */
+						margin-left: -250px;
+						/* margin-top = - height / 2 */
+						margin-top: -50px;
+						border: 1px solid var(--bg-border);
+						padding: 5px;
+					}
+
+					.child_3 {
+						position: absolute;
+						/* ширина и высота 2 блока в % */
+						height: 50%;
+						width: 50%;
+						/* Значения определяются в зависимости от его размера в % */
+						left: 25%;
+						/* (100% - width) / 2 */
+						top: 25%;
+						/* (100% - height) / 2 */
+						border: 1px solid var(--bg-border);
+						padding: 5px;
+						overflow: hidden;
+					}
+
+					.block-1 {
+						border: 1px solid var(--bg-border);
+						padding: 2px;
+						margin: 3px;
+
+					}
+
+					.block-2 {
+						margin-left: auto;
+						margin-right: auto;
+						width: 80%;
+						border: 1px solid var(--bg-border);
+						padding: 2px;
+					}
+
+					.block-wap {
+						border: 1px solid #eee;
+						background: #777;
+						height: 150px;
+					}
+
+					.parent_2 {
+						text-align: center;
+						border: 1px solid var(--bg-border);
+						background: #777;
+						height: 150px;
+					}
+
+					.child_4 {
+						display: inline-block;
+						border: 1px solid var(--bg-border);
+						margin: 3px;
+					}
+
+					.parent_4 {
+						border: 1px solid var(--bg-border);
+						background: #777;
+						height: 150px;
+					}
+
+					.parent_3 {
+						border: 1px solid var(--bg-border);
+						background: #777;
+						line-height: 50px;
+					}
+
+					.child_5 {
+						display: inline-block;
+						vertical-align: middle;
+						border: 1px solid var(--bg-border);
+						margin: 3px;
+					}
+
+					.parent_4 {
+						display: table;
+						border: 1px solid var(--bg-border);
+						margin: 3px;
+					}
+
+					.child_6 {
+						display: table-cell;
+						vertical-align: middle;
+						border: 1px solid var(--bg-border);
+						margin: 3px;
+					}
+
+
+					/* Position       */
+					.position_img {
+						width: 50%;
+						transition: all .3s;
+					}
+
+					.position_img:hover {
+						width: 100%;
+						transition: all .3s;
+					}
+
+					figcaption {
+						text-align: center;
+						margin-right: 40px;
+						padding: 8px;
+
+					}
+				</style>
+
+				<h1 class="page__title" id="top">Ссылки Выравнивание Позиционирование Видимость элементов</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Ссылки</a>
+							<a href="#h-items_2" class="con-menu">Выравнивание блока по центру</a>
+							<a href="#h-items_3" class="con-menu">Выравнивание по горизонтали</a>
+							<a href="#h-items_4" class="con-menu">Выравнивание по вертикали</a>
+							<a href="#h-items_5" class="con-menu">Позиционирование</a>
+							<a href="#h-items_6" class="con-menu">Видимость элементов</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Ссылки</h2>
+
+					<div class="page__content--items">
+
+						<div class="page__block--pic">
+							<picture>
+								<source srcset="../../img/h/links/links_1.webp" type="image/webp"><img
+									src="../../img/h/links/links_1.png" class="img-links" alt="Варианты ссылок">
+							</picture>
+
+							<picture>
+								<source srcset="../../img/h/links/links_2.webp" type="image/webp"><img
+									src="../../img/h/links/links_2.png" class="img-links" alt="Варианты ссылок">
+							</picture>
+
+						</div>
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Выравнивание блока по центру</h2>
+
+					<div class="page__content--items">
+
+						<p><b>1. Выравнивание одного блока по центру другого. При этом первый и второй блок имеют динамические
+								размеры.</b></p>
+						<div class="page__block--align align">
+							<div class="align__pre">
+								<pre class="pre"><code class="html">&lt;div class=&quot;parent&quot;&gt;
+  &lt;div class=&quot;child&quot;&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, cons........&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+
+							<div class="align__pre">
+								<pre class="pre"><code class="css">.parent {                       
+  position: relative;
+}
+
+.child {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}</code></pre>
+							</div>
+						</div>
+
+						<div class="parent">
+							<div class="child">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi repellendus quaerat provident magnam
+									fuga,
+									quo expedita quisquam harum in quas, soluta deserunt beatae quod cum optio accusantium velit dolor
+									vitae?
+								</p>
+							</div>
+						</div>
+						<br>
+
+
+						<p><b> 2. Выравнивание одного блока по центру другого. При этом второй блок имеет фиксированные размеры.</b>
+						</p>
+						<pre class="pre"><code class="css">.parent {                       
+  position: relative;
+}
+.child {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* ширина и высота 2 блока */
+  width: 500px;
+  height: 250px;
+  /* Значения определяются в зависимости от его размера */
+  /* margin-left = - width / 2 */
+  margin-left: -250px;
+  /* margin-top = - height / 2 */
+  margin-top: -125px;
+}</code></pre>
+
+						<div class="parent">
+							<div class="child_2">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi repellendus quaerat provident magnam
+									fuga,
+									quo expedita quisquam harum in quas, soluta deserunt beatae quod cum optio accusantium velit dolor
+									vitae?
+								</p>
+							</div>
+						</div>
+						<br>
+						<p><b> 3. Выравнивание одного блока по центру другого. При этом второй блок имеет размеры, заданные в
+								процентах.</b></p>
+
+
+						<pre class="pre"><code class="css"> .parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  /* ширина и высота 2 блока в % */
+  height: 50%;
+  width: 50%;
+  /* Значения определяются в зависимости от его размера в % */
+  left: 25%; /* (100% - width) / 2 */
+  top: 25%; /* (100% - height) / 2 */
+}</code></pre>
+						<div class="parent">
+							<div class="child_3">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi repellendus quaerat provident magnam
+									fuga,
+									quo expedita quisquam harum in quas, soluta vitae?
+								</p>
+							</div>
+						</div>
+
+					</div> <!-- page__content--items 2-->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Выравнивание по горизонтали</h2>
+
+					<div class="page__content--items">
+
+						<p><span>1. Выравнивание одного блочного элемента (<span class="green">display: block</span>) относительно
+								другого (в котором он
+								расположен) по горизонтали:</span></p>
+						<div class="page__block--align align">
+							<div class="align__pre">
+								<pre class="pre"><code class="html">&lt;div class="block-1"&gt;
+   
+            Содержимое этого блока по умолчанию выравнивается по левому краю
+
+  &lt;div class="block-2"&gt;
+   &lt;p&gt;Этот блок выравнивается по центру горозонтали......&lt;/p&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
+							</div>
+							<div class="align__pre">
+								<pre class="pre"><code class="css">.block-2 {
+  margin-left: auto;
+  margin-right: auto;
+}</code></pre>
+							</div>
+						</div>
+
+						<div class="block-wap">
+							<div class="block-1">Содержимое этого блока по умолчанию выравнивается по левому краю
+								<div class="block-2">
+									<p>Этот блок выравнивается по центру горозонтали <br>Lorem ipsum dolor sit amet, consectetur
+										adipisicing
+										elit. Non, consequuntur, ullam. Excepturi aliquam
+										sed
+										odit fugit numquam.</p>
+								</div>
+							</div>
+						</div>
+
+						<br>
+						<p><b> 2. Выравнивание строчного (<span class="green">display: inline</span>) или строчно-блочного
+								(<span class="green">display: inline-block</span>) элемента по горизонтали:</b></p>
+						<div class="page__block--align align">
+							<div class="align__pre">
+								<pre class="pre"><code class="html">&lt;div class="parent"&gt;
+...
+  &lt;div class="child"&gt;
+    &lt;p&gt;Lorem ipsum dolor sit amet, con.....&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+							<div class="align__pre">
+								<pre class="pre"><code class="css"> .parent {
+  text-align: center;
+}
+.child {
+  display: inline-block;
+}</code></pre>
+							</div>
+						</div>
+
+						<div class="parent_2">
+							...
+							<div class="child_4">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non, consequuntur, ullam. Excepturi
+									aliquam
+									sed
+									odit fugit numquam. Voluptatibus aliquam repellat, odio iure itaque fugit, quae quidem, ducimus,
+									eos
+									deserunt aperiam!</p>
+							</div>
+						</div>
+
+					</div> <!-- page__content--items 3-->
+
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Выравнивание по вертикали</h2>
+
+					<div class="page__content--items">
+
+						<p><b>1. Отцентровать один элемент (<span class="green">display: inline</span>, <span class="green">display:
+									inline-block</span>) относительно другого (в котором он расположен) по
+								центру.
+								Родительский блок в этом примере имеет фиксированную ширину, которая задаётся с помощью свойства CSS
+								<span class="green">line-height</span>.</b></p>
+
+
+						<pre class="pre"><code class="css"> .parent {
+  line-height: 50px;
+}
+.child {
+  display: inline-block;
+  vertical-align: middle;
+}</code></pre>
+						<div class="parent_3">
+							...
+							<div class="child_5">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum iste quibusdam hic suscipit enim
+									a,
+									qui
+									eius ipsam fugit reiciendis rerum ut sed blanditiis, accusantium! Atque esse, dolore saepe
+									repudiandae!</p>
+							</div>
+						</div>
+						<br>
+
+						<p><b> 2. Центрирования одного блока относительно другого по вертикали посредством представления родителя
+								как
+								таблицы, а ребёнка как ячейки этой таблицы.</b></p>
+						<pre class="pre"><code class="css">.parent {
+  display: table;
+}
+.child {
+  display: table-cell;
+  vertical-align: middle;
+}</code></pre>
+						<div class="parent_4">
+							...
+							<div class="child_6">
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum iste quibusdam hic suscipit enim
+									a,
+									qui
+									eius ipsam fugit reiciendis rerum ut sed blanditiis, accusantium! Atque esse, dolore saepe
+									repudiandae!</p>
+							</div>
+						</div>
+
+
+
+					</div> <!-- page__content--items 3-->
+
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Позиционирование</h2>
+
+					<div class="page__content--items">
+
+						<h4 class="green">position: absolute</h4>
+						<pre class="pre"><code class="html">&lt;div class="content"&gt;
+  &lt;div class="container"&gt;
+    &lt;img src="img_1" alt="" class="img"&gt;
+
+  .....TEXT.....
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">img {position: absolute;}</code></pre>
+						<p>Элемент с абсолютным позиционированием "приподнимается" над контентом блока.</p>
+
+						<figure>
+							<picture>
+								<source srcset="../../img/h/position/position_1.webp" type="image/webp"><img
+									src="../../img/h/position/position_1.jpg" alt="position: absolute" class="position_img">
+							</picture>
+							<figcaption>Рис.1</figcaption>
+						</figure>
+
+						<p>
+							Если ему не задано положение (<span class="green">top</span>, <span class="green">left</span>,
+							<span class="green">bottom</span>, <span class="green">right</span>), то он
+							находится (позиционируется в левом верхнем углу) в том блоке в котором прописан (Рис.1), но если задано
+							положение
+							- позиционирутся уже относительно окна браузера (Рис.2).
+						</p>
+
+						<pre class="pre"><code class="css">img {position: absolute;
+  top:50px;
+  left:50px;
+}</code></pre>
+
+						<figure>
+							<picture>
+								<source srcset="../../img/h/position/position_2.webp" type="image/webp"><img
+									src="../../img/h/position/position_2.png" alt="position: absolute" class="position_img">
+							</picture>
+							<figcaption>Рис.2</figcaption>
+						</figure>
+
+						<p>Если элемент с абсолютным позиционированием находится внутри другого элемента, также с абсолютным
+							позиционированием, то он начинает позиционироваться не относительно окна браузера, а относительно этого
+							блока
+							(родителя) (Рис.3).</p>
+
+
+						<p>В блоке с контентом в розовом прямоугольном контейнере, спозицированным в верхний правый угол, расположен
+							рисунок, который спозицирован относительно розового прямоугольника на <code>10рх</code> слева и
+							<code>20рх</code> снизу.
+						</p>
+						<pre class="pre"><code class="css">.container {position: absolute;
+  top:50px;
+  left: 50px;
+  width: 300px;
+  height: 240px;
+  background-color:#fadec9;
+}
+.container .img {position: absolute;
+  bottom: 20px;
+  left: 10px;
+}</code></pre>
+						<figure>
+							<picture>
+								<source srcset="../../img/h/position/position_3.webp" type="image/webp"><img
+									src="../../img/h/position/position_3.jpg" alt="position: absolute" class="position_img">
+							</picture>
+							<figcaption>Рис.3</figcaption>
+						</figure>
+
+						<h4 class="green"> position: relative;</h4>
+						<p>Позицирование элемента относительно своего расположения в HTML – документе. Если не указывать положение
+							(<span class="green">top</span>, <span class="green">left</span>, <span class="green">bottom</span>,
+							<span class="green">right</span>), то элемент располагается слева
+							вверху и занимает место как обычный блочный элемент, т.е. справа от него остается пустое место , которое
+							не
+							могут занять последующие элементы ( в данном случае – текст). Если задано положение – элемент смещается
+							куда
+							указано, но его место остаётся пустым т.к. другие элементы не могут занять место этой картинки.
+						</p>
+						<pre class="pre"><code class="html">&lt;div class="content"&gt;
+  &lt;img src="img_1" alt="" class="img"&gt;
+.....TEXT.....
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">img {position: relative;
+  left:120px;
+}</code></pre>
+
+						<figure>
+							<picture>
+								<source srcset="../../img/h/position/position_4.webp" type="image/webp"><img
+									src="../../img/h/position/position_4.jpg" alt="position: absolute" class="position_img">
+							</picture>
+							<figcaption>Рис.4</figcaption>
+						</figure>
+
+
+						<h4 class="green">Основное применение:</h4>
+						<p>Блоку – родителю прописываем <span class="green">position:</span> <span class="green">relative;</span>
+							а позиционирующемуся элементу
+							<span class="green">position:</span> <span class="green">absolute;</span> с указанием данных
+							перемещения
+							(черный прямоугольник сверху
+							шапки).
+						</p>
+
+						<figure>
+							<picture>
+								<source srcset="../../img/h/position/position_5.webp" type="image/webp"><img
+									src="../../img/h/position/position_5.jpg" alt="position: absolute" class="position_img">
+							</picture>
+							<figcaption>Рис.5</figcaption>
+						</figure>
+
+
+						<h4 class="green">position: fixed;</h4>
+
+						<p>Элемент с фиксированным позиционированием работает также, как и <span class="green">position:
+								absolute;</span> если нет
+							указателей положения – расположен в блоке, где прописан.</p>
+						<p>При конкретном указании положения позиционируется относительно окна браузера, и его положение не зависит
+							от
+							того, есть ли у родителя позиционирование или его нет - позиционирование только относительно окна
+							браузера.
+						</p>
+						<p> Элементы с позиционированием <span class="green">position: absolute;</span> и
+							<span class="green">position: fixed;</span> могут
+							располагаться в любом месте HTML – документе ( при условии, что позиционирование этих элементов
+							предусматривает
+							позиционирование относительно окна браузера ).
+						</p>
+						<p>Одновременное применение к элементу позиционирования и обтекания не допустимы.
+							Вместо отрицательных значений положения лучше использовать проценты. «Выталкиваем» блок за верхнюю
+							границу
+							родителя – <span class="green">bottom: 100%</span>, а не <span class="green">top: -50px </span>(
+							высота
+							элемента равна <span class="green">50рх</span>).
+						</p>
+
+						<h4 class="green">z-index</h4>
+						<p>Чем больше индекс, тем выше расположен элемент над другими.
+						</p>
+
+					</div> <!-- page__content--items 3-->
+
+
+					<!--! Статья 6 -->
+					<h2 class="page__subtitle" id="h-items_6">Видимость элементов</h2>
+
+					<div class="page__content--items">
+
+						<h4> <code class="green"> visibility</code> — управляет в CSS, видимостью содержимого элемента.</h4>
+						<p> <span class="green"> visibility: visible;</span> - Элемент виден</p>
+						<p> <span class="green">visibility: hidden;</span> - Элемент не виден</p>
+						<p> Место, которое занимает «невидимый» элемент остается видимым , появляется такой прогалок в контенте.</p>
+						<hr class="page__hr">
+						<h4> <code class="green"> display</code></h4>
+						<p> <span class="green">display: none;</span> - Элемент не виден и его место занимают последующие
+							элементы
+						</p>
+						<p> <span class="green">display: block;</span> - разбивает строку до и после элемента (т.е. элемент не
+							может
+							находится на одной
+							линии с другими элементами)</p>
+						<p> <span class="green">display: inline;</span> - не разбивает строку</p>
+
+						<pre class="pre"><code class="html">&lt;h2 style="display: inline;"&gt;будет на одной строке с текстом &lt;/h2&gt;
+&lt;strong style="display:block;"&gt;отобразиться на отдельной строке&lt;/strong&gt;</code></pre>
+						<hr class="page__hr">
+						<h4><code class="green">overflow</code> </h4>
+						<p> <span class="green">visible</span> - Отображается всё содержание элемента, даже за пределами
+							установленной
+							ширины.</p>
+						<p><span class="green"> hidden</span> - Отображается только область внутри элемента, остальное будет
+							скрыто
+						</p>
+						<p><span class="green">scroll</span> - Всегда добавляется горизонтальная полоса прокрутки.</p>
+						<p><span class="green"> auto</span> - Горизонтальная полоса прокрутки добавляется только при
+							необходимости.
+						</p>
+						<p><span class="green">overflow-x</span> и <code>overflow-y</code> - имеют те же значения, что и просто
+							<span class="green">overflow</span>, но применяются соответственно для горизонтали и вертикали.
+						</p>
+						<hr class="page__hr">
+						<h4 class="green"><code>clip</code></h4>
+						<p> Cвойство <span class="green">clip </span>обрезает видимую часть блока, невидимую не
+							загружает, как свойство
+							<code class="green">display</code>.
+						</p>
+						<p><span class="green">clip</span> принимает 2 значения - <span class="green">rect</span>
+							и
+							<span class="green">auto</span>.
+						</p>
+						<p><span class="green">rect</span> отображает прямоугольную часть блока, ограниченную заданными
+							координатами.
+							<span class="green">clip: rect(Y1, X1, Y2, X2)</span>
+						</p>
+						<p> <span class="green">auto</span> отображает блок по умолчанию.</p>
+						<figure>
+							<picture>
+								<source srcset="../../img/h/position/position_6.webp" type="image/webp"><img
+									src="../../img/h/position/position_6.jpg" alt="position: absolute" class="position_img">
+							</picture>
+							<figcaption>Свойство clip</figcaption>
+						</figure>
+
+						<p>Работает только с абсолютным позиционированием</p>
+						<pre class="pre"><code class="css">.fig_center {
+  position: absolute;
+  clip:rect(50px,300px,200px,50px)
+  ect(50px,300px,200px,50px)
+}</code></pre>
+
+					</div> <!-- page__content--items 3-->
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

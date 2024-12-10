@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 3</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Аудио Видео</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Аудио</a>
+							<a href="#h-items_2" class="con-menu">Видео</a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Аудио</h2>
+
+					<div class="page__content--items">
+
+						<p>Тег <span class="green">audio</span> позволяет проигрывать музыкальные композиции на сайте.</p>
+						<p>
+							Путь к странице можно
+							задать двумя способами.
+						</p>
+						<p>
+							Через тег <span class="green">
+								sourse</span> , либо через атрибут <span class="green">src</span>
+						<pre class="pre"><code class="html"> &lt;audio src="Путь к аудиофайлу"&gt;&lt;/audio&gt;
+      </p>
+
+  или      
+
+&lt;audio&gt;
+  &lt;sourse src="Путь к аудиофайлу" атрибуты&gt;
+&lt;/audio&gt;</code></pre>
+
+
+						<audio src="../../video/html/clip.mp3" controls="controls">
+							<p style="color: red">
+								К сожалению ваш браузер слишком устарел и не поддерживает технологию HTML5 и CSS3. Вы не сможите
+								прослушать
+								музыкальный фрагмент, но можете его скачать себе на компьютер:
+								<a href="../../audio/clip.mp3">скачать аудио</a>
+							</p>
+						</audio>
+
+						<h3 class="page__subtitle"> Атрибуты музыкального проигрывателя</h3>
+
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">src</span> - задает путь к аудиофайлу</li>
+								<li><span class="green">controls</span> - указывает, что неоходимо отобразить элементы контроля
+									плеера.
+								</li>
+								<li><span class="green">autoplay</span> - задает автоматическое воспроизведение аудифайла. Можно
+									задавать
+									2 способами , как
+									и
+									<span class="green">controls</span>
+								</li>
+								<li><span class="green">loop</span> - задает зацикливание воспроизведения. Также можно задавать 2
+									способами</li>
+								<li><span class="green">preload</span> - указывает браузеру, как нужно подгружать мультимедиа на
+									странице.
+									<ul class="atr">
+										<li><span class="green ">none</span> - не загружать файл.</li>
+										<li><span class="green ">auto</span> - стоит по умолчанию, файлы загружаются вместе со
+											страницей.</li>
+										<li><span class="green ">metadata</span> - браузер подгружает только информацию о файле.
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+
+
+						<h3 class="page__subtitle">Варианты кода</h3>
+
+						<pre class="pre"><code class="html">&lt;audio src="media/clip.mp3" controls="controls"&gt;&lt;/audio&gt;
+
+или
+
+&lt;audio src="media/clip.mp3" controls&gt;&lt;/audio&gt;
+
+
+&lt;audio controls="controls"&gt;&lt; sourse src="media/clip.mp3" &gt;&lt;/audio&gt;
+
+или
+
+&lt;audio controls&gt;&lt; sourse src="media/clip.mp3" &gt;&lt;/audio&gt;
+
+
+&lt;audio controls autoplay&gt;&lt; sourse src="media/clip.mp3" &gt;&lt;/audio&gt;
+
+&lt;audio src="media/clip.mp3" controls preload="metadata"&gt;&lt;/audio&gt;</code></pre>
+
+						<div class="page__block--audio">
+
+							<div class="page__block--audio-1">
+								<audio src="../../video/html//clip.mp3" controls="controls"></audio>
+								<br>
+								<br>
+								или
+								<br>
+								<br>
+								<audio src="../../video/html//clip.mp3" controls autoplay></audio>
+							</div>
+
+							<div class="page__block--audio-1">
+								<audio controls="controls">
+									<sourse src="../../video/html//clip.mp3"></sourse>
+								</audio>
+								<br>
+								<br>
+								или
+								<br>
+								<br>
+								<audio controls>
+									<sourse src="../../video/html//clip.mp3"></sourse>
+								</audio>
+							</div>
+
+							<div class="page__block--audio-1">
+								<audio controls autoplay>
+									<sourse src="../../avideo/html/clip.mp3"></sourse>
+								</audio>
+								<br>
+								<br><br>
+								<br>
+								<audio src="../../video/html//clip.mp3" controls preload="metadata"></audio>
+							</div>
+
+						</div>
+
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Видео</h2>
+
+					<div class="page__content--items">
+
+						<p>Тег <span class="green">video</span> позволяет проигрывать видеофайлы на сайте.</p>
+						<p> Путь к странице можно
+							задать
+							двумя способами.</p>
+						<p>Через тег <code class="green">sourse</code>, либо через атрибут <span class="green">src</span>
+						</p>
+
+						<pre class="pre"> <code class="html">&lt;video src=”Путь к видеофайлу”&gt;&lt;/video&gt;
+
+или   
+
+&lt;video&gt;
+  &lt;sourse src=”Путь к видеофайлу” атрибуты&gt;
+&lt;/video&gt;</code></pre>
+
+						<div class="page__block--video">
+							<video src="../../video/html/clip.mp4" controls="" preload="metadata" poster="../../video/html/poster.jpg"
+								width="100%">
+								<p class="mistake">
+									К сожалению ваш браузер слишком устарел и не поддерживает технологию HTML5 и CSS3. Вы не сможите
+									посмотреть
+									видео, но можете его скачать себе на компьютер:
+									<a href="../../video/html/clip.mp4">скачать видео</a>
+								</p>
+							</video>
+						</div>
+
+						<h3 class="page__subtitle">Атрибуты видеоплеера</h3>
+
+						<p> Атрибуты видеоплеера такие же как и у аудиоплеера, но у него есть несколько своих дополнительных
+							атрибутов.
+						</p>
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">width</span> - указывает ширину проигрывателя в пикселях или процентах.</li>
+								<li><span class="green">height</span> - указывает высоту проигрывателя в пикселях или процентах.
+									Обычно не
+									указывают, чтобы не
+									нарушать внешний вид проигрывателя.</li>
+								<li> <span class="green">poster</span> - вставляет постер (картинку-заставку) в видео, которая
+									отображается до
+									воспроизведения.
+								</li>
+							</ul>
+						</div>
+
+						<div class="warning">
+							<p><span class="red">Важно:</span><br> Помните, что пропорции постера и видео должны соответствовать ,
+								иначе
+								постер будет отображаться
+								не
+								пропорционально и не красиво. Будет искажаться</p>
+						</div>
+
+						<h3 class="page__subtitle">Примеры написания кода</h3>
+
+						<p>Вариант кода 1</p>
+
+						<pre class="pre"><code class="html">&lt;video src=”Путь к видеофайлу”&gt;&lt;/video&gt;
+&lt;video&gt;
+  &lt;sourse src=”Путь к видеофайлу” атрибуты&gt;
+&lt;/video&gt;
+&lt;video src="media/clip.mp4" controls preload="metadata" poster="media/poster.jpg"&gt;&lt;/video&gt;</code></pre>
+						<p> На устаревших браузерах теги <span class="green">&lt;video&gt;</span> и <span
+								class="green">&lt;audio&gt;</span> не работают, поэтому
+							нужно
+							вставлять напоминалку типа "скачать файл" или "обновить браузер", давая соответствующую ссылку.</p>
+						<p>Вариант кода 2</p>
+
+						<pre class="pre"><code class="html">&lt;video src="media/clip.mp4" controls preload="metadata" poster="media/poster.jpg"&gt;
+  &lt;p&gt;К сожалению ваш браузер слишком устарел и не поддерживает технологию HTML5 и CSS3.
+  Вы не сможите посмотреть видео, но можете его скачать себе на компьютер:
+  &lt;a href="media/clip.mp4"&gt;скачать видео&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/vidio&gt;</code></pre>
+
+
+						<h3 class="page__subtitle">
+							Тег <code class="green">sourse</code>
+						</h3>
+						<p>
+							Тег <span class="green">sourse</span> - указывает путь к файлу, который необходимо проиграть. Ниже
+							рассмотрим
+							атрибуты
+							этого тега
+						</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">type</span> - указывает тип воспроизводимого файла.</li>
+								<li><span class="green">src</span> - указывает путь к файлу.</li>
+								<li> <span class="green">media</span> - Для какого устройства должен производиться этот файл.</li>
+							</ul>
+						</div>
+
+						<h3 class="page__subtitle">Атрибут <code class="green">type</code></h3>
+						<p>Некоторые браузеры не могут воспроизводить медиафайлы определенных расширений, поэтому на сайт необходимо
+							заливать файлы разных расширений и тегах <span class="green">audio</span> и <span
+								class="green">video</span>
+							указывать
+							их типы.</p>
+
+						<p>Для перекодировки медиафайлов, и не только, удобно использовать сайт - Онлайн-конвертер: <a class="link"
+								target="_blank" href="http://www.online-convert.com">http://www.online-convert.com</a></p>
+
+						<p> Для аудифайлов это <span class="green">mp3</span> и <span class="green">ogg</span> </p>
+
+						<p>Для видеофайлов это <span class="green">mp4</span>, <span class="green">ogg</span> (<span
+								class="green">src="media/clip.ogv"</span>
+							<span class="green">type="video/ogg"</span>) и <span class="green">WebM</span>
+						</p>
+						<p> Пример для музыки, но для видео то же самое</p>
+						<pre class="pre"><code class="html">&lt;audio controls loop preload="metadata"&gt;
+  &lt;source src="media/clip.mp3" type="audio/mpeg"&gt;
+  &lt;source src="media/clip.ogg" type="audio/ogg"&gt;
+  &lt;p class="mistake"&gt;К сожалению ваш браузер слишком устарел и не поддерживает технологию HTML5 и CSS3. Вы не сможите прослушать музыкальный фрагмент, но можете его скачать себе на компьютер:
+    &lt;a href="media/clip.mp4"&gt; скачать аудио&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/audio&gt;</code></pre>
+
+						<h3 class="page__subtitle">Атрибут
+							<code class="green">media</code>
+						</h3>
+						<p>Значение атрибута <span class="green">media</span>:</p>
+
+						<div class="page__block--list">
+							<ul>
+								<li><span class="green">all</span> - для всех устройств</li>
+								<li><span class="green">handheld</span> - для смартфонов, телефонов и иже с ними</li>
+								<li><span class="green">screen</span> - для экранов мониторов</li>
+								<li><span class="green">speech</span> - для речевых синтезаторов</li>
+								<li><span class="green">projection</span> - для проекторов</li>
+								<li><span class="green">tv</span> - для теликов</li>
+								<li><span class="green">tty</span> - для телетайпов</li>
+								<li> <span class="green">print</span> - для печати</li>
+							</ul>
+						</div>
+
+
+
+
+					</div> <!-- page__content--items 2-->
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

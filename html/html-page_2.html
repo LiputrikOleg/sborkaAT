@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 2</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h1 class="page__title">Адаптация сайта</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Медиа-запросы</a>
+							<a href="#h-items_2" class="con-menu">Адаптация изображений</a>
+							<a href="#h-items_3" class="con-menu">Адаптация видео</a>
+							<a href="#h-items_4" class="con-menu">Адаптивное меню</a>
+							<a href="#h-items_5" class="con-menu">Адаптация таблиц</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+
+				<div class="page__content">
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Медиа-запросы</h2>
+
+					<div class="page__content--items">
+
+						<pre class="pre"><code class="css">/* менее 544px   Нет медиа запросов, так как это по умолчанию в Bootstrap */
+				
+  /* 544px и выше */ 
+  @media (min-width: 544px) { ... }
+
+    /*768px и выше */  
+  @media (min-width: 768px) { ... }
+
+  /* 992px и выше */ 
+  @media (min-width: 992px) { ... }
+
+  /* 1200px и выше*/   
+  @media (min-width: 1200px) { ... }</code></pre>
+
+						<pre class="pre"><code class="css">/*  менее 544px*/  
+  @media (max-width: 543px) { ... }
+
+  /*  меньше, чем 768px  */   
+  @media (max-width: 767px) { ... }
+
+  /*  меньше, чем 992px */   
+  @media (max-width: 991px) { ... }
+
+  /*  меньше 1200px */   
+  @media (max-width: 1199px) { ... }</code></pre>
+
+						<pre class="pre"><code class="css">/* менее 544px */ 
+  @media (max-width: 543px) { ... }
+
+  /*  544px и вверх */   
+  @media (min-width: 544px) and (max-width: 767px) { ... }
+
+  /*  768px и выше */   
+  @media (min-width: 768px) and (max-width: 991px) { ... }
+
+  /*  992px и выше */  
+  @media (min-width: 992px) and (max-width: 1199px) { ... }
+
+  /* 1200px и выше */  
+@media (min-width: 1200px) { ... }</code></pre>
+
+					</div> <!-- page__content--items 1-->
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Адаптация изображений</h2>
+
+					<div class="page__content--items">
+
+						<pre class="pre"><code class="css">img {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+						<p>Для того, чтобы на разных расширениях экрана загружались различные по формату рисунки:</p>
+						<pre class="pre"><code class="html">&lt;picture&gt;
+  &lt;source media="(max-width: 480px)"
+  srcset="img/mobile.jpg"&gt;               // до ширины 480px загружается mobile.jpg
+  &lt;source media="(max-width: 640px)"
+  srcset="img/tablet.jpg"&gt;               //от 480рх до 640рх  tablet.jpg 
+  &lt;img src&#x3D;&quot;img&#x2F;img-full.jpg&quot; alt&#x3D;&quot;&quot;&gt;      // далее img-full.jpg
+
+  &lt;img src="img&#x2F;img-800.jpg"                // Для DPR:1.0
+  srcset="
+  img&#x2F;img-800.jpg 800w,                     // Для DPR:2.0
+  img&#x2F;img-full.jpg 1400w"                   // Для DPR:3.0
+  alt=""&gt;
+&lt;/picture&gt;</code></pre>
+
+						<p>* DPR это соотношение виртуальных пикселей к физическим</p>
+						<p>Для браузера способного воспроизвести изображение с разрешением .webp загружается файл <code
+								class="green bold">img-full.webp</code> , а для
+							неспособных - загружается <code class="green bold">img-full.jpg</code></p>
+						<pre class="pre"><code class="html">&lt;picture&gt;
+  &lt;source type="image/webp" srcset="iimg-full.webp"&gt;
+  &lt;img src="iimg-full.jpg" alt=""  
+&lt;/picture&gt;</code></pre>
+					</div> <!-- page__content--items 2-->
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_">Адаптация видео</h2>
+
+					<div class="page__content--items">
+
+						<p>Для видео с сайта</p>
+						<pre class="pre"><code class="html">&lt;video class="video" width="768" height="432" controls src="../../video/clip.mp4"&gt;
+  &lt;sourse src="../../video/clip.mp4" type="video/mp4"&gt;&lt;/sourse&gt;
+&lt;/video&gt;
+</code></pre>
+						<pre class="pre"><code class="css">.video {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* можем задать фиксированную ширину,тогда адаптация пойдет после 480рх.*/
+  max-width: 480px;
+  margin: auto;
+} </code></pre>
+						<p>Для видео, подгружаемого co стороннего сайта</p>
+						<pre class="pre"><code class="html">&lt;div class="video__wrap"&gt;
+  &lt; iframe width="560" height="315" src="https://www.youtube.com/embed/5wMj1lh_IWc"<br> frameborder="0" allow="accelerometer; autoplay; encrypted-media; <br> qyroscope; picture-in-picture" allowfullscreen;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">.video_wrap {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video_wrap iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}</code></pre>
+
+
+						<style>
+							.video-flex {
+								display: flex;
+								justify-content: space-between;
+								flex-wrap: wrap;
+							}
+
+							.video {
+
+								width: 560px;
+								height: 315px;
+								display: block;
+								max-width: 480px !important;
+								margin: 0 auto;
+							}
+
+							/* .video__wrap {
+								position: relative;
+								padding-bottom: 56.25%;
+								height: 0;
+								overflow: hidden;
+							}
+
+							.video__wrap iframe {
+								position: absolute;
+								left: 0;
+								top: 0;
+								width: 50%;
+								height: 50%;
+							} */
+						</style>
+
+						<div class="video-flex">
+							<div class="page__content--video">
+								<video class="video" controls src="../../video/html/clip.mp4">
+								</video>
+							</div>
+							<div class="page__content--video">
+								<div class="video__wrap">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/5wMj1lh_IWc" frameborder="0"
+										allow="accelerometer; autoplay; encrypted-media; qyroscope; picture-in-picture"
+										allowfullscreen></iframe>
+								</div>
+							</div>
+						</div>
+
+
+
+					</div> <!-- page__content--items 3-->
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Адаптивное меню</h2>
+					<div class="page__content--items">
+
+
+						<div class="menu">
+							<button class="menu__hamburger">
+								<span></span>
+							</button>
+							<ul class="menu__list">
+								<li class="menu__element">
+									<a href="#" class="menu__link">Пункт 1</a>
+								</li>
+								<li class="menu__element">
+									<a href="#" class="menu__link">Пункт 2</a>
+								</li>
+								<li class="menu__element">
+									<a href="#" class="menu__link">Пункт 3</a>
+								</li>
+								<li class="menu__element">
+									<a href="#" class="menu__link">Пункт 4</a>
+								</li>
+								<li class="menu__element">
+									<a href="#" class="menu__link">Пункт 5</a>
+								</li>
+								<li class="menu__element">
+									<a href="#" class="menu__link">Пункт 6</a>
+								</li>
+							</ul>
+						</div>
+
+						<style>
+							button:focus {
+								outline: none;
+							}
+
+							.menu {
+								background-color: #4ba3af;
+								padding: 0 20px;
+							}
+
+							.menu__list {
+								max-width: 1024px;
+								margin: 0 auto;
+								list-style: none;
+								display: flex;
+								flex-wrap: wrap;
+							}
+
+							.menu__link {
+								padding: 20px;
+								text-decoration: none;
+								color: #000;
+								display: block;
+							}
+
+							.menu__link:hover,
+							.menu__link:focus {
+								background-color: #40b501;
+								text-decoration: none;
+								color: #000;
+								border: none;
+
+							}
+
+							.menu__hamburger {
+								width: 45px;
+								height: 32px;
+								margin-left: auto;
+								display: none;
+								border: none;
+								background-color: transparent;
+								cursor: pointer;
+								padding: 0;
+							}
+
+							.menu__hamburger span {
+								height: 5px;
+								display: block;
+								background-color: #fff;
+								margin: 8px 0;
+							}
+
+							.menu__hamburger::before,
+							.menu__hamburger::after {
+								height: 5px;
+								display: block;
+								background-color: #fff;
+								content: "";
+
+							}
+
+							@media (max-width: 780px) {
+								.menu {
+									padding-top: 13px;
+									padding-bottom: 13px;
+								}
+
+								.menu__list {
+									display: none;
+								}
+
+								.menu__hamburger {
+									display: block;
+								}
+
+								.menu__link {
+									padding: 10px 0;
+								}
+
+								.menu__link:hover {
+									background-color: transparent;
+									color: #00f;
+								}
+
+								.menu--active .menu__hamburger span {
+									display: none;
+								}
+
+								.menu--active .menu__hamburger::after {
+									transform: rotate(45deg);
+								}
+
+								.menu--active .menu__hamburger::before {
+									transform: rotate(-45deg) translate(-3px, 3px);
+								}
+
+								.menu--active .menu__list {
+									display: block;
+								}
+
+							}
+						</style>
+						<script>
+							const hamburger = document.querySelector('.menu__hamburger');
+							if (hamburger) {
+								hamburger.addEventListener('click', function (event) {
+									event.target.closest('.menu').classList.toggle('menu--active');
+								});
+							}
+						</script>
+
+
+						<pre class="pre"><code class="html">&lt;div class="menu"&gt;
+  &lt;button class="menu__hamburger"&gt;
+    &lt;span&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;ul class="menu__list"&gt;
+    &lt;li class="menu__element"&gt;
+      &lt;a href="#" class="menu__link"&gt;Пункт 1&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="menu__element"&gt;
+      &lt;a href="#" class="menu__link"&gt;Пункт 2&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="menu__element"&gt;
+      &lt;a href="#" class="menu__link"&gt;Пункт 3&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="menu__element"&gt;
+      &lt;a href="#" class="menu__link"&gt;Пункт 4&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="menu__element"&gt;
+      &lt;a href="#" class="menu__link"&gt;Пункт 5&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="menu__element"&gt;
+      &lt;a href="#" class="menu__link"&gt;Пункт 6&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+						<pre class="pre"><code class="css">button:focus {
+  outline: none;
+}
+.menu {
+  background-color: #0f0;
+  padding: 0 20px;
+}
+.menu__list {
+  max-width: 1024px;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.menu__link {
+  padding: 20px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+}
+.menu__link:hover,
+.menu__link:focus {
+  background-color: #40b501;
+  text-decoration: none;
+  color: #000;
+  border: none;
+}
+.menu__hamburger {
+  width: 45px;
+  height: 32px;
+  margin-left: auto;
+  display: none;
+  border: none;
+  background-color: transparent;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding: 0;
+}
+.menu__hamburger span {
+  height: 5px;
+  display: block;
+  background-color: #fff;
+  margin: 8px 0;
+}
+.menu__hamburger::before,
+.menu__hamburger::after {
+  height: 5px;
+  display: block;
+  background-color: #fff;
+  content: "";
+}
+
+@media (max-width: 780px) {
+  .menu {
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+  .menu__list {
+    display: none;
+  }
+  .menu__hamburger {
+    display: block;
+  }
+  .menu__link {
+    padding: 10px 0;
+  }
+  .menu__link:hover {
+    background-color: transparent;
+    color: #00f;
+  }
+  .menu--active .menu__hamburger span {
+    display: none;
+  }
+  .menu--active .menu__hamburger::after {
+    transform: rotate(45deg);
+  }
+  .menu--active .menu__hamburger::before {
+    transform: rotate(-45deg) translate(-3px, 3px);
+  }
+  .menu--active .menu__list {
+    display: block;
+  }
+}</code></pre>
+						<pre class="pre"><code class="js">&lt;script&gt;
+  const hamburger = document.querySelector('.menu__hamburger');
+  if (hamburger) {
+  hamburger.addEventListener('click', function(event) {
+    event.target.closest('.menu').classList.toggle('menu--active');
+  });
+}
+&lt;/script&gt;</code></pre>
+
+
+
+					</div> <!-- page__content--items 4-->
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Адаптация таблиц</h2>
+					<div class="page__content--items">
+
+						<style>
+							* {
+								margin: 0;
+								padding: 0;
+							}
+
+							table {
+								border-collapse: collapse;
+								width: 100%;
+								margin: 20px 0;
+							}
+
+							table td,
+							table th {
+								padding: 10px;
+								border: 1px solid #eee;
+							}
+
+							.table {
+								overflow: auto;
+								max-width: 100%;
+							}
+
+							.table table {
+								min-width: 560px;
+							}
+
+							@media (max-width: 680px) {
+
+								.table--two table thead {
+									display: none;
+								}
+
+								.table--two table tr {
+									display: block;
+								}
+
+								.table--two table td {
+									display: flex;
+									justify-content: space-between;
+								}
+
+								.table--two table td::before {
+									content: attr(data-label);
+									font-weight: bold;
+									margin-right: 20px;
+								}
+
+							}
+						</style>
+
+
+						<div class="table">
+							<table>
+								<thead>
+									<tr>
+										<th>Наименование товара</th>
+										<th>Артикул</th>
+										<th>Цена</th>
+										<th>Количество</th>
+										<th>Общая стоимость</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Название товара</td>
+										<td>ABCD</td>
+										<td>3 000 руб</td>
+										<td>1</td>
+										<td>3 000 руб</td>
+									</tr>
+									<tr>
+										<td>Название товара 2</td>
+										<td>ABCD</td>
+										<td>2 000 руб</td>
+										<td>3</td>
+										<td>6 000 руб</td>
+									</tr>
+									<tr>
+										<td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, suscipit.</td>
+										<td>ABCD</td>
+										<td>5 000 руб</td>
+										<td>5</td>
+										<td>25 000 руб</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="table--two">
+							<table>
+								<thead>
+									<tr>
+										<th>Наименование товара</th>
+										<th>Артикул</th>
+										<th>Цена</th>
+										<th>Количество</th>
+										<th>Общая стоимость</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td data-label="Наименование товара">Название товара</td>
+										<td data-label="Артикул">ABCD</td>
+										<td data-label="Цена">3 000 руб</td>
+										<td data-label="Количество">1</td>
+										<td data-label="Общая стоимость">3 000 руб</td>
+									</tr>
+									<tr>
+										<td data-label="Наименование товара">Название товара2</td>
+										<td data-label="Артикул">ABCD</td>
+										<td data-label="Цена">2 000 руб</td>
+										<td data-label="Количество">3</td>
+										<td data-label="Общая стоимость">6 000 руб</td>
+									</tr>
+									<tr>
+										<td data-label="Наименование товара">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+											Quis,
+											suscipit.</td>
+										<td data-label="Артикул">ABCD</td>
+										<td data-label="Цена">5 000 руб</td>
+										<td data-label="Количество">5</td>
+										<td data-label="Общая стоимость">25 000 руб</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+					</div> <!-- page__content--items 5-->
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

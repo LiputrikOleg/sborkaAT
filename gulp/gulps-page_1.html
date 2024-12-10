@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GULP Page 1</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Сборка Gulp от "Фрилансера" 2020</h1>
+
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+
+					<div class="page__content--items">
+
+						<p><a class="link" href="https://www.youtube.com/watch?v=stFOy0Noahg&t=2204s">Видео на ютубе</a></p>
+						<hr class="page__hr">
+						<p>Создаем 2 папки <span class="green">#src</span> и <span class="green">dist</span>. Первая служит для
+							разработки,
+							во
+							вторую будут складываться готовые файлы (
+							упорядоченные минифицированные, готовые для передачи заказчику).</p>
+
+						<p>В папке <span class="green">app</span> создаем папки <span class="green">images</span>, <span
+								class="green">fonts</span>, <span class="green">js--&gt;script.js</span> , <span
+								class="green">scss--&gt;style.scss</span>
+						</p>
+
+						<hr class="page__hr">
+
+						<h4 class="gray">Загружаемые плагины</h4>
+
+						<p>1. Открывает, перезапускает браузер</p>
+						<pre><code>npm i browsersync --save-dev</code></pre>
+
+						<hr class="page__hr">
+						<p>При разделении верстки на части создаем файлы <span class="green">_header.html</span>,
+							<span class="green">_footer.html</span> и другие. Подключение в файле <span
+								class="green">index.html</span>
+							в
+							виде
+							<span class="green"> &#64;&#64;include('_header.html')</span> и
+							<span class="green"> &#64;&#64;include('_footer.html')</span>соответственно.
+						</p>
+						<p>2. Собирает HTML файлы в один</p>
+
+						<pre><code>npm i gulp-file-include --save-dev</code></pre>
+
+						<p>Tеперь в файл <span class="green">dist/index.html</span> передатся содержимое из файла <span
+								class="green">header.html, index.html и footer.html </span>
+						</p>
+
+						<hr class="page__hr">
+
+						<p>3. Для автоматического удаления папки <span class="file">dist</span></p>
+
+						<pre><code>npm i del --save-dev</code></pre>
+
+						<hr class="page__hr">
+
+						<p>4. Для преобразавания scss-файлов </p>
+
+						<p class="warning">С 26/06/2021 - Обновился SASS, из-за этого сборки Gulp могут не запускаться. <br>
+							В<span class="green"> package.json</span>: либо ничего не меняем (оставляем версию), либо
+							<cspan class="green">"sass": "latest"</cspan>. <br>
+							В <span class="green">gulpfile.js</span> меняем на:
+							<span class="green">scss = require('gulp-sass')(require('sass'));</span> <br>
+							а также:
+							<span class="green">scss({ outputStyle: 'expanded' }).on('error', scss.logError)</span>
+						</p>
+						<pre><code>npm i gulp-sass --save-dev</code></pre>
+						<pre><code>npm i sass --save-dev</code></pre>
+
+						<hr class="page__hr">
+
+						<p>5. Для добавления префиксов </p>
+						<pre><code>npm i gulp-autoprefixer --save-dev</code></pre>
+
+						<hr class="page__hr">
+
+						<p>6. Собирает разбросанные по всему css-файлу media-запросы, группирует их и ставит в конец css-файла. </p>
+						<pre><code>npm i gulp-group-css-media-queries --save-dev</code></pre>
+						<hr class="page__hr">
+						<p>7. Будет чистить и сжимать css-файл на выходе</p>
+						<pre><code>npm i gulp-clean-css --save-dev</code></pre>
+						<hr class="page__hr">
+						<p>8. Для создания минимизированного файла css </p>
+						<pre><code>npm i gulp-rename --save-dev</code></pre>
+						<hr class="page__hr">
+						<p>9. Для создания минимизированного файла js </p>
+						<pre><code>npm i gulp-uglify-es --save-dev</code></pre>
+						<hr class="page__hr">
+						<p>10. Для оптимизации изображений</p>
+						<p><code class="green">imagemin</code> следует оставлять 7-й версии!</p>
+						<pre><code>npm i gulp-imagemin@7.1.0 --save-dev</code></pre>
+						<hr class="page__hr">
+						<p>11.Для конвертации изображений в формат webp с последующим подключением в html и css файлы </p>
+						<pre><code>npm i gulp-webp --save-dev</code></pre>
+						<pre><code>npm i gulp-webp-html --save-dev</code></pre>
+						<pre><code>npm i gulp-webpcss --save-dev</code></pre>
+						<p>12. У кого проблемы с плагином WEBPCSS нужно установить converter командой -</p>
+						<pre><code>npm install webp-converter@2.2.3 --save-dev</code></pre>
+						<p>13. SVG- Sprite множество разных иконок объединяем в одну. Время 1.01.00 -1.05.50 </p>
+						<pre><code>npm i gulp-svg-sprite --save-dev</code></pre>
+						<h3 class="gray">JS-функция определения поддержки WebP</h3>
+						<p>Вставляется в файл <span class="green">script.js</span></p>
+						<pre class="pre">
+<code class="js">
+function testWebP(callback) {
+
+   var webP = new Image();
+   webP.onload = webP.onerror = function () {
+   callback(webP.height == 2);
+   };
+   webP.src = "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
+}
+
+      testWebP(function (support) {
+
+      if (support == true) {
+      document.querySelector('body').classList.add('webp');
+      }else{
+      document.querySelector('body').classList.add('no-webp');
+   }
+});</code></pre>
+
+						<h3 class="gray">Шрифты </h3>
+						<p>В основном штифты поступают в формате <span class="green">ttf</span> и <span class="green">oof</span>.
+						</p>
+						<p>Для переконвертации требуются 3 плагина:</p><span> из ttf в woff</span>
+						<pre><code>npm i gulp-ttf2woff --save-dev</code></pre> <span> из ttf в woff2</span>
+						<pre><code>npm i gulp-ttf2woff2 --save-dev</code></pre><span> из otf в ttf, а потом с помощью верхних
+							плагинов
+							в
+							woff</span>
+						<pre><code>npm i gulp-fonter --save-dev</code></pre>
+						<p>Для того, чтобы шрифты после конвертации сами прописывались в файле <span class="green">style.css</span>
+							в
+							папке <span class="green">scss</span> создаем файл <span class="green">fonts.scss</span></p>
+						<p> В файле <span class="green">style.scss</span> прописываем миксин и импорт из файла <span class="green">
+								fonts.scss</span></p>
+						<pre class="jsfont"><code>&#64;mixin font($font_name, $file_name, $weight, $style) {
+   &#64;font-face {
+      font-family: $font_name;
+      font-display: swap;
+      src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+      font-weight: #{$weight};
+      font-style: #{$style};
+   }
+}
+   
+&#64;import "fonts";</code></pre>
+						<p>А файле <span class="gray">gulpfile.js</span></p>
+						<pre class="pre"><code class="js">let fonts_file = '#src/scss/fonts.scss';
+
+function fontsStyle(params) {
+
+   let file_content = fs.readFileSync(fonts_file);
+   if (file_content == '') {
+      fs.writeFile(fonts_file, '', cb);
+      return fs.readdir(path.build.fonts, function (err, items) {
+            if (items) {
+               let c_fontname;
+               for (var i = 0; i < items.length; i++) {
+                  let fontname = items[i].split('.');
+                  fontname = fontname[0];
+                  if (c_fontname != fontname) {
+                     fs.appendFile(fonts_file, '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+               }
+               c_fontname = fontname;
+            }
+         }
+      })
+   }
+}
+
+function cb() { }</code></pre>
+						<p>Приведенный в <a class="link" href="https://fls.guru/gulp.html" target="_blank">оригинале</a> скрипт не
+							захотел работать,
+							не
+							видел пути в файлу <span class="gray">fonts.scss</span>. Пришлось воспользаваться советом из интернета.
+							Создать новую переменную с
+							конкретным адресом и подставлять ее. </p>
+						<pre><code>let fonts_file = '#src/scss/fonts.scss';</code></pre>
+						<p>Вместо</p>
+						<pre><code>....source_folder + '/scss/fonts.scss'....</code></pre> просто
+						<pre><code>....fonts_file....</code></pre>
+						<hr class="page__hr">
+						<h3 class="gray">Напоследок</h3>
+						<p>Обычно готовая сборка собирается в папке <span class="green">dist</span> - (первые строки в <span
+								class="gray">gulpfile.js</span>)</p>
+
+						<pre><code>let project_folder = "dist";</code></pre>
+						<p>Для того, чтобы имя этой папки стало таким же, как и имя папки с проектом, изменим запись на </p>
+						<pre><code>let projekt_folder = require("path").basename(__dirname);</code></pre>
+
+						<h3 class="gray">Уточнения.</h3>
+
+
+
+						<h4 class="gray">SCSS миксин для подключения шрифтов</h4>
+						<pre class="pre">
+   <code class="js">&#64;mixin font($font_name, $file_name, $weight, $style) {
+   &#64;font-face {
+      font-family: $font_name;
+      font-display: swap;
+      src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+      font-weight: #{$weight};
+      font-style: #{$style};
+   }
+}
+   </code>
+</pre>
+
+						<h4 class="gray">JS-функция записи информации в gulpfile.js (Оригинал)</h4>
+						<pre class="pre">
+   <code class="js">
+function fontsStyle(params) {
+
+   let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
+   if (file_content == '') {
+      fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
+      return fs.readdir(path.build.fonts, function (err, items) {
+         if (items) {
+            let c_fontname;
+            for (var i = 0; i &lt; items.length; i++) {
+                  let fontname = items[i].split('.');
+                  fontname = fontname[0];
+                  if (c_fontname != fontname) {
+                  fs.appendFile(source_folder + '/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+               }
+               c_fontname = fontname;
+            }
+         }
+      })
+   }
+}
+
+function cb() { }
+</code></pre>
+
+
+					</div> <!-- page__content--items 1-->
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../gulp/gulps-menu.html" class="link">К меню "Сборка GULP "</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

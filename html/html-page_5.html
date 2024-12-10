@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 5</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<style>
+					.nesting {
+						font-size: 14px;
+						text-align: left;
+						margin-bottom: 15px;
+					}
+
+					.nesting th {
+						color: #fff;
+						padding: 7px 10px;
+						border: 1px solid rgb(52, 171, 5);
+					}
+
+					.nesting td {
+						color: rgb(184, 184, 188);
+						padding: 7px 10px;
+						border: 1px solid rgb(52, 171, 5);
+					}
+
+					.table-html {
+						width: 95%;
+						border-collapse: collapse;
+						border: 1px solid #fff;
+						margin-left: 28px;
+					}
+
+					.table-html td,
+					.table-html th {
+						border: 1px solid #fff;
+						padding: 10px;
+					}
+
+					.table-html caption {
+						padding: 10px;
+					}
+				</style>
+
+				<h1 class="page__title" id="top">Таблицы</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Как создать таблицу</a>
+							<a href="#h-items_2" class="con-menu">Группировка разделов таблицы</a>
+							<a href="#h-items_3" class="con-menu">Оформление заголовка таблицы</a>
+							<a href="#h-items_4" class="con-menu">Как объеденить ячейки таблицы</a>
+							<a href="#h-items_5" class="con-menu">Группирование строк и столбцов таблицы</a>
+							<a href="#h-items_6" class="con-menu">Одинаковая ширина колонок таблицы</a>
+							<a href="#h-items_7" class="con-menu">Как создать ссылки на ячейки таблицы</a>
+							<a href="#h-items_8" class="con-menu">Создание вложенных таблиц</a>
+							<a href="#h-items_9" class="con-menu">Полезные ссылки</a>
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Как создать таблицу</h2>
+
+					<div class="page__content--items">
+
+						<p> Таблица создаётся при помощи элемента <span class="green">&lt;table&gt; &lt;/table&gt;</span>, который
+							является контейнером
+							для элементов таблицы и все элементы должны находиться внутри него.</p>
+						<p>Строки или ряды таблицы создаются с помощью элемента <span class="green">&lt;tr&gt;</span>. Количество
+							горизонтальных строк
+							таблицы определяется количеством элементов <span class="green">&lt;tr&gt; &lt;/tr&gt;</span>.</p>
+						<p>Элемент <span class="green">&lt;td&gt;</span> создаёт ячейки таблицы, внутрь которых помещаются данные
+							таблицы. Элементы
+							<span class="green">&lt;td&lt;/td&gt;,</span> расположенные в одном ряду, определяют количество ячеек в
+							строке таблицы.
+						</p>
+						<p> Количество пар ячеек <span class="green">&lt;td&gt;</span> должно быть равно количеству пар ячеек <span
+								class="green">&lt;th&gt;</span>
+						</p>
+						<p>Элемент <span class="green">&lt;th&gt;</span> создаёт заголовок столбца — специальную ячейку, текст в
+							которой выделяется
+							полужирным. Количество ячеек заголовка определяется количеством элементов <span
+								class="green">&lt;th&gt;&lt;/th&gt;</span></p>
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Группировка разделов таблицы</h2>
+
+					<div class="page__content--items">
+
+						<p> Элемент <span class="green">&lt;thead&gt;</span> создает группу заголовков для строк таблицы с целью
+							задания единого
+							оформления. Используется в сочетании с элементом <span class="green">&lt;tbody&gt;</span> и<span
+								class="green"> &lt;tfoot&gt;</span> для
+							указания каждой части таблицы.</p>
+						<p>Элемент должен быть использован в следующем порядке: как дочерний элемент <span
+								class="green">&lt;table&gt;</span>, после
+							<span class="green">&lt;caption&gt;</span> и <span class="green">&lt;colgroup&gt;</span>, и перед
+							<span class="green">&lt;tbody&gt;</span>,
+							<span class="green">&lt;tfoot&gt;</span> и <span class="green">&lt;tr&gt;</span> элементами. В
+							пределах
+							одной таблицы можно использовать
+							один раз.
+						</p>
+						<p> Элемент <span class="green">&lt;tbody&gt;</span> группирует основное содержимое таблицы. Используется в
+							сочетании с
+							элементами<span class="green"> &lt;thead&gt;</span> и <span class="green">&lt;tfoot&gt;</span>.
+							<span class="green">&lt;tbody&gt;</span> может объединять
+							в себе не только содержимое таблицы, но и одну или несколько строк. Т.е их может быть несколько и ,
+							соответственно разными по стилям.
+						</p>
+						<p> Элемент <span class="green">&lt;tfoot&gt;</span> создает группу строк для представления информации о
+							суммах или итогах,
+							расположенную в нижней части таблицы. Используется в таблице один раз. Располагается после элемента
+							<span class="green">&lt;thead&gt;</span>, перед элементами <span class="green">&lt;tbody&gt;</span>
+							и
+							<span class="green">&lt;tr&gt;</span>.
+						</p>
+						<pre class="pre"><code class="html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;№ п/п&lt;/th&gt;
+      &lt;th&gt;Наименование товара&lt;/th&gt;
+      &lt;th&gt;Ед. изм.&lt;/th&gt;
+      &lt;th&gt;Количество&lt;/th&gt;
+      &lt;th&gt;Цена за ед. изм., руб.&lt;/th&gt;
+      &lt;th&gt;Стоимость, руб.&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="5" style="text-align:right"&gt;ИТОГО:&lt;/td&gt;
+      &lt;td&gt;1168,80&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1.&lt;/td&gt;
+      &lt;td&gt;Томаты свежие&lt;/td&gt;
+      &lt;td&gt;кг&lt;/td&gt;
+      &lt;td&gt;15,20&lt;/td&gt;
+      &lt;td&gt;69,00&lt;/td&gt;
+      &lt;td&gt;1048,80&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2.&lt;/td&gt;
+      &lt;td&gt;Огурцы свежие&lt;/td&gt;
+      &lt;td&gt;кг&lt;/td&gt;
+      &lt;td&gt;2,50&lt;/td&gt;
+      &lt;td&gt;48,00&lt;/td&gt;
+      &lt;td&gt;120,00&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+						<table class="nesting">
+							<thead>
+								<tr>
+									<th>№ п/п</th>
+									<th>Наименование товара</th>
+									<th>Ед. изм.</th>
+									<th>Количество</th>
+									<th>Цена за ед. изм., руб.</th>
+									<th>Стоимость, руб.</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<tr>
+									<td colspan="5" style="text-align:right">ИТОГО:</td>
+									<td>1168,80</td>
+								</tr>
+							</tfoot>
+							<tbody>
+								<tr>
+									<td>1.</td>
+									<td>Томаты свежие</td>
+									<td>кг</td>
+									<td>15,20</td>
+									<td>69,00</td>
+									<td>1048,80</td>
+								</tr>
+								<tr>
+									<td>2.</td>
+									<td>Огурцы свежие</td>
+									<td>кг</td>
+									<td>2,50</td>
+									<td>48,00</td>
+									<td>120,00</td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div> <!-- page__content--items 2-->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Оформление заголовка таблицы</h2>
+
+					<div class="page__content--items">
+
+						<p>Заголовок таблицы добавляется с помощью элемента
+							<span class="green">&lt;caption&gt;</span>Заголовок таблицы<span class="green">&lt;/caption&gt;</span>,
+							который вставляется сразу после
+							открывающего тега<span class="green"> &lt;table&gt;</span>. По умолчанию сам заголовок расположен перед
+							таблицей, а текст
+							заголовка выравнен по центру.
+						</p>
+
+						<p>Управлять положением заголовка можно свойством <span class="green">caption-side</span>, например,
+							<span class="green">caption {caption-side: bottom}</span> поместит заголовок после таблицы.
+						</p>
+
+						<p>По сути заголовок является ячейкой таблицы, поэтому для него можно задавать те же свойства, что и для
+							ячеек
+							таблицы, т.е.</p>
+						<pre class="pre"><code class="css">caption {
+  padding: 7px;
+  background: silver;
+  font-style: italic;
+  text-align: right;
+}</code></pre>
+
+					</div> <!-- page__content--items 3-->
+
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Как объеденить ячейки таблицы</h2>
+
+					<div class="page__content--items">
+
+						<p>Атрибуты<span class="green"> colspan</span> и <span class="green">rowspan</span> объединяют ячейки
+							таблицы. Атрибут <span class="green">colspan</span>
+							задает количество ячеек, объединенных по горизонтали, а <span class="green">rowspan</span> — по
+							вертикали.
+						</p>
+
+						<div style="border:1px solid rgb(233, 250, 2); padding: 5px;">
+							<p>Может быть трудно отслеживать, сколько клеток отсутствуют или лишних. Есть один простой способ — сперва
+								постройте полную таблицу, а затем удалите клетки, добавляя атрибуты <span class="green">colspan</span> и
+								<span class="green">rowspan</span>.
+							</p>
+							<p>Допустим, у нас должно быть восемь ячеек. Мы пишем только пять ячеек, а <span
+									class="green">colspan="2"</span> и
+								<span class="green">rowspan="3"</span> добавляют три дополнительных ячейки.
+							</p>
+						</div>
+						<pre class="pre"><code class="html">&lt;table&gt;
+  &lt;caption&gt;Таблица №1.&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Колонка 1&lt;/th&gt;
+      &lt;th&gt;Колонка 2&lt;/th&gt;
+      &lt;th&gt;Колонка 3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan="2"&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td colspan="2"&gt;7&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+						<table class="table-html">
+							<caption>Таблица №1.</caption>
+							<tbody>
+								<tr>
+									<th>Колонка 1</th>
+									<th>Колонка 2</th>
+									<th>Колонка 3</th>
+								</tr>
+								<tr>
+									<td rowspan="2">1</td>
+									<td>2</td>
+									<td>3</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>5</td>
+								</tr>
+								<tr>
+									<td>6</td>
+									<td colspan="2">7</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<pre class="pre"><code class="html">&lt;table&gt;
+&lt;caption&gt;Таблица №2.&lt;/caption&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th colspan="2"&gt;Колонка 1&lt;/th&gt;
+      &lt;th colspan="2"&gt;Колонка 2&lt;/th&gt;
+      &lt;th colspan="2"&gt;Колонка 3&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td colspan="2" rowspan="2"&gt;1&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td colspan="2" rowspan="2"&gt;2&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td colspan="2" rowspan="2"&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td colspan="2" rowspan="2"&gt;4&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+						<table class="table-html">
+							<caption>Таблица №2.</caption>
+							<tbody>
+								<tr>
+									<th colspan="2">Колонка 1</th>
+									<th colspan="2">Колонка 2</th>
+									<th colspan="2">Колонка 3</th>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td colspan="2" rowspan="2">1</td>
+									<td>1</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>4</td>
+									<td>3</td>
+									<td>4</td>
+								</tr>
+								<tr>
+									<td colspan="2" rowspan="2">2</td>
+									<td>1</td>
+									<td>2</td>
+									<td colspan="2" rowspan="2">3</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>4</td>
+								</tr>
+								<tr>
+									<td>1</td>
+									<td>2</td>
+									<td colspan="2" rowspan="2">4</td>
+									<td>1</td>
+									<td>2</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>4</td>
+									<td>3</td>
+									<td>4</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+
+				</div> <!-- page__content--items 4-->
+
+
+				<!--! Статья 5 -->
+				<h2 class="page__subtitle" id="h-items_5">Группирование строк и столбцов таблицы</h2>
+
+				<div class="page__content--items">
+
+					<p>Элемент <span class="green">&lt;colgroup&gt;</span> создает структурную группу столбцов, выделяя логически
+						однородные ячейки.
+						Группирует один или более столбцов для единого форматирования, позволяя применить стили к столбцам вместо
+						того,
+						чтобы повторять стили для каждой ячейки и для каждой строки.</p>
+					<p>Добавляется непосредственно после тегов <span class="green">&lt;table&gt;</span> и/или <span
+							class="green">&lt;caption&gt;</span>.</p>
+					<p>Элемент <span class="green">&lt;col&gt;</span> формирует группы столбцов, которые делят таблицу на разделы,
+						не относящиеся к
+						общей структуре, т.е. не содержащие информацию одного типа. Позволяет задавать свойства столбцов для каждого
+						столбца в пределах элемента <span class="green">&lt;colgroup&gt;</span>.</p>
+					<p>С помощью атрибута <span class="green">style</span> можно изменить основной цвет фона ячеек. Для элемента
+						<span class="green">&lt;col&gt;</span> доступен атрибут <span class="green">span</span>, задающий
+						количество столбцов для объединения.
+					</p>
+					<pre class="pre"><code class="html">&lt;table class="nesting"&gt;
+  &lt;colgroup&gt;
+    &lt;col span="2" style="background: rgb(101, 97, 52)"&gt;&lt;!-- С помощью этой конструкции задаем цвет фона для первых двух столбцов таблицы--&gt;
+    &lt;col style="background-color: rgb(34, 123, 123)"&gt;&lt;!-- Задаем цвет фона для следующего (одного) столбца таблицы--&gt;
+  &lt;/colgroup&gt;
+  &lt;tr&gt;
+    &lt;th&gt;№ п/п&lt;/th&gt;
+    &lt;th&gt;Наименование&lt;/th&gt;
+    &lt;th&gt;Цена, руб.&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;1&lt;/td&gt;
+    &lt;td&gt;Карандаш цветной&lt;/td&gt;
+    &lt;td&gt;20,00&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;2&lt;/td&gt;
+    &lt;td&gt;Линейка 20 см&lt;/td&gt;
+    &lt;td&gt;30,00&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+    </code></pre>
+
+					<table class="nesting">
+						<colgroup>
+							<col span="2" style="background:rgb(101, 97, 52)">
+							<!-- С помощью этой конструкции задаем цвет фона для первых двух столбцов таблицы-->
+							<col style="background-color:rgb(34, 123, 123)">
+							<!-- Задаем цвет фона для следующего (одного) столбца таблицы-->
+						</colgroup>
+						<tr>
+							<th>№ п/п</th>
+							<th>Наименование</th>
+							<th>Цена, руб.</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>Карандаш цветной</td>
+							<td>20,00</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>Линейка 20 см</td>
+							<td>30,00</td>
+						</tr>
+					</table>
+
+
+
+				</div> <!-- page__content--items 5-->
+
+
+
+				<!--! Статья 6 -->
+				<h2 class="page__subtitle" id="h-items_6">Одинаковая ширина колонок таблицы</h2>
+
+				<div class="page__content--items">
+
+					<p>По умолчанию ширина таблицы определяется содержимым ее ячеек. Управлять шириной столбцов (ячеек) можно
+						следующими
+						способами:</p>
+
+					<div class="page__block--list">
+						<ul>
+							<li>Если для таблицы задана ширина, то<span class="green"> table {table-layout: fixed;}</span>, сделает
+								все
+								ячейки одинаковой
+								ширины, исходя из ширины самой длинной ячейки.</li>
+							<li>Если для таблицы задана ширина<span class="green"> table {width: 100%;}</span>, и ширина ячеек
+								вычисляется
+								в %, например,
+								<span class="green">td {width: 25%;}</span> , то ширина всех ячеек будет равной.
+							</li>
+							<li>Задав фиксированную ширину с помощью единиц длины, например, <span class="green"> th {width:
+									200px}</span>
+								.</li>
+						</ul>
+					</div>
+
+					<p>При этом не забывайте, что к ширине таблицы будет добавлена ширина границы ячеек и таблицы и внутренние
+						отступы
+						ячеек <span class="green">padding </span>(если не установлено свойство <span
+							class="green">{box-sizing:border-box}</span>).</p>
+
+				</div> <!-- page__content--items 6-->
+
+
+
+				<!--! Статья 7 -->
+				<h2 class="page__subtitle" id="h-items_7">Как создать ссылки на ячейки таблицы</h2>
+
+				<div class="page__content--items">
+
+					<p>Ссылка на ячейку таблицы создается при помощи якоря. Для этого нужной ячейке добавляется атрибут <span
+							class="green">id</span> со
+						значением,
+						например:</p>
+					<pre
+						class="pre"><code class="html">&lt;td id="значение_идентификатора_ячейки"&gt;содержимое ячейки&lt;/td&gt;.</code></pre>
+					<p>Чтобы обеспечить переход со ссылки на эту ячейку, задаём ей соответствующее значение пути</p>
+					<pre
+						class="pre"><code class="html">&lt;a href="#значение_идентификатора_ячейки"&gt;текст ссылки&lt;/a&gt;.</code></pre>
+					<p>Если переход осуществляется с одной страницы сайта на другую, якорь добавляется после адреса страницы,
+						например:
+					</p>
+					<pre
+						class="pre"><code class="html">&lt;a href="https://html5book.ru/css-shrifty/#color"&gt;текст ссылки&lt;/a&gt;.</code></pre>
+					<p>Для наглядности результат перехода можно выделить, например, сменить цвет фона ячейки, цвет текста ячейки,
+						добавить подчеркивание и т.д.</p>
+
+					<pre class="pre"><code class="css">td:target {background: salmon;}
+td:target {color: salmon;}
+td:target {text-decoration: underline;}</code></pre>
+
+				</div> <!-- page__content--items 7-->
+
+
+
+				<!--! Статья 8 -->
+				<h2 class="page__subtitle" id="h-items_8">Создание вложенных таблиц</h2>
+
+				<div class="page__content--items">
+
+					<p>Чтобы вложить одну таблицу в другую, нужно поместить код вложенной таблицы в выбранную ячейку основной
+						таблицы,
+						например:</p>
+					<pre class="pre"><code class="html">&lt;table class="nesting"&gt;
+  &lt;tr&gt;
+    &lt;th&gt;ячейка заголовка таблицы&lt;/th&gt;
+    &lt;th&gt;ячейка заголовка таблицы&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;ячейка таблицы&lt;/td&gt;
+    &lt;td&gt;
+      &lt;table&gt;
+          &lt;tr&gt;
+              &lt;th&gt;ячейка заголовка вложенной таблицы&lt;/th&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+              &lt;td&gt;ячейка вложенной таблицы&lt;/td&gt;
+          &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+					<table class="nesting">
+						<tr>
+							<th>ячейка заголовка таблицы</th>
+							<th>ячейка заголовка таблицы</th>
+						</tr>
+						<tr>
+							<td>ячейка таблицы</td>
+							<td>
+								<table>
+									<tr>
+										<th>ячейка заголовка вложенной таблицы</th>
+									</tr>
+									<tr>
+										<td>ячейка вложенной таблицы</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+
+					<p> Вложенные таблицы могут содержать любое количество строк и ячеек. Для них можно устанавливать любые
+						свойства,
+						отличные от значений основной таблицы, размещать в ячейках изображения, а также другие таблицы.</p>
+
+				</div> <!-- page__content--items 8-->
+
+
+				<!--! Статья 9 -->
+				<h2 class="page__subtitle" id="h-items_9">Полезные ссылки (Не работают-Украина)</h2>
+
+				<div class="page__content--items">
+
+					<p><a class="link" target="_blank" href="https://html-plus.in.ua/tablicy-v-html/">CSS-свойства для таблиц</a>
+					</p>
+					<p><a class="link" target="_blank"
+							href="https://html-plus.in.ua/obedinenie-yacheek-i-strok-v-tablice/">Объединение ячеек и
+							строк в таблице</a>
+					</p>
+
+					<p><a class="link" target="_blank"
+							href="https://html-plus.in.ua/table-groups-thead-tfoot-tbody-col-colgroup/">Объединение строк
+							и столбцов
+							таблицы в группы. Теги thead, tfoot, tbody, col и colgroup</a></p>
+
+				</div> <!-- page__content--items 9-->
+
+
+
+			</div> <!-- page__content -->
+
+
+	</div> <!-- page__container -->
+
+	</main>
+
+	<!-- Ссылки к меню -->
+	<div class="return">
+		<div class="return__container">
+
+			<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+			<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+		</div>
+	</div>
+
+	<!-- Кнопка "Вверх" -->
+	<footer class="footer">
+		<div class="footer__container">
+
+			<!-- Кнопка вверх -->
+			<!-- https://itchief.ru/javascript/btn-up -->
+			<div class="btn-up btn-up_hide"></div>
+
+
+		</div>
+	</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

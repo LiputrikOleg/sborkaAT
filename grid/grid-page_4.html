@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Grid Page 4</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Позиционирование (координаты) элементов</h1>
+
+				<div class="page__content--items">
+					<div class="content__items">
+						<div class="content__text">
+							<p> <span class="green">grid-column-start</span> - Указывает grid-элементу на какой линии колонок он
+								начинается
+							</p>
+							<p> <span class="green">grid-column-end</span> - Указывает grid-элементу на какой линии колонок он
+								заканчивается
+							</p>
+							<p> <span class="green">grid-row-start</span> - Указывает grid-элементу на какой линии рядов он
+								начинается
+							</p>
+							<p> <span class="green">grid-row-end</span> - Указывает grid-элементу на какой линии рядов он
+								заканчивается
+							</p>
+						</div>
+						<figure>
+							<picture>
+								<img src="../../img/grid-img/scrin_11.JPG" alt="Image">
+							</picture>
+							<figcaption>GRID- сетка</figcaption>
+						</figure>
+						<br>
+						<div class="grids__body">
+							<h4 class="gray">Пример</h4>
+							<div class="grids__body">
+								<div class="block__grid grid-block_60">
+									<div class="block__grid_item item1">1</div>
+									<div class="block__grid_item item2">item2</div>
+									<div class="block__grid_item item3">3</div>
+									<div class="block__grid_item item4">4</div>
+									<div class="block__grid_item item5">5</div>
+									<div class="block__grid_item item6">6</div>
+									<div class="block__grid_item item7">7</div>
+									<div class="block__grid_item item7">8</div>
+									<div class="block__grid_item item7">9</div>
+									<div class="block__grid_item item7">10</div>
+								</div>
+								<pre class=""><code class="css">.block__grid {
+   display:grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   }
+   .item2 {
+   grid-column-start: 2;
+   grid-column-end: 5;
+   grid-row-start: 1;
+   grid-row-end: 3;
+   }</code></pre>
+								<br>
+							</div>
+							<div class="grids__body">
+								<p>При наличии большого количества колонок и рядов возможно использование обратного счета</p>
+								<h4 class="gray">Равнозначная запись</h4>
+								<pre class=""><code class="css">.block__grid {
+   display:grid;
+   grid-template-columns: repeat(5, 1fr);
+   grid-template-rows: repeat(3, 1fr);
+   }
+   .item2 {
+   grid-column-start: -5;
+      grid-column-end: -2;
+      grid-row-start: -4;
+      grid-row-end: -2;
+   }</code></pre>
+							</div>
+							<!-- ======  Сокращенная запись  ========== -->
+							<div class="grids__body">
+								<h4 class="gray">Сокращенная запись</h4>
+								<pre class=""><code class="css">grid-column: grid-column-start / grid-column-end;
+      grid-row: grid-row-start / grid-row-end;
+      
+.item2 {
+grid-column: 2 / 5;
+grid-row: 1 / 3;
+}</code></pre>
+								<br>
+								<p class="warning">
+									А теперь пример с указанием всех четырёх значений в строку. При таком указании значений есть <span
+										class="red"> скользкое место:</span> значения указываются в таком порядке: <span class="green">
+										row-start / column-start / row-end / column-end</span>, то есть сначала указываем оба начала, а
+									потом оба
+									конца.
+								</p><br>
+								<pre class=""><code class="css"> grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end;
+           
+.item2 {
+grid-area: 1 / 2 / 3 / 5;
+}</code></pre><br>
+							</div>
+							<!-- ======  Другие варианты   ========== -->
+							<h4 class="gray">Другие варианты:</h4>
+							<div data-tabs class="grids">
+								<nav data-tabs-titles class="grids__navigation">
+									<button type="button" class="grids__title _tab-active">С использованием span</button>
+									<button type="button" class="grids__title">Именная запись</button>
+								</nav>
+								<div data-tabs-body class="grids__content">
+									<!--  Первый таб -->
+									<div class="grids__body">
+										<div class="block__grid grid-block_18">
+											<div class="block__grid_item item_1">item_1</div>
+											<div class="block__grid_item item2">2</div>
+											<div class="block__grid_item item3">3</div>
+											<div class="block__grid_item item4">4</div>
+											<div class="block__grid_item item5">5</div>
+											<div class="block__grid_item item6">6</div>
+											<div class="block__grid_item item7">7</div>
+											<div class="block__grid_item item7">8</div>
+											<div class="block__grid_item item7">9</div>
+											<div class="block__grid_item item7">10</div>
+										</div>
+										<div class="grids__text">
+											<p>
+												С помощью специального слова <span class="green">span</span> можно задать растяжение
+												элемента на
+												несколько ячеек. <br>
+												После слова <span class="green">span</span> указывается, на какое количество ячеек надо
+												растянуть
+												элемент:
+											</p>
+											<p>Расшифровка записи ниже: <br> блок начинается на 1 линии колонок и растягивается на 4
+												колонки
+												<br>
+												начинается на 2 линии рядов и растягивается на 3 ячейки.
+											</p>
+										</div>
+										<pre class=""><code class="css">.grid-block {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 30px);
+}
+.item_1 {
+grid-column-start: 1;
+grid-column-end: span 4;
+grid-row-start: 2;
+grid-row-end: span 3;
+}</code></pre>
+									</div>
+									<!-- Второй таб -->
+									<div class="grids__body">
+										<div class="cart-product block__grid">
+											<div class="image">Изображение</div>
+											<div class="title">Название</div>
+											<div class="price">Цена</div>
+											<div class="description">Описание</div>
+											<div class="rating">Рейтинг</div>
+											<div class="reviews">Отзывы</div>
+											<div class="features">Характеристики</div>
+											<div class="availability">Наличие</div>
+											<div class="shipping">Доставка</div>
+											<div class="payment">Оплата</div>
+											<div class="contact">Связь</div>
+											<div class="warranty">Гарантия</div>
+											<div class="sizes">Размеры</div>
+											<div class="material">Материал</div>
+											<div class="related">Сопутствующие</div>
+										</div>
+										<div class="grids__text">
+											<p>Рассмотрим использование именной записи на примере компоновки интернет-магазина.</p>
+										</div>
+										<div data-spollers class="spollers spollers__small">
+											<details class="spollers__item">
+												<summary class="spollers__title">HTML</summary>
+												<div class="spollers__body">
+													<pre class=""><code class="html">&lt;div class="cart-product"&gt;
+   &lt;div class="image"&gt;Изображение&lt;/div&gt;
+   &lt;div class="title"&gt;Название&lt;/div&gt;
+   &lt;div class="price"&gt;Цена&lt;/div&gt;
+   &lt;div class="description"&gt;Описание&lt;/div&gt;
+   &lt;div class="rating"&gt;Рейтинг&lt;/div&gt;
+   &lt;div class="reviews"&gt;Отзывы&lt;/div&gt;
+   &lt;div class="features"&gt;Характеристики&lt;/div&gt;
+   &lt;div class="availability"&gt;Наличие&lt;/div&gt;
+   &lt;div class="shipping"&gt;Доставка&lt;/div&gt;
+   &lt;div class="payment"&gt;Оплата&lt;/div&gt;
+   &lt;div class="contact"&gt;Связь&lt;/div&gt;
+   &lt;div class="warranty"&gt;Гарантия&lt;/div&gt;
+   &lt;div class="sizes"&gt;Размеры&lt;/div&gt;
+   &lt;div class="material"&gt;Материал&lt;/div&gt;
+   &lt;div class="related"&gt;Сопутствующие&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+												</div>
+											</details>
+										</div>
+										<div class="grids__text">
+											<p>Создаем grid-сетку и "компануем" интернет магазин. Код записан так, что понятна "компановка"
+												страницы
+											</p>
+										</div>
+										<div data-spollers class="spollers spollers__small">
+											<details class="spollers__item">
+												<summary class="spollers__title">CSS</summary>
+												<div class="spollers__body">
+													<pre class=""><code class="css">.cart-product {
+display: grid;
+grid-template-columns: repeat(6, 1fr);
+/* 6 столбцов одинаковой ширины для десктопа */
+grid-template-rows: repeat(5, 1fr);
+/* 5 строки автоматической высоты */
+grid-gap: 10px;
+/* промежуток между блоками */
+grid-template-areas:
+   "image       image       image         title        title    title"
+   "image       image       image         price        rating   rating"
+   "features    features    features      price        payment  payment"
+   "description description description   description  reviews  reviews  "
+   "shipping    contact     availability  availability warranty sizes"
+   "material    material    related       related      related  related";
+}</code></pre>
+												</div>
+											</details>
+										</div>
+										<div class="grids__text">
+											<p>Что-бы все это работало нужно каждому из блоков присвоить персональное "имя". ( стили
+												оформления:
+												размеры, цвета и др. опущены.)
+											</p>
+										</div>
+										<div data-spollers class="spollers spollers__small">
+											<details class="spollers__item">
+												<summary class="spollers__title">CSS</summary>
+												<div class="spollers__body">
+													<pre class=""><code class="css">.image {
+grid-area: image;
+}
+
+.title {
+grid-area: title;
+}
+
+.price {
+grid-area: price;
+}
+
+.description {
+grid-area: description;
+}
+
+.rating {
+grid-area: rating;
+}
+
+.reviews {
+grid-area: reviews;
+}
+
+.features {
+grid-area: features;
+}
+
+.availability {
+grid-area: availability;
+}
+
+.shipping {
+grid-area: shipping;
+}
+
+.payment {
+grid-area: payment;
+}
+
+.contact {
+grid-area: contact;
+}
+
+.warranty {
+grid-area: warranty;
+}
+
+.sizes {
+grid-area: sizes;
+}
+
+.material {
+grid-area: material;
+}
+
+.related {
+grid-area: related;
+}</code></pre>
+												</div>
+											</details>
+										</div>
+										<div class="grids__text">
+											<p>Этот способ очень удобен при компоновке блоков различных размеров. Не требуется расчета, где
+												будет
+												стоять и сколько места занимать каждый из блоков. В коде визуально понятно, где, кто и какой.
+											</p>
+											<p>И еще один, несомненно БОЛЬШОЙ ПЛЮС.</p>
+											<p>Для различных размеров экрана нужно лишь скорректировать код.</p>
+										</div>
+										<div data-spollers class="spollers spollers__small">
+											<details class="spollers__item">
+												<summary class="spollers__title">CSS</summary>
+												<div class="spollers__body">
+													<pre class=""><code class="css">@media (max-width: 720px) {
+   .cart-product {
+      grid-template-columns: repeat(4, 1fr);
+      /* 4 столбца одинаковой ширины для мобильника */
+      grid-template-areas:
+      "image        image    price       rating"
+      "image        image    description description"
+      "title        title    title       title"
+      "reviews      reviews  features    features"
+      "availability payment  shipping    contact"
+      "warranty     warranty sizes       sizes"
+      "warranty     warranty sizes       sizes"
+      "material     material material    related";
+   }
+}</code></pre>
+												</div>
+											</details>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div> <!-- page__container -->
+				</div>
+			</div>
+			<div class="return">
+				<div class="return__container">
+
+					<p><a href="../grid/grid-menu.html" class="link">К меню " GRID "</a></p>
+					<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+				</div>
+			</div>
+			<footer class="footer">
+				<div class="footer__container">
+
+					<!-- Кнопка вверх -->
+					<!-- https://itchief.ru/javascript/btn-up -->
+					<div class="btn-up btn-up_hide"></div>
+
+
+				</div>
+
+			</footer>
+		</main>
+
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>GULP Page 2</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+			<div class="page__container">
+
+				<h1 class="page__title">Сборка GULP от "Фрилансера" 2022</h1>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+					<!--! Статья 1 -->
+
+					<div class="page__content--items">
+
+
+						<h3 class="gray">Основные ссылки</h3>
+
+						<p><a class=" link" href="https://nodejs.org/en/" target="_blank">Node.js </a></p>
+						<p><a class="link" href="https://gulpjs.com" target="_blank"> Gulp </a></p>
+
+						<hr class="page__hr">
+
+						<h3 class="gray">Начало</h3>
+
+						<p> Скачиваем версию LTS и устанавливаем <span class="gray">Node.js </span>с официального сайта</p>
+						<p>Или</p>
+
+						<p>Проверка наличия узлов, npm и npx, <span class="gray">Node.js </span> и их версий.</p>
+						<pre><code>node -v</code></pre>
+						<pre><code>npm -v</code></pre>
+						<pre><code>npx -v</code></pre>
+						<p>Если Gulp установлен глобально, так же проверяем версию</p>
+						<pre><code>gulp -v</code></pre>
+						<p>Если нет:</p>
+						<pre><code>npm i --global gulp-cli</code></pre>
+
+						<hr class="page__hr">
+
+						<h4 class="warning">Глобально установленные файлы загружаются в компьютер по адресу: <br>
+							windows/пользователи/Олег/AppData/Roaming/npm/... </h4>
+						<p>
+
+						<p>Создаем папку (каталог) для будущего проекта. Имя папки не должно быль <span class="bold">gulp</span>.
+							Открывем
+							её и
+							нажимаем <kbd>Ctrl + правая кнопка мыши</kbd>, выбираем "Открыть окно PowerShell здесь" .
+							Открывается командная строка данного проекта.</p>
+
+						<hr class="page__hr">
+
+						<h3 class="gray"">Создание файла package.json в каталоге проекта</h3>
+
+         <pre><code>npm init</code></pre>
+         <p>Это поможет вам дать вашему проекту имя, версию, описание и т.д.</p>
+      
+         <hr class=" page__hr">
+
+							<h3 class="gray">Устанавливаем gulp в проект</h3>
+							<pre><code>npm i gulp --save-dev</code></pre>
+							<p>Локально файлы устанавливаются в папку <span class=" gray">node_modules</span>, которая автоматически
+								создается
+								в каталоге.</p>
+
+							<hr class="page__hr">
+
+							<h3 class="gray">Coздаем файл <span class="gray">gulpfile.js</span></h3>
+							<p>В файле <span class="gray">gulpfile.js</span> прописываем</p>
+							<pre><code>function defaultTask(cb) {
+   // place code for your default task here
+   cb();
+}
+
+exports.default = defaultTask</code></pre>
+							<p>Команда</p>
+							<pre><code>gulp</code></pre>
+							<p>Вывод в терминале:</p>
+							<pre><code>PS E:\frilanse_gulp> gulp
+[16:53:47] Using gulpfile E:\frilanse_gulp\gulpfile.js
+[16:53:47] Starting 'default'...
+[16:53:47] Finished 'default' after 2.43 ms</code></pre>
+							<p>Если другой:
+							<p>Очистка пакетного менеджера npm </p>
+							<pre><code>npm cache clear --force</code></pre>
+							<p>Устанавливаем npm глобально </p>
+							<pre><code>npm i npm -g</code></pre>- начинай сначала!!!!</p>
+
+							<hr class="page__hr">
+							<p>
+
+								<a class="link" href="https://www.youtube.com/watch?v=jU88mLuLWlk" target="_blank">Источник</a>
+							</p>
+
+							<div class="page__block--list">
+								<ul>
+									<li>00:00:00 - Что умеет Gulp?</li>
+									<li>00:00:40 - Подготовка к работе. NodeJS, GIT Bush</li>
+									<li>00:03:16 - Создание Package.json. Включаем ES6 модули.</li>
+									<li>00:04:58 - Установка GULP. Глобально и в проект</li>
+									<li>00:06:42 - Структура файлов и папок. Архитектура сборки</li>
+									<li>00:10:23 - Копирование файлов</li>
+									<li>00:16:45 - Настройка наблюдателя (watch)</li>
+									<li>00:20:31 - Очистка папки с результатом</li>
+									<li>00:22:51 - Обработка HTML/PUG файлов</li>
+									<li>00:46:09 - Локальный сервер. Автообновление страницы.</li>
+									<li>00:49:59 - Обработка SASS/SCSS/CSS файлов</li>
+									<li>01:03:14 - Обработка JavaScript файлов. WEBPACK</li>
+									<li>01:10:15 - Оптимизация картинок. Создание WEBP</li>
+									<li>01:17:36 - Конвертация шрифтов. Запись в файл стилей</li>
+									<li>01:25:49 - Создание SVG спрайтов.</li>
+									<li>01:30:37 - Режимы разработчика (dev) и продакшн (build)</li>
+									<li>01:37:03 - Создание ZIP архива с результатом</li>
+									<li>01:39:47 - Выгрузка результата на сервер по FTP</li>
+									<li>01:44:20 - Использование Gulp сборки для нового проекта</li>
+									<li> 01:46:21 - Заключение</li>
+								</ul>
+							</div>
+							<hr class="page__hr">
+							<h3 class="gray">HTMl</h3>
+							<p>Основной файл <span class="gray">index.html</span> в папке <span class="gray">src</span></p>
+							<p>Все дополнительные HTMl-файлы в папке <span class="gray">src/html</span></p>
+
+							<h4>Подключение <span class="gray">head.html, header.html, footer.html</span></h4>
+
+
+							<pre class="pre"><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+   &#64;&#64;include('html/head.html', {
+      "title": "Сборка GULP"
+   })
+
+   &lt;body&gt;
+
+      &#64;&#64;include('html/header.html',{})
+      &lt;main&gt;&lt;/main&gt;
+      &#64;&#64;include('html/footer.html',{})
+
+   &lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+							<h4 class="gray"> head.html</h4>
+
+							<pre class="pre"><code class="html"> &lt;head&gt;
+   &lt;meta charset="UTF-8"&gt;
+   &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+   &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+   &lt;link rel="stylesheet" href="css/style.min.css"&gt;
+   &lt;title&gt;<span class="red">&#64;&#64;title</span>&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+
+							<hr class="page__hr">
+
+							<h3 class="gray">CSS</h3>
+
+							<p>Файлы SCSS находятся в папке <span class="gray">src</span></p>
+							<h4>Подключение файлов <span class="gray">.scss</span></h4>
+							<pre class="pre"><code class="html">&#64;import "fonts";
+&#64;import "header";</code> </pre>
+
+							<p>Если порядок подключения имеет значение, то импорт в нужном порядке</p>
+							<h4>Возможности:</h4>
+							<p>Создание в папке <span class="gray">dist</span> 2 файлов <span class="gray">css/style.css и
+									css/style.min.css</span></p>
+							<p>Сведение всех файлов в один</p>
+							<p>Добавление вендорных префиксов</p>
+							<p>Краткие формы свойств</p>
+							<p>Группировка медиа-запросов</p>
+							<p>Выбор WEBP изображений</p>
+							<p>Отключение кеширования в браузерах</p>
+
+							<hr class="page__hr">
+
+							<h3 class="gray">Images</h3>
+							<p>Уменьшает вес изображений</p>
+							<p>Перекодирует в WEBP</p>
+							<p>Для браузеров поддерживающих WEBP делает двойную запись в HTML и CSS</p>
+							<h4>Подключение</h4>
+							<p>Т.к. подключение в зависимости от вложенности различное для файлов HTML (img) Запись выглядит
+								так:</p>
+							<pre class="pre"><code class="html"> &lt;img src="&#64;img.jpg" alt=""&gt;</code></pre>
+							<p>Для стилей:</p>
+							<pre class="pre"><code class="css"> background-image: url(&#64;img/orig.png);</code></pre>
+
+							<hr class="page__hr">
+
+							<h3 class="gray">Fonts</h3>
+							<p>Перекодировка otf --&gt; ttf, а потом ttf --&gt; woff и woff2</p>
+							<p>Создание файла <span class="gray">fonts.scss</span></p>
+							<p>При сответствующем подключении перенос содержимого в <span class="gray">style.scss</span></p>
+
+							<hr class="page__hr">
+
+							<h3 class="gray">Режимы работы</h3>
+							<h4>Режим разработчика</h4>
+							<pre><code> npm run dev</code></pre>
+							<p>Файлы CSS и JS не минизированы, даже для ... .min. ...</p>
+							<p>Автопрефиксы, группировка медиа-файлов, краткая запись, сжатие файла, WEBP-подключения - ОТКЛЮЧЕНЫ!
+							</p>
+							<p>Изображения не перекодируются в WEBP и не сжимаются</p>
+							<p>Шрифты перекодируются</p>
+							<h4>Режим продакшн</h4>
+							<pre><code>npm run build</code></pre>
+							<p>Делает все, что нужно и собирает в папку <span class="bold">dist</span> для передачи клиенту</p>
+							<h4>Создание архива</h4>
+							<pre><code>npm run zip </code></pre>
+							<p>Создается архив папки <span class="bold">dist</span> с названием папки проекта</p>
+
+					</div> <!-- page__content -->
+
+
+				</div>
+				<div class="return">
+					<div class="return__container">
+
+						<p><a href="../gulp/gulps-menu.html" class="link">К меню "Сборка GULP "</a></p>
+						<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+
+					</div>
+				</div>
+				<footer class="footer">
+					<div class="footer__container">
+
+						<!-- Кнопка вверх -->
+						<!-- https://itchief.ru/javascript/btn-up -->
+						<div class="btn-up btn-up_hide"></div>
+
+
+					</div>
+
+				</footer>
+		</main>
+
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

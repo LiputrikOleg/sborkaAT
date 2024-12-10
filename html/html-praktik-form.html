@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Praktik Form</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<style>
+				form.forms2 {
+					width: 520px;
+					margin: 10px auto;
+					background: #444343;
+					padding: 20px;
+					border: 2px outset #bbb;
+					color: #fff;
+				}
+
+				form.forms2 label {
+					margin: 0 0 5px 0;
+					display: block;
+				}
+
+				form.forms2 span {
+					display: inline-block;
+					width: 175px;
+					cursor: pointer;
+					font-size: 15px;
+					font-style: italic;
+					color: #eee9e9;
+				}
+
+				form.forms2 input {
+					width: 200px;
+					padding: 6px 0 6px 10px;
+					margin: 10px 0;
+					line-height: 16px;
+					border: 1px solid #ccc;
+					outline: none;
+					font-size: 16px;
+					color: #171616;
+				}
+
+				form.forms2 input:focus,
+				.forms2 textarea:focus {
+					border: 1px solid #75bbe6;
+					color: #1b6d9c;
+					background: #F0F0F0;
+				}
+
+				form.forms2 textarea {
+					width: 90%;
+					height: 80px;
+					font-size: 16px;
+					color: #a5a2a2;
+					border: 1px solid #ccc;
+					outline: none;
+				}
+
+				form p {
+					border-bottom: 2px dotted #e7e4e4;
+					font-size: 21px;
+					margin-top: 0;
+				}
+
+				form.forms2 input[type="reset"],
+				form.forms2 input[type="submit"] {
+					width: 150px;
+					background: #47718B;
+					color: #fff;
+					cursor: pointer;
+					padding: 8px 5px;
+				}
+
+				form.forms2 input[type="reset"] {
+					margin-left: 80px;
+				}
+
+				form.forms2 input[type="reset"]:focus,
+				form.forms2 input[type="submit"]:focus {
+					background: #ccc;
+					color: #2F5973;
+				}
+			</style>
+			</head>
+
+			<body>
+				<form action="mail.php" class="forms2">
+					<p>Форма обратной связи</p>
+					<label>
+						<span>Введите ваше имя:</span>
+						<input type="text" name="name" placeholder="Введите ваше имя" required>
+					</label>
+					<label>
+						<span>Укажите ваш E-mail:</span>
+						<input type="email" name="email" placeholder="Укажите свой e-mail" required>
+					</label>
+					<label>
+						<span>Напишите тему:</span>
+						<input type="text" name="theme" placeholder="Тема письма" required>
+					</label>
+					<label>
+						<span>Ваше сообщение:</span>
+						<textarea name="text" placeholder=" Ваше сообщение" required></textarea>
+					</label>
+					<input type="reset" name="reset" value="Сброс">
+					<input type="submit" name="knop" value="Отправить ">
+				</form>
+
+
+
+				<div class="page__content--items">
+
+					<div class="page__content_prim">
+
+						<div class="prim_atr">
+							<pre class="pre"><code class="html">  &lt;form action="mail.php" class="forms2"&gt;
+  &lt;p&gt;Форма обратной связи&lt;/p&gt;
+  &lt;label&gt;
+    &lt;span&gt;Введите ваше имя:&lt;/span&gt;
+    &lt;input type="text" name="name" placeholder="Введите ваше имя" required&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Укажите ваш E-mail:&lt;/span&gt;
+    &lt;input type="email" name="email" placeholder="Укажите свой e-mail" required&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Напишите тему:&lt;/span&gt;
+    &lt;input type="text" name="theme" placeholder="Тема письма" required&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    &lt;span&gt;Ваше сообщение:&lt;/span&gt;
+    &lt;textarea name="text" placeholder=" Ваше сообщение" required&gt;&lt;/textarea&gt;
+  &lt;/label&gt;
+  &lt;input type="reset" name="reset" value="Сброс"&gt;
+  &lt;input type="submit" name="knop" value="Отправить "&gt;
+&lt;/form&gt;</code></pre>
+						</div>
+
+						<div class="prim_atr">
+							<pre class="pre"><code class="css"> form.forms2 {
+  width: 520px;
+  margin: 10px auto;
+  background: #444343;
+  padding: 20px;
+  border: 2px outset #bbb;
+  color: #fff;
+}
+
+form.forms2 label {
+  margin: 0 0 5px 0;
+  display: block;
+}
+
+form.forms2 span {
+  display: inline-block;
+  width: 175px;
+  cursor: pointer;
+  font-size: 15px;
+  font-style: italic;
+  color: #eee9e9;
+}
+
+form.forms2 input {
+  width: 200px;
+  padding: 6px 0 6px 10px;
+  margin: 10px 0;
+  line-height: 16px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  color: #171616;
+}
+
+form.forms2 input:focus,
+.forms2 textarea:focus {
+  border: 1px solid #75bbe6;
+  color: #1b6d9c;
+  background: #F0F0F0;
+}
+
+form.forms2 textarea {
+  width: 90%;
+  height: 80px;
+  font-size: 16px;
+  color: #a5a2a2;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+form p {
+  border-bottom: 2px dotted #e7e4e4;
+  font-size: 21px;
+  margin-top: 0;
+}
+
+form.forms2 input[type="reset"],
+form.forms2 input[type="submit"] {
+  width: 150px;
+  background: #47718B;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 5px;
+}
+
+form.forms2 input[type="reset"] {
+  margin-left: 80px;
+}
+
+form.forms2 input[type="reset"]:focus,
+form.forms2 input[type="submit"]:focus {
+  background: #ccc;
+  color: #2F5973;
+}</code></pre>
+						</div>
+
+					</div>
+				</div>
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

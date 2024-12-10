@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 8</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Font Awesome - Установка и подключение</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Font Awesome - 4</a>
+							<a href="#h-items_2" class="con-menu">Font Awesome - 5</a>
+							<a href="#h-items_3" class="con-menu">Работа с иконками</a>
+							<a href="#h-items_4" class="con-menu">Размеры иконок</a>
+							<a href="#h-items_5" class="con-menu">Иконки с фиксированной шириной</a>
+							<a href="#h-items_6" class="con-menu">Использование иконок в списках</a>
+							<a href="#h-items_7" class="con-menu">Поворот, переворот, отображение</a>
+							<a href="#h-items_8" class="con-menu">Новое в Font Awesome 5</a>
+						</div>
+					</details>
+				</div>
+
+
+
+				<!--			Arhive  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Архив</summary>
+						<div class="spollers__body spollers__body--menu">
+
+							<div class="page__block--list">
+								<ul class="page__block--list-arhive">
+									<li><i class="fas fa-fw text-info fa-briefcase"></i><a
+											href="../../arhive/html/fontawesome-free-5.5.0-desktop.zip"
+											class="link">fontawesome-free-5.5.0-desktop.zip</a>
+									</li>
+									<li><i class="fas fa-fw text-info fa-briefcase"></i><a
+											href="../../arhive/html/fontavesome/fontawesome-free-5.5.0-web.zip"
+											class="link">fontawesome-free-5.5.0-web.zip</a>
+									</li>
+									<li><i class="fas fa-fw text-info fa-briefcase"></i><a
+											href="../../arhive/html/fontawesome-free-6.5.1-web.zip"
+											class="link">fontawesome-free-6.5.1-web.zip</a>
+									</li>
+									<li><i class="fas fa-fw text-info fa-briefcase"></i><a aria-dropeffect=""
+											href="../../arhive/html/fontAwesomeBootstrap.zip" class="link">fontAwesomeBootstrap.zip</a></li>
+									<li><i class="fas fa-fw text-info fa-book"></i><a target="_blank"
+											href="../../arhive/html/table_FontAwesome.pdf" class="link">Шпаргалка
+											по Font Awesome.pdf</a></li>
+								</ul>
+							</div>
+
+						</div>
+					</details>
+				</div>
+
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Font Awesome - 4</h2>
+
+					<div class="page__content--items">
+
+						<p>Чтобы подключить шрифт Font Awesome на свой веб-сайт вы можете воспользоваться двумя способами:</p>
+
+						<div class="page__block">
+							<ol>
+								<li>
+									<p>Самый простой способ – это с помощью Bootstrap CDN. Для этого необходимо добавить одну строчку кода
+										в
+										раздел заголовка сайта. Ничего загружать и устанавливать не надo.</p>
+									<pre
+										class="pre"><code class="html">&lt;link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"&gt;</code></pre>
+								</li>
+								<li>
+									<p>Второй способ заключается в скачивании шрифта Awesome со страницы проекта, его распаковки в каталог
+										сайта
+										и
+										подключения CSS файла "<span class="green">font-awesome.min.css</span>".</p>
+									<pre
+										class="pre"><code class="html">&lt;link rel="stylesheet" href="/css/font-awesome.min.css"&gt;</code></pre>
+								</li>
+							</ol>
+						</div>
+
+						<p> Из архива <span class="green">fontAwesomeBootstrap.zip</span> переносим папки <span class="green">fonts,
+								css, js</span>. В данном варианте
+							кроме обычной начинки <span class="green">bootstrap</span> присутствует <span
+								class="green">css-файл</span>
+							иконочного шрифта, а также сам шрифт.
+							Подключаем как указано выше во втором способе. Также подключаем <span class="green">bootstrap</span>.
+						</p>
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Font Awesome - 5</h2>
+
+					<div class="page__content--items">
+
+						<p>Здесь добавлены иконки в формате SVG</p>
+						<h4 class="gray">Подключение от внешнего источника (сайта-разработчика)</h4>
+
+						<div class="page__block">
+							<ol>
+								<li>
+									<p>Eсли хотим использовать SVG формат иконок, добавляем такую строчку:</p>
+									<pre
+										class="pre"><code class="javascript">&lt;script defer src=&quot;https://use.fontawesome.com/releases/v5.3.1/js/all.js&quot;&gt;&lt;/script&gt;</code></pre>
+								</li>
+								<li>
+									<p>Если Вы всё же приверженец шрифтовых, то добавляем такую</p>
+									<pre
+										class="pre"><code class="html">&lt;link href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" rel="stylesheet"&gt;</code></pre>
+								</li>
+							</ol>
+						</div>
+
+						<h4 class="gray">Подключение локально</h4>
+
+						<p>Скачиваем с официального сайта последнюю версию, извлекаем из архива содержимое.</p>
+						<p>В корне сайта создаем папку <span class="green">fontawesome</span> и загружаем туда:</p>
+
+						<div class="page__block--list">
+							<ol>
+								<li>Для икононок в SVG: файл <span class="green">all.js</span> из каталога
+									<span class="green">fontawesome-free-5.5.0-web --&gt; js --&gt; all.js</span>, либо его
+									минимизированную
+									копию
+								</li>
+								<li>Для шрифтовых иконок файл <span class="green">all.css</span> из каталога
+									<span class="green">fontawesome-free-5.5.0-web --&gt; css --&gt; all.css</span>, либо его
+									минимизированную
+									копию и папку
+									<span class="green">webfonts</span>.
+								</li>
+							</ol>
+						</div>
+
+						<p>Соответственно осуществляем подключение</p>
+
+						<ul>
+							<li>
+								<h4 class="gray">Для SVG</h4>
+							</li>
+							<pre
+								class="pre"><code class="javascript">&lt;script defer src="/fontawesome/all.js"&gt;&lt;/script&gt;</code></pre>
+							<li>
+								<h4 class="gray">Для шрифта</h4>
+							</li>
+							<pre class="pre"><code class="html">&lt;link href="/fontawesome/all.css" rel="stylesheet"&gt;</code></pre>
+						</ul>
+
+					</div> <!-- page__content--items 2-->
+
+
+					<!--! Статья 3 -->
+					<h2 class="page__subtitle" id="h-items_3">Работа с иконками</h2>
+
+					<div class="page__content--items">
+
+						<p>В FontAwesome - 5 подключение иконок немного изменилось относительно 4 версии. Вместо класса
+							<span class="green"> fa</span> используются
+							<span class="green">fab</span>, <span class="green">fas</span> вместо <span class="green">fa</span>,
+							<span class="green">far</span> и <span class="green">fas</span>
+						</p>
+						<p>2 последних и основном в платной версии. В <a href="html-table.html" target="_blank" class="link">
+								таблице</a>
+							указаны измениения
+							имен иконок в разных версиях .</p>
+						<p>Еще одно изменение:</p>
+						<pre class="pre"><code class="scc">/* общий стиль, разделяемый между версиями */
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* стиль версии 4 (с использованием calendar-o) */
+.calendar::before {
+  font-family: FontAwesome;
+  content: "\f133";
+}
+
+/* стиль версии 5 (с использованием обновленного calendar ) */
+.calendar::before {
+  font-family: "Font Awesome 5 Free";  /* обновленный font-family */
+  font-weight: 400; /* regular style/weight , в 5 версии они могут быть различными*/
+  content: "\f133";
+}</code></pre>
+
+					</div> <!-- page__content--items 3-->
+
+
+
+					<!--! Статья 4 -->
+					<h2 class="page__subtitle" id="h-items_4">Размеры иконок</h2>
+
+					<div class="page__content--items">
+
+						<p>Иконки наследуют <span class="green">font-size</span> своего родителя, но с помощью дополнительных
+							классов
+							можно
+							изменить <span class="green">font-size</span> иконки, хотя его возможно изменить через стили элемента,
+							как
+							раньше.</p>
+
+						<i class="fas fa-stroopwafel fa-xs"></i>
+						<i class="fas fa-stroopwafel fa-sm"></i>
+						<i class="fas fa-stroopwafel fa-lg"></i>
+						<i class="fas fa-stroopwafel fa-2x"></i>
+						<i class="fas fa-stroopwafel fa-3x"></i>
+						<i class="fas fa-stroopwafel fa-4x"></i>
+						<i class="fas fa-stroopwafel fa-5x"></i>
+						<i class="fas fa-stroopwafel fa-6x"></i>
+						<i class="fas fa-stroopwafel fa-7x"></i>
+						<i class="fas fa-stroopwafel fa-8x"></i>
+						<i class="fas fa-stroopwafel fa-9x"></i>
+						<i class="fas fa-stroopwafel fa-10x"></i>
+						<pre class="pre"><code class="html">&lt;i class=&quot;fas fa-stroopwafel fa-xs&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fas fa-stroopwafel fa-sm&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fas fa-stroopwafel fa-lg&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fas fa-stroopwafel fa-2x&quot;&gt;&lt;/i&gt;
+&lt;i class=&quot;fas fa-stroopwafel fa-3x&quot;&gt;&lt;/i&gt;
+....
+&lt;i class=&quot;fas fa-stroopwafel fa-10x&quot;&gt;&lt;/i&gt;</code></pre>
+
+
+						<table class="table table-all " style="width: 400px; background: #555;">
+							<th>Класс</th>
+							<th>Размер</th>
+							<tr>
+								<td>fa-xs</td>
+								<td>.75em</td>
+							</tr>
+							<tr>
+								<td>fa-sm</td>
+								<td>.875em</td>
+							</tr>
+							<tr>
+								<td>fa-lg</td>
+								<td>1.33em</td>
+							</tr>
+							<tr>
+								<td>fa-2x</td>
+								<td>2em</td>
+							</tr>
+							<tr>
+								<td>fa-3x</td>
+								<td>3em</td>
+							</tr>
+							<tr>
+								<td>...</td>
+								<td>...</td>
+							</tr>
+							<tr>
+								<td>fa-10x</td>
+								<td>10em</td>
+							</tr>
+						</table>
+					</div>
+
+
+					<!--! Статья 5 -->
+					<h2 class="page__subtitle" id="h-items_5">Иконки с фиксированной шириной</h2>
+
+					<div class="page__content--items">
+
+						<p>Для списков или меню навигации необходимо выровнить иконки по ширине, для этого и служит <span
+								class="green">fa-fw</span>.
+							Для наглядности иконки имеют фон, слева с выравниванием по ширине - справа без.</p>
+
+
+						<div class="page__block--icon">
+							<div class="icon-flex">
+								<div style="font-size: 1.25rem;">
+									<p><i class="fas fa-home fa-fw" style="background:#23eac9"></i> Home</p>
+									<p><i class="fas fa-info fa-fw" style="background:#23eac9"></i> Info</p>
+									<p><i class="fas fa-book fa-fw" style="background:#23eac9"></i> Library</p>
+									<p><i class="fas fa-pencil-alt fa-fw" style="background:#23eac9"></i> Applications</p>
+									<div><i class="fas fa-cog fa-fw" style="background:#23eac9"></i> Settings</div>
+								</div>
+							</div>
+							<div class="icon-flex">
+								<div style="font-size: 1.25rem;">
+									<p><i class="fas fa-home " style="background:#23eac9"></i> Home</p>
+									<p><i class="fas fa-info " style="background:#23eac9"></i> Info</p>
+									<p><i class="fas fa-book f" style="background:#23eac9"></i> Library</p>
+									<p><i class="fas fa-pencil-alt " style="background:#23eac9"></i> Applications</p>
+									<p><i class="fas fa-cog " style="background:#23eac9"></i> Settings</p>
+								</div>
+							</div>
+							<div class="icon-flex">
+								<pre class="pre"><code class="html">&lt;div style=&quot;font-size: 2rem;&quot;&gt;
+  &lt;div&gt;&lt;i class=&quot;fas fa-home fa-fw&quot;&gt;&lt;/i&gt; Home&lt;/div&gt;
+  &lt;div&gt;&lt;i class=&quot;fas fa-info fa-fw&quot;&gt;&lt;/i&gt; Info&lt;/div&gt;
+  &lt;div&gt;&lt;i class=&quot;fas fa-book fa-fw&quot;&gt;&lt;/i&gt; Library&lt;/div&gt;
+  &lt;div&gt;&lt;i class=&quot;fas fa-pencil-alt fa-fw&quot;&gt;&lt;/i&gt; Applications&lt;/div&gt;
+  &lt;div&gt;&lt;i class=&quot;fas fa-cog fa-fw&quot;&gt;&lt;/i&gt; Settings&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+
+
+					</div>
+
+
+					<!--! Статья 6 -->
+					<h2 class="page__subtitle" id="h-items_6">Использование иконок в списках</h2>
+
+					<div class="page__content--items">
+
+						<p> С помощью всего 2 классов присваиваем обеим видам списков иконки вместо цифири или декоративных штучек.
+						</p>
+
+						<div class="page__block--icon">
+							<div class="icon-flex">
+
+								<div class="page__block--list">
+									<ul class="fa-ul">
+										<li><span class="fa-li"><i class="fas fa-check-square"></i></span>List icons can</li>
+										<li><span class="fa-li"><i class="fas fa-check-square"></i></span>be used to</li>
+										<li><span class="fa-li"><i class="fas fa-spinner fa-pulse"></i></span>replace bullets</li>
+										<li><span class="fa-li"><i class="far fa-square"></i></span>in lists</li>
+									</ul>
+								</div>
+
+							</div>
+							<div class="icon-flex">
+								<pre class="pre"><code class="html">&lt;ul class=&quot;fa-ul&quot;&gt;
+  &lt;li&gt;&lt;span class=&quot;fa-li&quot;&gt;&lt;i class=&quot;fas fa-check-square&quot;&gt;&lt;/i&gt;&lt;/span&gt;List icons can&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;fa-li&quot;&gt;&lt;i class=&quot;fas fa-check-square&quot;&gt;&lt;/i&gt;&lt;/span&gt;be used to&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;fa-li&quot;&gt;&lt;i class=&quot;fas fa-spinner fa-pulse&quot;&gt;&lt;/i&gt;&lt;/span&gt;replace bullets&lt;/li&gt;
+  &lt;li&gt;&lt;span class=&quot;fa-li&quot;&gt;&lt;i class=&quot;far fa-square&quot;&gt;&lt;/i&gt;&lt;/span&gt;in lists&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+							</div>
+						</div>
+
+					</div> <!-- page__content--items 6-->
+
+
+					<!--! Статья 7 -->
+					<h2 class="page__subtitle" id="h-items_7">Поворот, переворот, отображение</h2>
+
+					<div class="page__content--items">
+
+						<div class="page__block--icon">
+							<div class="icon-flex">
+								<div class="fa-4x">
+									<i class="fab fa-font-awesome"></i>
+									<i class="fab fa-font-awesome fa-rotate-90"></i>
+									<i class="fab fa-font-awesome fa-rotate-180"></i>
+									<i class="fab fa-font-awesome fa-rotate-270"></i>
+									<i class="fab fa-font-awesome fa-flip-horizontal"></i>
+									<i class="fab fa-font-awesome fa-flip-vertical"></i>
+								</div>
+							</div>
+							<div class="icon-flex">
+								<pre class="pre"><code class="html">&lt;div class=&quot;fa-4x&quot;&gt;
+  &lt;i class=&quot;fab fa-font-awesome&quot;&gt;&lt;/i&gt;
+  Поворот-переворот
+  &lt;i class=&quot;fab fa-font-awesome fa-rotate-90&quot;&gt;&lt;/i&gt;  
+  &lt;i class=&quot;fab fa-font-awesome fa-rotate-180&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fab fa-font-awesome fa-rotate-270&quot;&gt;&lt;/i&gt;
+  Отражение по-горизонтали или по вертикали
+  &lt;i class=&quot;fab fa-font-awesome fa-flip-horizontal&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fab fa-font-awesome fa-flip-vertical&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div>
+
+					</div> <!-- page__content--items 7-->
+
+
+					<!--! Статья 8 -->
+					<h2 class="page__subtitle" id="h-items_8">Новое в Font Awesome 5</h2>
+
+					<div class="page__content--items">
+
+						<p>Благодаря силе SVG в Font Awesome 5 теперь вы можете масштабировать, позиционировать, переворачивать и
+							поворачивать значки произвольно, используя <span class="green">data-fa-transform</span> атрибут <span
+								class="green">element</span>. Вы можете
+							даже комбинировать их для некоторых супер-полезных эффектов.</p>
+
+						<h4 class="gray">Маштабирование</h4>
+
+						<p>Масштабирование влияет на размер значка без изменения или перемещения контейнера. Чтобы масштабировать
+							значки
+							вверх или вниз, используйте <span class="green">grow-#</span> и <span class="green">shrink-#</span> с
+							любым
+							произвольным значением, включая
+							десятичные числа. Единицы 1 / 16em. Для ясности в примере мы добавили цвет фона на значок, чтобы вы могли
+							видеть
+							эффект.</p>
+						<div class="page__block--icon">
+							<div class="icon-flex">
+								<div class="fa-4x">
+									<i class="fas fa-magic" data-fa-transform="shrink-8" style="background: #23eac9"></i>
+									<i class="fas fa-magic" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="grow-6" style="background: #23eac9"></i>
+								</div>
+							</div>
+							<div class="icon-flex">
+								<pre class="pre"><code class="html">&lt;div class=&quot;fa-4x&quot;&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;shrink-8&quot; &gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;grow-6&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div> <!-- /.row-->
+
+						<h4 class="gray">Позиционирование</h4>
+						<p> Позиционирует расположение значков эффектов без изменения или перемещения контейнера. Чтобы переместить
+							значки
+							вверх, вниз, влево или вправо, использование <span class="green">up-#</span>, <span
+								class="green">down-#</span>,
+							<span class="green">left-#</span> и
+							<span class="green">right-#</span> с любым произвольным значением, в том числе десятичных знаков. Единицы
+							1 / 16em.
+						</p>
+						<div class="page__block--icon">
+							<div class="icon-flex">
+								<div class="fa-4x">
+									<i class="fas fa-magic" data-fa-transform="shrink-8" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="shrink-8 up-6" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="shrink-8 right-6" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="shrink-8 down-6" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="shrink-8 left-6" style="background: #23eac9"></i>
+								</div>
+							</div>
+							<div class="icon-flex">
+								<pre class="pre"><code class="html">&lt;&lt;div class=&quot;fa-4x&quot;&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;shrink-8&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;shrink-8 up-6&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;shrink-8 right-6&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;shrink-8 down-6&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;shrink-8 left-6&quot; &gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div> <!--  / .row-->
+
+						<h4 class="gray">Вращение и отражение</h4>
+						<p>Power Transform поворачивает и переворачивает эффекты иконка и отражение изображения без изменения или
+							перемещения контейнера. Для того, чтобы вращать или флип иконки использовать любую комбинацию
+							<span class="green">rotate-#</span>, <span class="green">flip-v</span> и <span class="green">flip-h
+							</span> с любым произвольным значением. Единицы - это
+							градусы с допустимыми отрицательными номерами (см. Пятый значок в примере).
+						</p>
+						<div class="page__block--icon">
+							<div class="icon-flex">
+								<div class="fa-4x">
+									<i class="fas fa-magic" data-fa-transform="rotate-90" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="rotate-180" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="rotate-270" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="rotate-30" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="rotate--30" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="flip-v" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="flip-h" style="background: #23eac9"></i>
+									<i class="fas fa-magic" data-fa-transform="flip-v flip-h" style="background: #23eac9"></i>
+								</div>
+							</div>
+							<div class="icon-flex">
+								<pre class="pre"><code class="html">&lt;div class=&quot;fa-4x&quot;&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;rotate-90&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;rotate-180&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;rotate-270&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;rotate-30&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;rotate--30&quot; &gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;flip-v&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;flip-h&quot;&gt;&lt;/i&gt;
+  &lt;i class=&quot;fas fa-magic&quot; data-fa-transform=&quot;flip-v flip-h&quot;&gt;&lt;/i&gt;
+&lt;/div&gt;</code></pre>
+							</div>
+						</div> <!--  / .row -->
+
+						<h4 class="gray">Создание вращающихся иконок</h4>
+						<p>Для создания вращающейся иконки используйте класс<span class="green"> fa-spin</code>.</p>
+						<div class="page__block--icon">
+							<div class="icon-flex">
+								<button type="button" class="btn btn-default btn-lg"><i class="fa fa-spinner fa-spin"></i></button>
+								<button type="button" class="btn btn-default btn-lg"><i
+										class="fa fa-circle-o-notch fa-spin"></i></button>
+								<button type="button" class="btn btn-default btn-lg"><i class="fa fa-refresh fa-spin"></i></button>
+								<button type="button" class="btn btn-default btn-lg"><i class="fa fa-cog fa-spin"></i></button>
+							</div>
+							<div class="icon-flex">
+								<pre
+									class="pre"><code class="html">&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;&lt;i class=&quot;fa fa-spinner fa-spin&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;&lt;i class=&quot;fa fa-circle-o-notch fa-spin&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;&lt;i class=&quot;fa fa-refresh fa-spin&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot;&gt;&lt;i class=&quot;fa fa-cog fa-spin&quot;&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
+							</div>
+						</div> <!--  / .row -->
+
+						<h4 class="gray">Создание «направленных» иконок и границ вокруг иконки</h4>
+						<p>Для создания «вытянутых» кавычек или иконок статей используйте классы <span
+								class="green">fa-border</span> и
+							<span class="green">pull-right</span> или <span class="green">pull-left</span>.
+						</p>
+
+						<div class="page__block--icon">
+							<div class="icon-flex">
+								<i class="fas fa-arrow-left fa-2x fa-pull-left fa-border"></i>
+								<p>
+									...Креативность — это просто создание связей между вещами. Когда творческих людей спрашивают, как они
+									что-то
+									сделали, они чувствуют себя немного виноватыми, потому что они не сделали.....
+								</p>
+								<br>
+								<hr style="background-color: cornflowerblue; height: 2px">
+								<br>
+								<i class="fas fa-arrow-right fa-2x fa-pull-right fa-border"></i>
+								<p>
+									...Креативность — это просто создание связей между вещами. Когда творческих людей спрашивают, как они
+									что-то
+									сделали, они чувствуют себя немного виноватыми, потому что они не сделали.....
+								</p>
+							</div>
+							<div class="icon-flex">
+								<pre class="pre"><code class="html">&lt;i class=&quot;fas fa-arrow-left fa-2x fa-pull-left fa-border&quot;&gt;&lt;/i&gt;
+...Креативность &mdash; это просто создание связей между вещами. 
+Когда творческих людей спрашивают, как они что-то сделали, они 
+чувствуют себя немного виноватыми, потому что они не сделали.....
+
+&lt;i class=&quot;fas fa-arrow-right fa-2x fa-pull-right fa-border&quot;&gt;&lt;/i&gt;
+...Креативность &mdash; это просто создание связей между вещами.
+ Когда творческих людей спрашивают, как они что-то сделали, они 
+ чувствуют себя немного виноватыми, потому что они не сделали.....</code></pre>
+							</div>
+						</div> <!--  / .row -->
+
+
+
+						<h4 class="gray">Новые "накрученные" возможности</h4>
+						<p><a class="link" href="https://fontawesome.com/how-to-use/on-the-web/styling/masking"
+								target="_blank">Маскировка</a></p>
+						<p><a class="link" href="https://fontawesome.com/how-to-use/on-the-web/styling/layering"
+								target="_blank">Слои,
+								текст и
+								счетчики</a></p>
+					</div>
+
+				</div> <!-- page__content-->
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>

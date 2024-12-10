@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>HTML Page 7</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="../../css/style.min.css?_v=20241026231742">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<main class="page">
+
+			<div class="page__container">
+
+				<h1 class="page__title" id="top">Иконочные шрифты</h1>
+
+				<!-- Оглавление  -->
+
+				<div data-spollers class="spollers">
+					<details class="spollers__item">
+						<summary class="spollers__title spollers__title--bg">Оглавление</summary>
+						<div class="spollers__body spollers__body--menu">
+							<a href="#h-items_1" class="con-menu">Fontastic</a>
+							<a href="#h-items_2" class="con-menu">Icomoon</a>
+
+						</div>
+					</details>
+				</div>
+
+				<!-- Контейнер  со статьями -->
+				<div class="page__content">
+
+
+					<!--! Статья 1 -->
+					<h2 class="page__subtitle" id="h-items_1">Fontastic</h2>
+
+					<div class="page__content--items">
+						<p>Заходим на <a href="http://fontastic.me/" target="_blank" title="" class="link">fontastic.me</a>. Если
+							регистрация уже была кликаем <b>Login</b>, вводим свои данные.
+						</p>
+						<p>Для первоначальной регистрации вводим <span class="green">email</span> ( ol-deniska-64@yandex.ru ) ,
+							<span class="green">password </span> ( 311237g311237 ) кликает на желтое поле. Первоначально открыто
+							несколько
+							коллекций, если этого не достаточно - добавляем коллекции иконок - <b><b>Add More Icon</b></b>
+						</p>
+						<p><b>Premium</b> - Платные. <b>Activate</b> - Активируем бесплатные и возвращаемся к началу - кликаем
+							<b>Home</b>
+							-
+							Открываем все доступные, но их очень много, поэтому пользуемся поиском. Придется вводить слова по
+							английски.
+						</p>
+						<p>В окошке <b>PUBLISH</b> отображается количество выбранных иконок, по окончании выбора кликаем по ней.
+							Существуют
+							2 варианта отображения иконок: <b>Icon Font</b> или <b>SVG Sprite</b>. Выбираем нужный и <b>Download</b> -
+							скачиваем</p>
+						<p>Над кнопкой скачки есть ссылка на установку шрифта или SVG.</p>
+						<p>Для каждой иконки существует свой код. В таблице стилей смотрим его – например для лупы это \61. Чтобы
+							иконку
+							вставить в поле поиска сделаем так:</p>
+						<pre
+							class="pre"><code class="html">&lt;input type=&quot;submit&quot; value=&quot;&amp;#x61;&quot;&gt; </code></pre>
+
+						<p> Из той же таблицы стилей копируем шрифт ( <span class="green">font-family: "myfont" !important;
+							</span>) и
+							прописываем его
+							этой кнопке в основных стилях. Теперь у нас выводиться лупа в кнопке <span class="green">submit</span>.
+						</p>
+
+
+
+
+					</div> <!-- page__content--items 1-->
+
+
+					<!--! Статья 2 -->
+					<h2 class="page__subtitle" id="h-items_2">Icomoon</h2>
+
+					<div class="page__content--items">
+
+						<div class="page__block--list">
+							<ul>
+								<li> Заходим на сайт <a class="link" target="_blank" href="https://icomoon.io">https://icomoon.io</a>
+								</li>
+								<li> Кликаем вверху кнопочку <b>IcoMoon App</b></li>
+								<li> Выбираем необходимые иконки</li>
+								<li> Внизу кнопка <b>Generate Font</b> - кликаем</li>
+								<li> <b>Download</b></li>
+								<li> Создаем новую папку <b>iconmoon</b>, в нее из скаченного архива переносим файл <span
+										class="green">style.css</span> и папку
+									<span class="green">fonts</span>
+								</li>
+								<li> Подключаем
+									<pre
+										class="pre"><code class="html">&lt;link rel="stylesheet" href="iconmoon/style.css"&gt;</code></pre>
+								</li>
+								<li> В этом файле указаны классы иконок.</li>
+								<li> Чтобы вывести иконку на экран подключаем ее через пустой тег <b>&lt;i&gt;</b>
+									<pre
+										class="pre"><code class="html">&lt;div class="p2__bullet"&gt; <b>&lt;i class="icon-star-full"&gt;&lt;/i&gt;</b>7 сайтов своими руками&lt;/div&gt;</code></pre>
+								</li>
+								<li>Иконка появляется непосредственно перед текстом, чтобы переместить иконку влево на некоторое
+									расстояние
+									применяем позиционирование:</li>
+								<li>Родительскому блоку <span class="green">&lt;div class="p2__bullet"&gt; </span> задаем
+									<span class="green">position: relative;</span>
+								</li>
+								<li> Иконкам <span class="green">position: absolute; top:0; left: 5px;</span> или другой сдвиг</li>
+								<li> Текст соответственно сдвигаем вправо при помощи <span class="green"> padding-left: 70px;</span>
+								</li>
+								<li> Иконки это фактически текст, поэтому стили как для текста
+									<span class="green">font-size: 23px;color: #f4924a;font-weight: 400;</span>
+								</li>
+								<li>ВСЁ</li>
+							</ul>
+						</div>
+
+					</div> <!-- page__content--items 2-->
+
+
+				</div> <!-- page__content -->
+
+
+			</div> <!-- page__container -->
+
+		</main>
+
+		<!-- Ссылки к меню -->
+		<div class="return">
+			<div class="return__container">
+
+				<p><a href="../html/html-menu.html" class="link">К меню " HTML "</a></p>
+				<p><a href="../../index.html" class="link">К меню " Справочник по всем вопросам "</a></p>
+
+			</div>
+		</div>
+
+		<!-- Кнопка "Вверх" -->
+		<footer class="footer">
+			<div class="footer__container">
+
+				<!-- Кнопка вверх -->
+				<!-- https://itchief.ru/javascript/btn-up -->
+				<div class="btn-up btn-up_hide"></div>
+
+
+			</div>
+		</footer>
+	</div>
+	<script src="../../js/app.min.js?_v=20241026231742"></script>
+
+	<!-- ! Кнопка "Вверх" -->
+	<script>
+		const btnUp = {
+			el: document.querySelector('.btn-up'),
+			scrolling: false,
+			show() {
+				if (this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.remove('btn-up_hide');
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			hide() {
+				if (!this.el.classList.contains('btn-up_hide') && !this.el.classList.contains('btn-up_hiding')) {
+					this.el.classList.add('btn-up_hiding');
+					window.setTimeout(() => {
+						this.el.classList.add('btn-up_hide');
+						this.el.classList.remove('btn-up_hiding');
+					}, 300);
+				}
+			},
+			addEventListener() {
+				// при прокрутке окна (window)
+				window.addEventListener('scroll', () => {
+					const scrollY = window.scrollY || document.documentElement.scrollTop;
+					if (this.scrolling && scrollY > 0) {
+						return;
+					}
+					this.scrolling = false;
+					// если пользователь прокрутил страницу более чем на 150px
+					if (scrollY > 150) {
+						// сделаем кнопку .btn-up видимой
+						this.show();
+					} else {
+						// иначе скроем кнопку .btn-up
+						this.hide();
+					}
+				});
+				// при нажатии на кнопку .btn-up
+				document.querySelector('.btn-up').onclick = () => {
+					this.scrolling = true;
+					this.hide();
+					// переместиться в верхнюю часть страницы
+					window.scrollTo({
+						top: 0,
+						left: 0,
+						behavior: 'smooth'
+					});
+				}
+			}
+		}
+
+		btnUp.addEventListener();
+	</script>
+</body>
+
+</html>
